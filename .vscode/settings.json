@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "gpio.h": "c",
+        "main.h": "c",
+        "tim.h": "c",
+        "typedef.h": "c",
+        "button.h": "c",
+        "dma.h": "c",
+        "calc_value.h": "c",
+        "drive.h": "c",
+        "eeprom.h": "c",
+        "encoder.h": "c",
+        "i2c.h": "c",
+        "iwdg.h": "c",
+        "spi.h": "c",
+        "usart.h": "c",
+        "stm32f1xx_it.h": "c",
+        "stm32f1xx_ll_dma.h": "c",
+        "stm32f1xx.h": "c"
+    }
+}

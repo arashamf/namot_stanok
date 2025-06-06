@@ -1,0 +1,326 @@
+ARM GAS  /tmp/ccvqCjvd.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"eeprom.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SaveByte_In_EEPROM,"ax",%progbits
+  18              		.align	1
+  19              		.global	SaveByte_In_EEPROM
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	SaveByte_In_EEPROM:
+  25              	.LVL0:
+  26              	.LFB953:
+  27              		.file 1 "Core/Src/eeprom.c"
+   1:Core/Src/eeprom.c **** 
+   2:Core/Src/eeprom.c **** // Includes --------------------------------------------------------------------//
+   3:Core/Src/eeprom.c **** #include "eeprom.h"
+   4:Core/Src/eeprom.c **** #include "typedef.h"
+   5:Core/Src/eeprom.c **** #include "usart.h"
+   6:Core/Src/eeprom.c **** #include "i2c.h"
+   7:Core/Src/eeprom.c **** #include <stdio.h>
+   8:Core/Src/eeprom.c **** // Defines ---------------------------------------------------------------------//                 
+   9:Core/Src/eeprom.c **** 
+  10:Core/Src/eeprom.c **** // Private typedef ------------------------------------------------------------//
+  11:Core/Src/eeprom.c **** 
+  12:Core/Src/eeprom.c **** // Private variables ---------------------------------------------------------//
+  13:Core/Src/eeprom.c **** uint8_t EEPROM_TX_Buf[30] = {0} ;
+  14:Core/Src/eeprom.c **** uint8_t EEPROM_RX_Buf[30] = {0} ;
+  15:Core/Src/eeprom.c **** 
+  16:Core/Src/eeprom.c **** // Functions -------------------------------------------------------------------//
+  17:Core/Src/eeprom.c **** static void EEPROM_WriteBytes	(uint16_t, uint8_t *, uint16_t);
+  18:Core/Src/eeprom.c **** static void EEPROM_ReadBytes	(uint16_t, uint8_t *, uint16_t); 
+  19:Core/Src/eeprom.c **** encoder_data_t ReadData_From_EEPROM (uint8_t , uint8_t);
+  20:Core/Src/eeprom.c **** 
+  21:Core/Src/eeprom.c **** //--------------------------------------------------------------------------------------//
+  22:Core/Src/eeprom.c **** void SaveByte_In_EEPROM (uint8_t byte, uint8_t adress)
+  23:Core/Src/eeprom.c **** {
+  28              		.loc 1 23 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 23 1 is_stmt 0 view .LVU1
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+ARM GAS  /tmp/ccvqCjvd.s 			page 2
+
+
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  24:Core/Src/eeprom.c **** 	I2C_WriteByte (byte, adress);
+  38              		.loc 1 24 2 is_stmt 1 view .LVU2
+  39 0002 FFF7FEFF 		bl	I2C_WriteByte
+  40              	.LVL1:
+  25:Core/Src/eeprom.c **** 	#ifdef __USE_DBG
+  26:Core/Src/eeprom.c **** 		sprintf ((char *)DBG_buffer,  "WRIGHT:%d\r\n", byte);
+  27:Core/Src/eeprom.c **** 		DBG_PutString(DBG_buffer);
+  28:Core/Src/eeprom.c **** 	#endif	
+  29:Core/Src/eeprom.c **** }
+  41              		.loc 1 29 1 is_stmt 0 view .LVU3
+  42 0006 08BD     		pop	{r3, pc}
+  43              		.cfi_endproc
+  44              	.LFE953:
+  46              		.section	.text.SaveCoilData,"ax",%progbits
+  47              		.align	1
+  48              		.global	SaveCoilData
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	SaveCoilData:
+  54              	.LVL2:
+  55              	.LFB954:
+  30:Core/Src/eeprom.c **** 
+  31:Core/Src/eeprom.c **** //--------------------------------------------------------------------------------------//
+  32:Core/Src/eeprom.c **** void SaveCoilData (uint8_t * data, uint8_t number_byte, uint8_t EEPROM_adress)
+  33:Core/Src/eeprom.c **** {
+  56              		.loc 1 33 1 is_stmt 1 view -0
+  57              		.cfi_startproc
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		.loc 1 33 1 is_stmt 0 view .LVU5
+  61 0000 10B5     		push	{r4, lr}
+  62              	.LCFI1:
+  63              		.cfi_def_cfa_offset 8
+  64              		.cfi_offset 4, -8
+  65              		.cfi_offset 14, -4
+  66 0002 8646     		mov	lr, r0
+  67 0004 1046     		mov	r0, r2
+  68              	.LVL3:
+  34:Core/Src/eeprom.c **** 	#ifdef __USE_DBG
+  35:Core/Src/eeprom.c **** 	sprintf ((char *)DBG_buffer,  "WRIGHT: ");
+  36:Core/Src/eeprom.c **** 	DBG_PutString(DBG_buffer);
+  37:Core/Src/eeprom.c **** 	#endif	
+  38:Core/Src/eeprom.c **** 	
+  39:Core/Src/eeprom.c **** 	for (uint8_t i = 0; i < number_byte; i++)
+  69              		.loc 1 39 2 is_stmt 1 view .LVU6
+  70              	.LBB2:
+  71              		.loc 1 39 7 view .LVU7
+  72              		.loc 1 39 15 is_stmt 0 view .LVU8
+  73 0006 0023     		movs	r3, #0
+  74              		.loc 1 39 2 view .LVU9
+  75 0008 06E0     		b	.L4
+  76              	.LVL4:
+  77              	.L5:
+  40:Core/Src/eeprom.c **** 	{
+ARM GAS  /tmp/ccvqCjvd.s 			page 3
+
+
+  41:Core/Src/eeprom.c **** 		EEPROM_TX_Buf[i] = (uint8_t)(*(data+i)); //количество витков обмоток
+  78              		.loc 1 41 3 is_stmt 1 discriminator 3 view .LVU10
+  79              		.loc 1 41 22 is_stmt 0 discriminator 3 view .LVU11
+  80 000a 1EF803C0 		ldrb	ip, [lr, r3]	@ zero_extendqisi2
+  81              		.loc 1 41 20 discriminator 3 view .LVU12
+  82 000e 064C     		ldr	r4, .L7
+  83 0010 04F803C0 		strb	ip, [r4, r3]
+  39:Core/Src/eeprom.c **** 	{
+  84              		.loc 1 39 39 is_stmt 1 discriminator 3 view .LVU13
+  39:Core/Src/eeprom.c **** 	{
+  85              		.loc 1 39 40 is_stmt 0 discriminator 3 view .LVU14
+  86 0014 0133     		adds	r3, r3, #1
+  87              	.LVL5:
+  39:Core/Src/eeprom.c **** 	{
+  88              		.loc 1 39 40 discriminator 3 view .LVU15
+  89 0016 DBB2     		uxtb	r3, r3
+  90              	.LVL6:
+  91              	.L4:
+  39:Core/Src/eeprom.c **** 	{
+  92              		.loc 1 39 22 is_stmt 1 discriminator 1 view .LVU16
+  39:Core/Src/eeprom.c **** 	{
+  93              		.loc 1 39 2 is_stmt 0 discriminator 1 view .LVU17
+  94 0018 8B42     		cmp	r3, r1
+  95 001a F6D3     		bcc	.L5
+  96              	.LBE2:
+  42:Core/Src/eeprom.c **** 		
+  43:Core/Src/eeprom.c **** 		#ifdef __USE_DBG
+  44:Core/Src/eeprom.c **** 		sprintf ((char *)DBG_buffer,  "%d ", EEPROM_TX_Buf[i]);
+  45:Core/Src/eeprom.c **** 		DBG_PutString(DBG_buffer);
+  46:Core/Src/eeprom.c **** 		#endif	
+  47:Core/Src/eeprom.c **** 	}		
+  48:Core/Src/eeprom.c **** 	
+  49:Core/Src/eeprom.c **** 	#ifdef __USE_DBG
+  50:Core/Src/eeprom.c **** 	sprintf ((char *)DBG_buffer,  "\r\n");
+  51:Core/Src/eeprom.c **** 	DBG_PutString(DBG_buffer);
+  52:Core/Src/eeprom.c **** 	#endif	
+  53:Core/Src/eeprom.c **** 	
+  54:Core/Src/eeprom.c **** 	I2C_WriteBuffer (EEPROM_adress, EEPROM_TX_Buf, number_byte);
+  97              		.loc 1 54 2 is_stmt 1 view .LVU18
+  98 001c 0A46     		mov	r2, r1
+  99              	.LVL7:
+ 100              		.loc 1 54 2 is_stmt 0 view .LVU19
+ 101 001e 0249     		ldr	r1, .L7
+ 102              	.LVL8:
+ 103              		.loc 1 54 2 view .LVU20
+ 104 0020 FFF7FEFF 		bl	I2C_WriteBuffer
+ 105              	.LVL9:
+  55:Core/Src/eeprom.c **** }
+ 106              		.loc 1 55 1 view .LVU21
+ 107 0024 10BD     		pop	{r4, pc}
+ 108              	.L8:
+ 109 0026 00BF     		.align	2
+ 110              	.L7:
+ 111 0028 00000000 		.word	.LANCHOR0
+ 112              		.cfi_endproc
+ 113              	.LFE954:
+ 115              		.section	.text.GetCoilData,"ax",%progbits
+ARM GAS  /tmp/ccvqCjvd.s 			page 4
+
+
+ 116              		.align	1
+ 117              		.global	GetCoilData
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 122              	GetCoilData:
+ 123              	.LVL10:
+ 124              	.LFB955:
+  56:Core/Src/eeprom.c **** 
+  57:Core/Src/eeprom.c **** //--------------------------------------------------------------------------------------//
+  58:Core/Src/eeprom.c **** void GetCoilData (uint8_t * data, uint8_t number_byte, uint8_t adress)
+  59:Core/Src/eeprom.c **** {
+ 125              		.loc 1 59 1 is_stmt 1 view -0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		.loc 1 59 1 is_stmt 0 view .LVU23
+ 130 0000 38B5     		push	{r3, r4, r5, lr}
+ 131              	.LCFI2:
+ 132              		.cfi_def_cfa_offset 16
+ 133              		.cfi_offset 3, -16
+ 134              		.cfi_offset 4, -12
+ 135              		.cfi_offset 5, -8
+ 136              		.cfi_offset 14, -4
+ 137 0002 0546     		mov	r5, r0
+ 138 0004 0C46     		mov	r4, r1
+ 139 0006 1046     		mov	r0, r2
+ 140              	.LVL11:
+  60:Core/Src/eeprom.c **** 	I2C_ReadBuffer (adress, EEPROM_RX_Buf, number_byte);	
+ 141              		.loc 1 60 2 is_stmt 1 view .LVU24
+ 142 0008 0A46     		mov	r2, r1
+ 143              	.LVL12:
+ 144              		.loc 1 60 2 is_stmt 0 view .LVU25
+ 145 000a 0749     		ldr	r1, .L13
+ 146              	.LVL13:
+ 147              		.loc 1 60 2 view .LVU26
+ 148 000c FFF7FEFF 		bl	I2C_ReadBuffer
+ 149              	.LVL14:
+  61:Core/Src/eeprom.c **** 	
+  62:Core/Src/eeprom.c **** 	for (uint8_t i = 0; i < number_byte; i++)
+ 150              		.loc 1 62 2 is_stmt 1 view .LVU27
+ 151              	.LBB3:
+ 152              		.loc 1 62 7 view .LVU28
+ 153              		.loc 1 62 15 is_stmt 0 view .LVU29
+ 154 0010 0023     		movs	r3, #0
+ 155              		.loc 1 62 2 view .LVU30
+ 156 0012 06E0     		b	.L10
+ 157              	.LVL15:
+ 158              	.L11:
+  63:Core/Src/eeprom.c **** 	{	
+  64:Core/Src/eeprom.c **** 		data[i] = EEPROM_RX_Buf[i];	
+ 159              		.loc 1 64 3 is_stmt 1 discriminator 3 view .LVU31
+ 160              		.loc 1 64 26 is_stmt 0 discriminator 3 view .LVU32
+ 161 0014 044A     		ldr	r2, .L13
+ 162 0016 12F803C0 		ldrb	ip, [r2, r3]	@ zero_extendqisi2
+ 163              		.loc 1 64 11 discriminator 3 view .LVU33
+ 164 001a 05F803C0 		strb	ip, [r5, r3]
+ARM GAS  /tmp/ccvqCjvd.s 			page 5
+
+
+  62:Core/Src/eeprom.c **** 	{	
+ 165              		.loc 1 62 39 is_stmt 1 discriminator 3 view .LVU34
+  62:Core/Src/eeprom.c **** 	{	
+ 166              		.loc 1 62 40 is_stmt 0 discriminator 3 view .LVU35
+ 167 001e 0133     		adds	r3, r3, #1
+ 168              	.LVL16:
+  62:Core/Src/eeprom.c **** 	{	
+ 169              		.loc 1 62 40 discriminator 3 view .LVU36
+ 170 0020 DBB2     		uxtb	r3, r3
+ 171              	.LVL17:
+ 172              	.L10:
+  62:Core/Src/eeprom.c **** 	{	
+ 173              		.loc 1 62 22 is_stmt 1 discriminator 1 view .LVU37
+  62:Core/Src/eeprom.c **** 	{	
+ 174              		.loc 1 62 2 is_stmt 0 discriminator 1 view .LVU38
+ 175 0022 A342     		cmp	r3, r4
+ 176 0024 F6D3     		bcc	.L11
+ 177              	.LBE3:
+  65:Core/Src/eeprom.c **** 	}		
+  66:Core/Src/eeprom.c **** }
+ 178              		.loc 1 66 1 view .LVU39
+ 179 0026 38BD     		pop	{r3, r4, r5, pc}
+ 180              	.LVL18:
+ 181              	.L14:
+ 182              		.loc 1 66 1 view .LVU40
+ 183              		.align	2
+ 184              	.L13:
+ 185 0028 00000000 		.word	.LANCHOR1
+ 186              		.cfi_endproc
+ 187              	.LFE955:
+ 189              		.global	EEPROM_RX_Buf
+ 190              		.global	EEPROM_TX_Buf
+ 191              		.section	.bss.EEPROM_RX_Buf,"aw",%nobits
+ 192              		.align	2
+ 193              		.set	.LANCHOR1,. + 0
+ 196              	EEPROM_RX_Buf:
+ 197 0000 00000000 		.space	30
+ 197      00000000 
+ 197      00000000 
+ 197      00000000 
+ 197      00000000 
+ 198              		.section	.bss.EEPROM_TX_Buf,"aw",%nobits
+ 199              		.align	2
+ 200              		.set	.LANCHOR0,. + 0
+ 203              	EEPROM_TX_Buf:
+ 204 0000 00000000 		.space	30
+ 204      00000000 
+ 204      00000000 
+ 204      00000000 
+ 204      00000000 
+ 205              		.text
+ 206              	.Letext0:
+ 207              		.file 2 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/m
+ 208              		.file 3 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/s
+ 209              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
+ 210              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
+ 211              		.file 6 "Core/Inc/typedef.h"
+ARM GAS  /tmp/ccvqCjvd.s 			page 6
+
+
+ 212              		.file 7 "Core/Inc/i2c.h"
+ARM GAS  /tmp/ccvqCjvd.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 eeprom.c
+     /tmp/ccvqCjvd.s:18     .text.SaveByte_In_EEPROM:0000000000000000 $t
+     /tmp/ccvqCjvd.s:24     .text.SaveByte_In_EEPROM:0000000000000000 SaveByte_In_EEPROM
+     /tmp/ccvqCjvd.s:47     .text.SaveCoilData:0000000000000000 $t
+     /tmp/ccvqCjvd.s:53     .text.SaveCoilData:0000000000000000 SaveCoilData
+     /tmp/ccvqCjvd.s:111    .text.SaveCoilData:0000000000000028 $d
+     /tmp/ccvqCjvd.s:116    .text.GetCoilData:0000000000000000 $t
+     /tmp/ccvqCjvd.s:122    .text.GetCoilData:0000000000000000 GetCoilData
+     /tmp/ccvqCjvd.s:185    .text.GetCoilData:0000000000000028 $d
+     /tmp/ccvqCjvd.s:196    .bss.EEPROM_RX_Buf:0000000000000000 EEPROM_RX_Buf
+     /tmp/ccvqCjvd.s:203    .bss.EEPROM_TX_Buf:0000000000000000 EEPROM_TX_Buf
+     /tmp/ccvqCjvd.s:192    .bss.EEPROM_RX_Buf:0000000000000000 $d
+     /tmp/ccvqCjvd.s:199    .bss.EEPROM_TX_Buf:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+I2C_WriteByte
+I2C_WriteBuffer
+I2C_ReadBuffer

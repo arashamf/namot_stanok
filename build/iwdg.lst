@@ -1,0 +1,508 @@
+ARM GAS  /tmp/ccVDo40j.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"iwdg.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.IWDG_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	IWDG_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	IWDG_Init:
+  25              	.LFB961:
+  26              		.file 1 "Core/Src/iwdg.c"
+   1:Core/Src/iwdg.c **** 
+   2:Core/Src/iwdg.c **** // Includes ------------------------------------------------------------------//
+   3:Core/Src/iwdg.c **** #include "iwdg.h"
+   4:Core/Src/iwdg.c **** #include "stm32f1xx_ll_iwdg.h"
+   5:Core/Src/iwdg.c **** 
+   6:Core/Src/iwdg.c **** //----------------------------------------------------------------------------//
+   7:Core/Src/iwdg.c **** void IWDG_Init(void)
+   8:Core/Src/iwdg.c **** {
+  27              		.loc 1 8 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+   9:Core/Src/iwdg.c ****   LL_IWDG_Enable(IWDG);
+  32              		.loc 1 9 3 view .LVU1
+  33              	.LVL0:
+  34              	.LBB16:
+  35              	.LBI16:
+  36              		.file 2 "Core/Inc/stm32f1xx_ll_iwdg.h"
+   1:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+   2:Core/Inc/stm32f1xx_ll_iwdg.h ****   ******************************************************************************
+   3:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @file    stm32f1xx_ll_iwdg.h
+   4:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @author  MCD Application Team
+   5:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief   Header file of IWDG LL module.
+   6:Core/Inc/stm32f1xx_ll_iwdg.h ****   ******************************************************************************
+   7:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @attention
+   8:Core/Inc/stm32f1xx_ll_iwdg.h ****   *
+   9:Core/Inc/stm32f1xx_ll_iwdg.h ****   * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  10:Core/Inc/stm32f1xx_ll_iwdg.h ****   * All rights reserved.</center></h2>
+  11:Core/Inc/stm32f1xx_ll_iwdg.h ****   *
+  12:Core/Inc/stm32f1xx_ll_iwdg.h ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Core/Inc/stm32f1xx_ll_iwdg.h ****   * the "License"; You may not use this file except in compliance with the
+ARM GAS  /tmp/ccVDo40j.s 			page 2
+
+
+  14:Core/Inc/stm32f1xx_ll_iwdg.h ****   * License. You may obtain a copy of the License at:
+  15:Core/Inc/stm32f1xx_ll_iwdg.h ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Core/Inc/stm32f1xx_ll_iwdg.h ****   *
+  17:Core/Inc/stm32f1xx_ll_iwdg.h ****   ******************************************************************************
+  18:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  19:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  20:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Define to prevent recursive inclusion -------------------------------------*/
+  21:Core/Inc/stm32f1xx_ll_iwdg.h **** #ifndef STM32F1xx_LL_IWDG_H
+  22:Core/Inc/stm32f1xx_ll_iwdg.h **** #define STM32F1xx_LL_IWDG_H
+  23:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  24:Core/Inc/stm32f1xx_ll_iwdg.h **** #ifdef __cplusplus
+  25:Core/Inc/stm32f1xx_ll_iwdg.h **** extern "C" {
+  26:Core/Inc/stm32f1xx_ll_iwdg.h **** #endif
+  27:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  28:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Includes ------------------------------------------------------------------*/
+  29:Core/Inc/stm32f1xx_ll_iwdg.h **** #include "stm32f1xx.h"
+  30:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  31:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @addtogroup STM32F1xx_LL_Driver
+  32:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  33:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  34:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  35:Core/Inc/stm32f1xx_ll_iwdg.h **** #if defined(IWDG)
+  36:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  37:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL IWDG
+  38:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  39:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  40:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  41:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Private types -------------------------------------------------------------*/
+  42:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Private variables ---------------------------------------------------------*/
+  43:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  44:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Private constants ---------------------------------------------------------*/
+  45:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_Private_Constants IWDG Private Constants
+  46:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  47:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  48:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_KEY_RELOAD                 0x0000AAAAU               /*!< IWDG Reload Counter Enabl
+  49:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_KEY_ENABLE                 0x0000CCCCU               /*!< IWDG Peripheral Enable   
+  50:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_KEY_WR_ACCESS_ENABLE       0x00005555U               /*!< IWDG KR Write Access Enab
+  51:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_KEY_WR_ACCESS_DISABLE      0x00000000U               /*!< IWDG KR Write Access Disa
+  52:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+  53:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+  54:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  55:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  56:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Private macros ------------------------------------------------------------*/
+  57:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  58:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Exported types ------------------------------------------------------------*/
+  59:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Exported constants --------------------------------------------------------*/
+  60:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_Exported_Constants IWDG Exported Constants
+  61:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  62:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  63:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  64:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_EC_GET_FLAG Get Flags Defines
+  65:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief    Flags defines which can be used with LL_IWDG_ReadReg function
+  66:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  67:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  68:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_SR_PVU                     IWDG_SR_PVU                           /*!< Watchdog pres
+  69:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_SR_RVU                     IWDG_SR_RVU                           /*!< Watchdog coun
+  70:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ARM GAS  /tmp/ccVDo40j.s 			page 3
+
+
+  71:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+  72:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  73:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  74:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_EC_PRESCALER  Prescaler Divider
+  75:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  76:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  77:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_4                0x00000000U                           /*!< Divider by 4 
+  78:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_8                (IWDG_PR_PR_0)                        /*!< Divider by 8 
+  79:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_16               (IWDG_PR_PR_1)                        /*!< Divider by 16
+  80:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_32               (IWDG_PR_PR_1 | IWDG_PR_PR_0)         /*!< Divider by 32
+  81:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_64               (IWDG_PR_PR_2)                        /*!< Divider by 64
+  82:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_128              (IWDG_PR_PR_2 | IWDG_PR_PR_0)         /*!< Divider by 12
+  83:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_PRESCALER_256              (IWDG_PR_PR_2 | IWDG_PR_PR_1)         /*!< Divider by 25
+  84:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+  85:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+  86:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  87:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  88:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+  89:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+  90:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  91:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  92:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Exported macro ------------------------------------------------------------*/
+  93:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_Exported_Macros IWDG Exported Macros
+  94:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  95:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+  96:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+  97:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_EM_WRITE_READ Common Write and read registers Macros
+  98:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+  99:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 100:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 101:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 102:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Write a value in IWDG register
+ 103:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  __INSTANCE__ IWDG Instance
+ 104:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  __REG__ Register to be written
+ 105:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  __VALUE__ Value to be written in the register
+ 106:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 107:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 108:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALU
+ 109:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 110:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 111:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Read a value in IWDG register
+ 112:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  __INSTANCE__ IWDG Instance
+ 113:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  __REG__ Register to be read
+ 114:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval Register value
+ 115:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 116:Core/Inc/stm32f1xx_ll_iwdg.h **** #define LL_IWDG_ReadReg(__INSTANCE__, __REG__) READ_REG(__INSTANCE__->__REG__)
+ 117:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 118:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+ 119:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 120:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 121:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 122:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+ 123:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 124:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 125:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 126:Core/Inc/stm32f1xx_ll_iwdg.h **** /* Exported functions --------------------------------------------------------*/
+ 127:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_Exported_Functions IWDG Exported Functions
+ARM GAS  /tmp/ccVDo40j.s 			page 4
+
+
+ 128:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+ 129:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 130:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_EF_Configuration Configuration
+ 131:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+ 132:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 133:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 134:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 135:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Start the Independent Watchdog
+ 136:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @note   Except if the hardware watchdog option is selected
+ 137:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll KR           KEY           LL_IWDG_Enable
+ 138:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 139:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 140:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 141:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_Enable(IWDG_TypeDef *IWDGx)
+  37              		.loc 2 141 22 view .LVU2
+  38              	.LBB17:
+ 142:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 143:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->KR, LL_IWDG_KEY_ENABLE);
+  39              		.loc 2 143 3 view .LVU3
+  40 0000 0A4B     		ldr	r3, .L3
+  41 0002 4CF6CC42 		movw	r2, #52428
+  42 0006 1A60     		str	r2, [r3]
+  43              	.LVL1:
+  44              		.loc 2 143 3 is_stmt 0 view .LVU4
+  45              	.LBE17:
+  46              	.LBE16:
+  10:Core/Src/iwdg.c ****   LL_IWDG_EnableWriteAccess(IWDG);
+  47              		.loc 1 10 3 is_stmt 1 view .LVU5
+  48              	.LBB18:
+  49              	.LBI18:
+ 144:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 145:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 146:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 147:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Reloads IWDG counter with value defined in the reload register
+ 148:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll KR           KEY           LL_IWDG_ReloadCounter
+ 149:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 150:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 151:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 152:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_ReloadCounter(IWDG_TypeDef *IWDGx)
+ 153:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 154:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->KR, LL_IWDG_KEY_RELOAD);
+ 155:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 156:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 157:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 158:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Enable write access to IWDG_PR, IWDG_RLR and IWDG_WINR registers
+ 159:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll KR           KEY           LL_IWDG_EnableWriteAccess
+ 160:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 161:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 162:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 163:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_EnableWriteAccess(IWDG_TypeDef *IWDGx)
+  50              		.loc 2 163 22 view .LVU6
+  51              	.LBB19:
+ 164:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 165:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->KR, LL_IWDG_KEY_WR_ACCESS_ENABLE);
+  52              		.loc 2 165 3 view .LVU7
+  53 0008 45F25552 		movw	r2, #21845
+  54 000c 1A60     		str	r2, [r3]
+ARM GAS  /tmp/ccVDo40j.s 			page 5
+
+
+  55              	.LVL2:
+  56              		.loc 2 165 3 is_stmt 0 view .LVU8
+  57              	.LBE19:
+  58              	.LBE18:
+  11:Core/Src/iwdg.c ****   LL_IWDG_SetPrescaler(IWDG, LL_IWDG_PRESCALER_128);
+  59              		.loc 1 11 3 is_stmt 1 view .LVU9
+  60              	.LBB20:
+  61              	.LBI20:
+ 166:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 167:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 168:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 169:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Disable write access to IWDG_PR, IWDG_RLR and IWDG_WINR registers
+ 170:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll KR           KEY           LL_IWDG_DisableWriteAccess
+ 171:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 172:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 173:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 174:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_DisableWriteAccess(IWDG_TypeDef *IWDGx)
+ 175:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 176:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->KR, LL_IWDG_KEY_WR_ACCESS_DISABLE);
+ 177:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 178:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 179:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 180:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Select the prescaler of the IWDG
+ 181:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll PR           PR            LL_IWDG_SetPrescaler
+ 182:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 183:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  Prescaler This parameter can be one of the following values:
+ 184:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_4
+ 185:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_8
+ 186:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_16
+ 187:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_32
+ 188:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_64
+ 189:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_128
+ 190:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_256
+ 191:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 192:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 193:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_SetPrescaler(IWDG_TypeDef *IWDGx, uint32_t Prescaler)
+  62              		.loc 2 193 22 view .LVU10
+  63              	.LBB21:
+ 194:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 195:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->PR, IWDG_PR_PR & Prescaler);
+  64              		.loc 2 195 3 view .LVU11
+  65 000e 0522     		movs	r2, #5
+  66 0010 5A60     		str	r2, [r3, #4]
+  67              	.LVL3:
+  68              		.loc 2 195 3 is_stmt 0 view .LVU12
+  69              	.LBE21:
+  70              	.LBE20:
+  12:Core/Src/iwdg.c ****   LL_IWDG_SetReloadCounter(IWDG, 4095);
+  71              		.loc 1 12 3 is_stmt 1 view .LVU13
+  72              	.LBB22:
+  73              	.LBI22:
+ 196:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 197:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 198:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 199:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Get the selected prescaler of the IWDG
+ 200:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll PR           PR            LL_IWDG_GetPrescaler
+ 201:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ARM GAS  /tmp/ccVDo40j.s 			page 6
+
+
+ 202:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval Returned value can be one of the following values:
+ 203:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_4
+ 204:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_8
+ 205:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_16
+ 206:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_32
+ 207:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_64
+ 208:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_128
+ 209:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         @arg @ref LL_IWDG_PRESCALER_256
+ 210:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 211:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE uint32_t LL_IWDG_GetPrescaler(IWDG_TypeDef *IWDGx)
+ 212:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 213:Core/Inc/stm32f1xx_ll_iwdg.h ****   return (READ_REG(IWDGx->PR));
+ 214:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 215:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 216:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 217:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Specify the IWDG down-counter reload value
+ 218:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll RLR          RL            LL_IWDG_SetReloadCounter
+ 219:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 220:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  Counter Value between Min_Data=0 and Max_Data=0x0FFF
+ 221:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval None
+ 222:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 223:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE void LL_IWDG_SetReloadCounter(IWDG_TypeDef *IWDGx, uint32_t Counter)
+  74              		.loc 2 223 22 view .LVU14
+  75              	.LBB23:
+ 224:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 225:Core/Inc/stm32f1xx_ll_iwdg.h ****   WRITE_REG(IWDGx->RLR, IWDG_RLR_RL & Counter);
+  76              		.loc 2 225 3 view .LVU15
+  77 0012 40F6FF72 		movw	r2, #4095
+  78 0016 9A60     		str	r2, [r3, #8]
+  79              	.LVL4:
+  80              	.L2:
+  81              		.loc 2 225 3 is_stmt 0 view .LVU16
+  82              	.LBE23:
+  83              	.LBE22:
+  13:Core/Src/iwdg.c ****   while (LL_IWDG_IsReady(IWDG) != 1){}
+  84              		.loc 1 13 38 is_stmt 1 discriminator 1 view .LVU17
+  85              		.loc 1 13 9 discriminator 1 view .LVU18
+  86              	.LBB24:
+  87              	.LBI24:
+ 226:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 227:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 228:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 229:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Get the specified IWDG down-counter reload value
+ 230:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll RLR          RL            LL_IWDG_GetReloadCounter
+ 231:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 232:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval Value between Min_Data=0 and Max_Data=0x0FFF
+ 233:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 234:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE uint32_t LL_IWDG_GetReloadCounter(IWDG_TypeDef *IWDGx)
+ 235:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 236:Core/Inc/stm32f1xx_ll_iwdg.h ****   return (READ_REG(IWDGx->RLR));
+ 237:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 238:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 239:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 240:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @}
+ 241:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 242:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 243:Core/Inc/stm32f1xx_ll_iwdg.h **** /** @defgroup IWDG_LL_EF_FLAG_Management FLAG_Management
+ARM GAS  /tmp/ccVDo40j.s 			page 7
+
+
+ 244:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @{
+ 245:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 246:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 247:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 248:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Check if flag Prescaler Value Update is set or not
+ 249:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll SR           PVU           LL_IWDG_IsActiveFlag_PVU
+ 250:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 251:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval State of bit (1 or 0).
+ 252:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 253:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE uint32_t LL_IWDG_IsActiveFlag_PVU(IWDG_TypeDef *IWDGx)
+ 254:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 255:Core/Inc/stm32f1xx_ll_iwdg.h ****   return ((READ_BIT(IWDGx->SR, IWDG_SR_PVU) == (IWDG_SR_PVU)) ? 1UL : 0UL);
+ 256:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 257:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 258:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 259:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Check if flag Reload Value Update is set or not
+ 260:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll SR           RVU           LL_IWDG_IsActiveFlag_RVU
+ 261:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 262:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval State of bit (1 or 0).
+ 263:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 264:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE uint32_t LL_IWDG_IsActiveFlag_RVU(IWDG_TypeDef *IWDGx)
+ 265:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 266:Core/Inc/stm32f1xx_ll_iwdg.h ****   return ((READ_BIT(IWDGx->SR, IWDG_SR_RVU) == (IWDG_SR_RVU)) ? 1UL : 0UL);
+ 267:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 268:Core/Inc/stm32f1xx_ll_iwdg.h **** 
+ 269:Core/Inc/stm32f1xx_ll_iwdg.h **** /**
+ 270:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @brief  Check if flags Prescaler & Reload Value Update are reset or not
+ 271:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @rmtoll SR           PVU           LL_IWDG_IsReady\n
+ 272:Core/Inc/stm32f1xx_ll_iwdg.h ****   *         SR           RVU           LL_IWDG_IsReady
+ 273:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @param  IWDGx IWDG Instance
+ 274:Core/Inc/stm32f1xx_ll_iwdg.h ****   * @retval State of bits (1 or 0).
+ 275:Core/Inc/stm32f1xx_ll_iwdg.h ****   */
+ 276:Core/Inc/stm32f1xx_ll_iwdg.h **** __STATIC_INLINE uint32_t LL_IWDG_IsReady(IWDG_TypeDef *IWDGx)
+  88              		.loc 2 276 26 discriminator 1 view .LVU19
+  89              	.LBB25:
+ 277:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 278:Core/Inc/stm32f1xx_ll_iwdg.h ****   return ((READ_BIT(IWDGx->SR, IWDG_SR_PVU | IWDG_SR_RVU) == 0U) ? 1UL : 0UL);
+  90              		.loc 2 278 3 discriminator 1 view .LVU20
+  91              		.loc 2 278 12 is_stmt 0 discriminator 1 view .LVU21
+  92 0018 044B     		ldr	r3, .L3
+  93 001a DB68     		ldr	r3, [r3, #12]
+  94              		.loc 2 278 72 discriminator 1 view .LVU22
+  95 001c 13F0030F 		tst	r3, #3
+  96 0020 FAD1     		bne	.L2
+  97              	.LVL5:
+  98              		.loc 2 278 72 discriminator 1 view .LVU23
+  99              	.LBE25:
+ 100              	.LBE24:
+  14:Core/Src/iwdg.c ****   LL_IWDG_ReloadCounter(IWDG);
+ 101              		.loc 1 14 3 is_stmt 1 view .LVU24
+ 102              	.LBB26:
+ 103              	.LBI26:
+ 152:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 104              		.loc 2 152 22 view .LVU25
+ 105              	.LBB27:
+ 154:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 106              		.loc 2 154 3 view .LVU26
+ARM GAS  /tmp/ccVDo40j.s 			page 8
+
+
+ 107 0022 024B     		ldr	r3, .L3
+ 108 0024 4AF6AA22 		movw	r2, #43690
+ 109 0028 1A60     		str	r2, [r3]
+ 110              	.LVL6:
+ 154:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 111              		.loc 2 154 3 is_stmt 0 view .LVU27
+ 112              	.LBE27:
+ 113              	.LBE26:
+  15:Core/Src/iwdg.c **** 
+  16:Core/Src/iwdg.c **** }
+ 114              		.loc 1 16 1 view .LVU28
+ 115 002a 7047     		bx	lr
+ 116              	.L4:
+ 117              		.align	2
+ 118              	.L3:
+ 119 002c 00300040 		.word	1073754112
+ 120              		.cfi_endproc
+ 121              	.LFE961:
+ 123              		.section	.text.IWDG_Reset,"ax",%progbits
+ 124              		.align	1
+ 125              		.global	IWDG_Reset
+ 126              		.syntax unified
+ 127              		.thumb
+ 128              		.thumb_func
+ 130              	IWDG_Reset:
+ 131              	.LFB962:
+  17:Core/Src/iwdg.c **** 
+  18:Core/Src/iwdg.c **** //-------------------------------------------------------------------------------------------------
+  19:Core/Src/iwdg.c **** void IWDG_Reset (void)
+  20:Core/Src/iwdg.c **** {
+ 132              		.loc 1 20 1 is_stmt 1 view -0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              		@ link register save eliminated.
+  21:Core/Src/iwdg.c **** 	LL_IWDG_ReloadCounter(IWDG);
+ 137              		.loc 1 21 2 view .LVU30
+ 138              	.LVL7:
+ 139              	.LBB28:
+ 140              	.LBI28:
+ 152:Core/Inc/stm32f1xx_ll_iwdg.h **** {
+ 141              		.loc 2 152 22 view .LVU31
+ 142              	.LBB29:
+ 154:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 143              		.loc 2 154 3 view .LVU32
+ 144 0000 024B     		ldr	r3, .L6
+ 145 0002 4AF6AA22 		movw	r2, #43690
+ 146 0006 1A60     		str	r2, [r3]
+ 147              	.LVL8:
+ 154:Core/Inc/stm32f1xx_ll_iwdg.h **** }
+ 148              		.loc 2 154 3 is_stmt 0 view .LVU33
+ 149              	.LBE29:
+ 150              	.LBE28:
+  22:Core/Src/iwdg.c **** }...
+ 151              		.loc 1 22 1 view .LVU34
+ 152 0008 7047     		bx	lr
+ 153              	.L7:
+ARM GAS  /tmp/ccVDo40j.s 			page 9
+
+
+ 154 000a 00BF     		.align	2
+ 155              	.L6:
+ 156 000c 00300040 		.word	1073754112
+ 157              		.cfi_endproc
+ 158              	.LFE962:
+ 160              		.text
+ 161              	.Letext0:
+ 162              		.file 3 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/m
+ 163              		.file 4 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/s
+ 164              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f105xc.h"
+ 165              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
+ 166              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
+ARM GAS  /tmp/ccVDo40j.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 iwdg.c
+     /tmp/ccVDo40j.s:18     .text.IWDG_Init:0000000000000000 $t
+     /tmp/ccVDo40j.s:24     .text.IWDG_Init:0000000000000000 IWDG_Init
+     /tmp/ccVDo40j.s:119    .text.IWDG_Init:000000000000002c $d
+     /tmp/ccVDo40j.s:124    .text.IWDG_Reset:0000000000000000 $t
+     /tmp/ccVDo40j.s:130    .text.IWDG_Reset:0000000000000000 IWDG_Reset
+     /tmp/ccVDo40j.s:156    .text.IWDG_Reset:000000000000000c $d
+
+NO UNDEFINED SYMBOLS

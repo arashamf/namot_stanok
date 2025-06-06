@@ -1,0 +1,32 @@
+{
+    "configurations": 
+    [
+        {
+            "name": "STM32",
+            "compilerPath": "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc",
+            "includePath": 
+            [
+                "${workspaceRoot}/Core/Inc/**",
+                "${workspaceRoot}/Drivers/STM32F1xx_HAL_Driver/Inc/**",
+                "${workspaceRoot}/display/**",
+                "${workspaceRoot}/Drivers/CMSIS/Include/**",
+                "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F1xx/Include/**"
+            ],
+            "defines": 
+            [
+                "STM32F105xC", 
+                "USE_HAL_DRIVER", 
+                "_RTE_", 
+                "USE_FULL_ASSERT"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse":
+            {
+                "limitSymbolsToIncludedHeaders": false
+            }
+        }
+    ],
+    "version": 4
+}
