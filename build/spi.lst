@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccO145yx.s 			page 1
+ARM GAS  /tmp/ccB7ORci.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   30:Core/Src/spi.c **** 
   31:Core/Src/spi.c **** /* SPI2 init function */
   32:Core/Src/spi.c **** void MX_SPI2_Init(void)
-ARM GAS  /tmp/ccO145yx.s 			page 2
+ARM GAS  /tmp/ccB7ORci.s 			page 2
 
 
   33:Core/Src/spi.c **** {
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   10:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****     [..]
   11:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****       A delay between an RCC peripheral clock enable and the effective peripheral
   12:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****       enabling should be taken into account in order to manage the peripheral read/write
-ARM GAS  /tmp/ccO145yx.s 			page 3
+ARM GAS  /tmp/ccB7ORci.s 			page 3
 
 
   13:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****       from/to registers.
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   67:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** /* Exported constants --------------------------------------------------------*/
   68:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** /** @defgroup BUS_LL_Exported_Constants BUS Exported Constants
   69:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   * @{
-ARM GAS  /tmp/ccO145yx.s 			page 4
+ARM GAS  /tmp/ccB7ORci.s 			page 4
 
 
   70:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  124:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB1_GRP1_PERIPH_SPI2           RCC_APB1ENR_SPI2EN
  125:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #endif /*SPI2*/
  126:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #if defined(SPI3)
-ARM GAS  /tmp/ccO145yx.s 			page 5
+ARM GAS  /tmp/ccB7ORci.s 			page 5
 
 
  127:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB1_GRP1_PERIPH_SPI3           RCC_APB1ENR_SPI3EN
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  181:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_AFIO           RCC_APB2ENR_AFIOEN
  182:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_GPIOA          RCC_APB2ENR_IOPAEN
  183:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_GPIOB          RCC_APB2ENR_IOPBEN
-ARM GAS  /tmp/ccO145yx.s 			page 6
+ARM GAS  /tmp/ccB7ORci.s 			page 6
 
 
  184:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_GPIOC          RCC_APB2ENR_IOPCEN
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  238:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h **** /**
  239:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   * @brief  Enable AHB1 peripherals clock.
  240:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   * @rmtoll AHBENR       CRCEN         LL_AHB1_GRP1_EnableClock\n
-ARM GAS  /tmp/ccO145yx.s 			page 7
+ARM GAS  /tmp/ccB7ORci.s 			page 7
 
 
  241:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         AHBENR       DMA1EN        LL_AHB1_GRP1_EnableClock\n
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  295:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_ETHMACTX (*)
  296:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_FLASH
  297:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_FSMC (*)
-ARM GAS  /tmp/ccO145yx.s 			page 8
+ARM GAS  /tmp/ccB7ORci.s 			page 8
 
 
  298:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_OTGFS (*)
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  352:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_OTGFS (*)
  353:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *
  354:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         (*) value not defined in all devices.
-ARM GAS  /tmp/ccO145yx.s 			page 9
+ARM GAS  /tmp/ccB7ORci.s 			page 9
 
 
  355:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   * @retval None
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  409:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB1ENR      UART4EN       LL_APB1_GRP1_EnableClock\n
  410:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB1ENR      UART5EN       LL_APB1_GRP1_EnableClock\n
  411:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB1ENR      USART2EN      LL_APB1_GRP1_EnableClock\n
-ARM GAS  /tmp/ccO145yx.s 			page 10
+ARM GAS  /tmp/ccB7ORci.s 			page 10
 
 
  412:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB1ENR      USART3EN      LL_APB1_GRP1_EnableClock\n
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   74              		.loc 2 451 3 is_stmt 1 view .LVU12
   75 002c 029A     		ldr	r2, [sp, #8]
   76              	.LVL2:
-ARM GAS  /tmp/ccO145yx.s 			page 11
+ARM GAS  /tmp/ccB7ORci.s 			page 11
 
 
   77              		.loc 2 451 3 is_stmt 0 view .LVU13
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  498:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM5 (*)
  499:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM6 (*)
  500:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM7 (*)
-ARM GAS  /tmp/ccO145yx.s 			page 12
+ARM GAS  /tmp/ccB7ORci.s 			page 12
 
 
  501:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_UART4 (*)
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  555:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM13 (*)
  556:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM14 (*)
  557:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM2
-ARM GAS  /tmp/ccO145yx.s 			page 13
+ARM GAS  /tmp/ccB7ORci.s 			page 13
 
 
  558:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM3
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  612:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_I2C1
  613:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_I2C2 (*)
  614:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_PWR
-ARM GAS  /tmp/ccO145yx.s 			page 14
+ARM GAS  /tmp/ccB7ORci.s 			page 14
 
 
  615:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_SPI2 (*)
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  669:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_ALL
  670:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_BKP
  671:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_CAN1 (*)
-ARM GAS  /tmp/ccO145yx.s 			page 15
+ARM GAS  /tmp/ccB7ORci.s 			page 15
 
 
  672:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_CAN2 (*)
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  726:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB2ENR      TIM10EN       LL_APB2_GRP1_EnableClock\n
  727:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB2ENR      TIM11EN       LL_APB2_GRP1_EnableClock\n
  728:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB2ENR      TIM15EN       LL_APB2_GRP1_EnableClock\n
-ARM GAS  /tmp/ccO145yx.s 			page 16
+ARM GAS  /tmp/ccB7ORci.s 			page 16
 
 
  729:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h ****   *         APB2ENR      TIM16EN       LL_APB2_GRP1_EnableClock\n
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   98              	.LVL3:
   99              		.loc 2 767 3 is_stmt 0 view .LVU22
  100              	.LBE66:
-ARM GAS  /tmp/ccO145yx.s 			page 17
+ARM GAS  /tmp/ccB7ORci.s 			page 17
 
 
  101              	.LBE65:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   18:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
   19:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /* Define to prevent recursive inclusion -------------------------------------*/
   20:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #ifndef __STM32F1xx_LL_DMA_H
-ARM GAS  /tmp/ccO145yx.s 			page 18
+ARM GAS  /tmp/ccB7ORci.s 			page 18
 
 
   21:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define __STM32F1xx_LL_DMA_H
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   75:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** typedef struct
   76:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
   77:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   uint32_t PeriphOrM2MSrcAddress;  /*!< Specifies the peripheral base address for DMA transfer
-ARM GAS  /tmp/ccO145yx.s 			page 19
+ARM GAS  /tmp/ccB7ORci.s 			page 19
 
 
   78:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****                                         or as Source base address in case of memory to memory trans
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  132:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****                                         This parameter can be a value of @ref DMA_LL_EC_PRIORITY
  133:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  134:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****                                         This feature can be modified afterwards using unitary funct
-ARM GAS  /tmp/ccO145yx.s 			page 20
+ARM GAS  /tmp/ccB7ORci.s 			page 20
 
 
  135:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  189:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_ISR_TEIF1                  DMA_ISR_TEIF1         /*!< Channel 1 transfer error flag 
  190:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_ISR_GIF2                   DMA_ISR_GIF2          /*!< Channel 2 global flag         
  191:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_ISR_TCIF2                  DMA_ISR_TCIF2         /*!< Channel 2 transfer complete fl
-ARM GAS  /tmp/ccO145yx.s 			page 21
+ARM GAS  /tmp/ccB7ORci.s 			page 21
 
 
  192:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_ISR_HTIF2                  DMA_ISR_HTIF2         /*!< Channel 2 half transfer flag  
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  246:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /** @defgroup DMA_LL_EC_DIRECTION Transfer Direction
  247:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @{
  248:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 22
+ARM GAS  /tmp/ccB7ORci.s 			page 22
 
 
  249:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_DIRECTION_PERIPH_TO_MEMORY 0x00000000U             /*!< Peripheral to memory directi
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  303:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /** @defgroup DMA_LL_EC_PRIORITY Transfer Priority level
  304:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @{
  305:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 23
+ARM GAS  /tmp/ccB7ORci.s 			page 23
 
 
  306:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #define LL_DMA_PRIORITY_LOW               0x00000000U             /*!< Priority level : Low       *
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  360:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** #endif
  361:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  362:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 24
+ARM GAS  /tmp/ccB7ORci.s 			page 24
 
 
  363:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Convert DMAx_Channely into LL_DMA_CHANNEL_y
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  417:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****  (((uint32_t)(__DMA_INSTANCE__) == ((uint32_t)DMA1)) && ((uint32_t)(__CHANNEL__) == ((uint32_t)LL_D
  418:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****  (((uint32_t)(__DMA_INSTANCE__) == ((uint32_t)DMA1)) && ((uint32_t)(__CHANNEL__) == ((uint32_t)LL_D
  419:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****  (((uint32_t)(__DMA_INSTANCE__) == ((uint32_t)DMA1)) && ((uint32_t)(__CHANNEL__) == ((uint32_t)LL_D
-ARM GAS  /tmp/ccO145yx.s 			page 25
+ARM GAS  /tmp/ccB7ORci.s 			page 25
 
 
  420:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****  DMA1_Channel7)
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  474:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   CLEAR_BIT(((DMA_Channel_TypeDef *)((uint32_t)((uint32_t)DMAx + CHANNEL_OFFSET_TAB[Channel - 1U]))
  475:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
  476:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 26
+ARM GAS  /tmp/ccB7ORci.s 			page 26
 
 
  477:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  531:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
  532:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  533:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 27
+ARM GAS  /tmp/ccB7ORci.s 			page 27
 
 
  534:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Set Data transfer direction (read from peripheral or from memory).
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  570:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_7
  571:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval Returned value can be one of the following values:
  572:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_DIRECTION_PERIPH_TO_MEMORY
-ARM GAS  /tmp/ccO145yx.s 			page 28
+ARM GAS  /tmp/ccB7ORci.s 			page 28
 
 
  573:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_DIRECTION_MEMORY_TO_PERIPH
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  627:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
  628:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  629:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 29
+ARM GAS  /tmp/ccB7ORci.s 			page 29
 
 
  630:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Set Peripheral increment mode.
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  684:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_6
  685:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_7
  686:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  MemoryOrM2MDstIncMode This parameter can be one of the following values:
-ARM GAS  /tmp/ccO145yx.s 			page 30
+ARM GAS  /tmp/ccB7ORci.s 			page 30
 
 
  687:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_MEMORY_INCREMENT
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  741:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
  742:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  743:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 31
+ARM GAS  /tmp/ccB7ORci.s 			page 31
 
 
  744:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Get Peripheral size.
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  798:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_4
  799:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_5
  800:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_6
-ARM GAS  /tmp/ccO145yx.s 			page 32
+ARM GAS  /tmp/ccB7ORci.s 			page 32
 
 
  801:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_7
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  156 006e A36D     		ldr	r3, [r4, #88]
  157 0070 23F02003 		bic	r3, r3, #32
  158 0074 A365     		str	r3, [r4, #88]
-ARM GAS  /tmp/ccO145yx.s 			page 33
+ARM GAS  /tmp/ccB7ORci.s 			page 33
 
 
  159              	.LVL7:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  198              	.LVL10:
  739:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****              PeriphOrM2MSrcDataSize);
  199              		.loc 3 739 3 is_stmt 0 view .LVU54
-ARM GAS  /tmp/ccO145yx.s 			page 34
+ARM GAS  /tmp/ccB7ORci.s 			page 34
 
 
  200              	.LBE78:
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  238 00ac 0E93     		str	r3, [sp, #56]
   84:Core/Src/spi.c ****   SPI_InitStruct.BitOrder = LL_SPI_MSB_FIRST;
  239              		.loc 1 84 3 is_stmt 1 view .LVU73
-ARM GAS  /tmp/ccO145yx.s 			page 35
+ARM GAS  /tmp/ccB7ORci.s 			page 35
 
 
  240              		.loc 1 84 27 is_stmt 0 view .LVU74
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  849:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_7
  850:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval Returned value can be one of the following values:
  851:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_PRIORITY_LOW
-ARM GAS  /tmp/ccO145yx.s 			page 36
+ARM GAS  /tmp/ccB7ORci.s 			page 36
 
 
  852:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_PRIORITY_MEDIUM
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  906:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
  907:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
  908:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Configure the Source and Destination addresses.
-ARM GAS  /tmp/ccO145yx.s 			page 37
+ARM GAS  /tmp/ccB7ORci.s 			page 37
 
 
  909:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @note   This API must not be called when the DMA channel is enabled.
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  963:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
  964:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE void LL_DMA_SetMemoryAddress(DMA_TypeDef *DMAx, uint32_t Channel, uint32_t MemoryAd
  965:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
-ARM GAS  /tmp/ccO145yx.s 			page 38
+ARM GAS  /tmp/ccB7ORci.s 			page 38
 
 
  966:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   WRITE_REG(((DMA_Channel_TypeDef *)((uint32_t)((uint32_t)DMAx + CHANNEL_OFFSET_TAB[Channel - 1U]))
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1020:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_4
 1021:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_5
 1022:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_6
-ARM GAS  /tmp/ccO145yx.s 			page 39
+ARM GAS  /tmp/ccB7ORci.s 			page 39
 
 
 1023:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   *         @arg @ref LL_DMA_CHANNEL_7
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1077:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @note   Interface used for direction LL_DMA_DIRECTION_MEMORY_TO_MEMORY only.
 1078:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @rmtoll CPAR         PA            LL_DMA_GetM2MSrcAddress
 1079:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
-ARM GAS  /tmp/ccO145yx.s 			page 40
+ARM GAS  /tmp/ccB7ORci.s 			page 40
 
 
 1080:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  Channel This parameter can be one of the following values:
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1134:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
 1135:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Get Channel 2 global interrupt flag.
 1136:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @rmtoll ISR          GIF2          LL_DMA_IsActiveFlag_GI2
-ARM GAS  /tmp/ccO145yx.s 			page 41
+ARM GAS  /tmp/ccB7ORci.s 			page 41
 
 
 1137:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1191:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @rmtoll ISR          GIF7          LL_DMA_IsActiveFlag_GI7
 1192:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
 1193:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval State of bit (1 or 0).
-ARM GAS  /tmp/ccO145yx.s 			page 42
+ARM GAS  /tmp/ccB7ORci.s 			page 42
 
 
 1194:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1248:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval State of bit (1 or 0).
 1249:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
 1250:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_TC5(DMA_TypeDef *DMAx)
-ARM GAS  /tmp/ccO145yx.s 			page 43
+ARM GAS  /tmp/ccB7ORci.s 			page 43
 
 
 1251:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1305:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE uint32_t LL_DMA_IsActiveFlag_HT3(DMA_TypeDef *DMAx)
 1306:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
 1307:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   return (READ_BIT(DMAx->ISR, DMA_ISR_HTIF3) == (DMA_ISR_HTIF3));
-ARM GAS  /tmp/ccO145yx.s 			page 44
+ARM GAS  /tmp/ccB7ORci.s 			page 44
 
 
 1308:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1362:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   return (READ_BIT(DMAx->ISR, DMA_ISR_TEIF1) == (DMA_ISR_TEIF1));
 1363:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
 1364:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 45
+ARM GAS  /tmp/ccB7ORci.s 			page 45
 
 
 1365:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1419:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
 1420:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** /**
 1421:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Get Channel 7 transfer error flag.
-ARM GAS  /tmp/ccO145yx.s 			page 46
+ARM GAS  /tmp/ccB7ORci.s 			page 46
 
 
 1422:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @rmtoll ISR          TEIF7         LL_DMA_IsActiveFlag_TE7
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1476:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @brief  Clear Channel 5 global interrupt flag.
 1477:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @rmtoll IFCR         CGIF5         LL_DMA_ClearFlag_GI5
 1478:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
-ARM GAS  /tmp/ccO145yx.s 			page 47
+ARM GAS  /tmp/ccB7ORci.s 			page 47
 
 
 1479:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval None
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1533:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
 1534:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval None
 1535:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 48
+ARM GAS  /tmp/ccB7ORci.s 			page 48
 
 
 1536:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE void LL_DMA_ClearFlag_TC3(DMA_TypeDef *DMAx)
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1577:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @param  DMAx DMAx Instance
 1578:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   * @retval None
 1579:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 49
+ARM GAS  /tmp/ccB7ORci.s 			page 49
 
 
 1580:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE void LL_DMA_ClearFlag_TC7(DMA_TypeDef *DMAx)
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1634:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   */
 1635:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** __STATIC_INLINE void LL_DMA_ClearFlag_HT5(DMA_TypeDef *DMAx)
 1636:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
-ARM GAS  /tmp/ccO145yx.s 			page 50
+ARM GAS  /tmp/ccB7ORci.s 			page 50
 
 
 1637:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   WRITE_REG(DMAx->IFCR, DMA_IFCR_CHTIF5);
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1691:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** {
 1692:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****   WRITE_REG(DMAx->IFCR, DMA_IFCR_CTEIF3);
 1693:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
-ARM GAS  /tmp/ccO145yx.s 			page 51
+ARM GAS  /tmp/ccB7ORci.s 			page 51
 
 
 1694:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** 
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   20:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** #ifndef STM32F1xx_LL_SPI_H
   21:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** #define STM32F1xx_LL_SPI_H
   22:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 52
+ARM GAS  /tmp/ccB7ORci.s 			page 52
 
 
   23:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** #ifdef __cplusplus
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   77:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
   78:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
   79:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 53
+ARM GAS  /tmp/ccB7ORci.s 			page 53
 
 
   80:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   uint32_t NSS;                     /*!< Specifies whether the NSS signal is managed by hardware (N
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  134:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief    IT defines which can be used with LL_SPI_ReadReg and  LL_SPI_WriteReg functions
  135:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @{
  136:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 54
+ARM GAS  /tmp/ccB7ORci.s 			page 54
 
 
  137:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** #define LL_SPI_CR2_RXNEIE                  SPI_CR2_RXNEIE            /*!< Rx buffer not empty inter
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  191:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** #define LL_SPI_MSB_FIRST                   0x00000000U               /*!< Data is transmitted/recei
  192:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
  193:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @}
-ARM GAS  /tmp/ccO145yx.s 			page 55
+ARM GAS  /tmp/ccB7ORci.s 			page 55
 
 
  194:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  248:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
  249:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
  250:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 56
+ARM GAS  /tmp/ccB7ORci.s 			page 56
 
 
  251:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief  Write a value in SPI register
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  305:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
  306:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
  307:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief  Check if SPI peripheral is enabled
-ARM GAS  /tmp/ccO145yx.s 			page 57
+ARM GAS  /tmp/ccB7ORci.s 			page 57
 
 
  308:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @rmtoll CR1          SPE           LL_SPI_IsEnabled
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  362:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** }
  363:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
  364:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 58
+ARM GAS  /tmp/ccB7ORci.s 			page 58
 
 
  365:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief  Get clock phase
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  419:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   *         @arg @ref LL_SPI_BAUDRATEPRESCALER_DIV256
  420:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @retval None
  421:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 59
+ARM GAS  /tmp/ccB7ORci.s 			page 59
 
 
  422:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** __STATIC_INLINE void LL_SPI_SetBaudRatePrescaler(SPI_TypeDef *SPIx, uint32_t BaudRate)
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  476:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @note   For Half-Duplex mode, Rx Direction is set by default.
  477:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   *         In master mode, the MOSI pin is used and in slave mode, the MISO pin is used for Half-D
  478:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @rmtoll CR1          RXONLY        LL_SPI_SetTransferDirection\n
-ARM GAS  /tmp/ccO145yx.s 			page 60
+ARM GAS  /tmp/ccB7ORci.s 			page 60
 
 
  479:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   *         CR1          BIDIMODE      LL_SPI_SetTransferDirection\n
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  533:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** __STATIC_INLINE uint32_t LL_SPI_GetDataWidth(SPI_TypeDef *SPIx)
  534:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** {
  535:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   return (uint32_t)(READ_BIT(SPIx->CR1, SPI_CR1_DFF));
-ARM GAS  /tmp/ccO145yx.s 			page 61
+ARM GAS  /tmp/ccB7ORci.s 			page 61
 
 
  536:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** }
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  590:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** {
  591:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   SET_BIT(SPIx->CR1, SPI_CR1_CRCNEXT);
  592:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** }
-ARM GAS  /tmp/ccO145yx.s 			page 62
+ARM GAS  /tmp/ccB7ORci.s 			page 62
 
 
  593:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  647:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
  648:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief  Set NSS mode
  649:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @note   LL_SPI_NSS_SOFT Mode is not used in SPI TI mode.
-ARM GAS  /tmp/ccO145yx.s 			page 63
+ARM GAS  /tmp/ccB7ORci.s 			page 63
 
 
  650:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @rmtoll CR1          SSM           LL_SPI_SetNSSMode\n
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  704:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @param  SPIx SPI Instance
  705:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @retval State of bit (1 or 0).
  706:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 64
+ARM GAS  /tmp/ccB7ORci.s 			page 64
 
 
  707:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** __STATIC_INLINE uint32_t LL_SPI_IsActiveFlag_TXE(SPI_TypeDef *SPIx)
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  761:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** }
  762:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
  763:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 65
+ARM GAS  /tmp/ccB7ORci.s 			page 65
 
 
  764:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  818:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   tmpreg = SPIx->SR;
  819:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   (void) tmpreg;
  820:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** }
-ARM GAS  /tmp/ccO145yx.s 			page 66
+ARM GAS  /tmp/ccB7ORci.s 			page 66
 
 
  821:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  875:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
  876:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /**
  877:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @brief  Disable Rx buffer not empty interrupt
-ARM GAS  /tmp/ccO145yx.s 			page 67
+ARM GAS  /tmp/ccB7ORci.s 			page 67
 
 
  878:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @rmtoll CR2          RXNEIE        LL_SPI_DisableIT_RXNE
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  932:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @}
  933:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
  934:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 68
+ARM GAS  /tmp/ccB7ORci.s 			page 68
 
 
  935:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** /** @defgroup SPI_LL_EF_DMA_Management DMA Management
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  304              	.LBE88:
  305              	.LBE87:
   93:Core/Src/spi.c ****   LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_5); //Enable Transfer complete interrupt
-ARM GAS  /tmp/ccO145yx.s 			page 69
+ARM GAS  /tmp/ccB7ORci.s 			page 69
 
 
  306              		.loc 1 93 3 is_stmt 1 view .LVU96
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  311              		.loc 3 1763 3 view .LVU98
  312 00dc A36D     		ldr	r3, [r4, #88]
  313 00de 43F00203 		orr	r3, r3, #2
-ARM GAS  /tmp/ccO145yx.s 			page 70
+ARM GAS  /tmp/ccB7ORci.s 			page 70
 
 
  314 00e2 A365     		str	r3, [r4, #88]
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  329              		.loc 3 1801 3 is_stmt 0 view .LVU103
  330              	.LBE92:
  331              	.LBE91:
-ARM GAS  /tmp/ccO145yx.s 			page 71
+ARM GAS  /tmp/ccB7ORci.s 			page 71
 
 
   95:Core/Src/spi.c ****   LL_SPI_Enable(SPI2); //enable SPI2
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  376              	.LVL20:
  377              	.L6:
  104:Core/Src/spi.c ****   while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
-ARM GAS  /tmp/ccO145yx.s 			page 72
+ARM GAS  /tmp/ccB7ORci.s 			page 72
 
 
  378              		.loc 1 104 42 discriminator 1 view .LVU110
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
 1009:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   * @retval Address of data register
 1010:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h ****   */
 1011:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** __STATIC_INLINE uint32_t LL_SPI_DMA_GetRegAddr(SPI_TypeDef *SPIx)
-ARM GAS  /tmp/ccO145yx.s 			page 73
+ARM GAS  /tmp/ccB7ORci.s 			page 73
 
 
 1012:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_spi.h **** {
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  406              		.loc 4 1057 10 view .LVU122
  407              	.LBE98:
  408              	.LBE97:
-ARM GAS  /tmp/ccO145yx.s 			page 74
+ARM GAS  /tmp/ccB7ORci.s 			page 74
 
 
  106:Core/Src/spi.c ****  // while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  452 0008 074A     		ldr	r2, .L14
  453 000a 82F80CC0 		strb	ip, [r2, #12]
  454              	.LVL26:
-ARM GAS  /tmp/ccO145yx.s 			page 75
+ARM GAS  /tmp/ccB7ORci.s 			page 75
 
 
  455              		.loc 4 1057 10 view .LVU134
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  119:Core/Src/spi.c **** 	}
  120:Core/Src/spi.c **** }
  494              		.loc 1 120 1 view .LVU148
-ARM GAS  /tmp/ccO145yx.s 			page 76
+ARM GAS  /tmp/ccB7ORci.s 			page 76
 
 
  495 0024 7047     		bx	lr
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  881:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h ****              DMA_CNDTR_NDT, NbData);
  541              		.loc 3 881 3 view .LVU156
  542 000c D36D     		ldr	r3, [r2, #92]
-ARM GAS  /tmp/ccO145yx.s 			page 77
+ARM GAS  /tmp/ccB7ORci.s 			page 77
 
 
  543 000e 1B0C     		lsrs	r3, r3, #16
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  587              	.LBE111:
  588              	.LBE110:
  589              	.LBB112:
-ARM GAS  /tmp/ccO145yx.s 			page 78
+ARM GAS  /tmp/ccB7ORci.s 			page 78
 
 
  590              	.LBI112:
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  474:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h **** }
  624              		.loc 3 474 3 view .LVU183
  625 004c 0D4A     		ldr	r2, .L24
-ARM GAS  /tmp/ccO145yx.s 			page 79
+ARM GAS  /tmp/ccB7ORci.s 			page 79
 
 
  626 004e 936D     		ldr	r3, [r2, #88]
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   42:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /* Private constants ---------------------------------------------------------*/
   43:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
   44:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /** @defgroup GPIO_LL_Private_Constants GPIO Private Constants
-ARM GAS  /tmp/ccO145yx.s 			page 80
+ARM GAS  /tmp/ccB7ORci.s 			page 80
 
 
   45:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @{
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
   99:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  100:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  101:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @}
-ARM GAS  /tmp/ccO145yx.s 			page 81
+ARM GAS  /tmp/ccB7ORci.s 			page 81
 
 
  102:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  156:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  157:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @}
  158:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
-ARM GAS  /tmp/ccO145yx.s 			page 82
+ARM GAS  /tmp/ccB7ORci.s 			page 82
 
 
  159:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  213:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PORT_A       AFIO_EVCR_PORT_PA  /*!< EVENTOUT on port A */
  214:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PORT_B       AFIO_EVCR_PORT_PB  /*!< EVENTOUT on port B */
  215:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PORT_C       AFIO_EVCR_PORT_PC  /*!< EVENTOUT on port C */
-ARM GAS  /tmp/ccO145yx.s 			page 83
+ARM GAS  /tmp/ccB7ORci.s 			page 83
 
 
  216:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PORT_D       AFIO_EVCR_PORT_PD  /*!< EVENTOUT on port D */
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  270:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @{
  271:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
  272:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 84
+ARM GAS  /tmp/ccB7ORci.s 			page 84
 
 
  273:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  327:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
  328:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
  329:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
-ARM GAS  /tmp/ccO145yx.s 			page 85
+ARM GAS  /tmp/ccB7ORci.s 			page 85
 
 
  330:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_13
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  384:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   return (READ_BIT(*pReg, ((GPIO_CRL_CNF0 | GPIO_CRL_MODE0) << (POSITION_VAL(Pin) * 4U))) >> (POSIT
  385:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** }
  386:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccO145yx.s 			page 86
+ARM GAS  /tmp/ccB7ORci.s 			page 86
 
 
  387:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  441:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_5
  442:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_6
  443:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_7
-ARM GAS  /tmp/ccO145yx.s 			page 87
+ARM GAS  /tmp/ccB7ORci.s 			page 87
 
 
  444:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  498:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** }
  499:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  500:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
-ARM GAS  /tmp/ccO145yx.s 			page 88
+ARM GAS  /tmp/ccB7ORci.s 			page 88
 
 
  501:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @brief  Return gpio output type for several pins on dedicated port.
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  555:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
  556:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_13
  557:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_14
-ARM GAS  /tmp/ccO145yx.s 			page 89
+ARM GAS  /tmp/ccB7ORci.s 			page 89
 
 
  558:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_15
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  612:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_2
  613:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_3
  614:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_4
-ARM GAS  /tmp/ccO145yx.s 			page 90
+ARM GAS  /tmp/ccB7ORci.s 			page 90
 
 
  615:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_5
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  669:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @brief  Return 1 if one of the pin of a dedicated port is locked. else return 0.
  670:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll LCKR         LCKK          LL_GPIO_IsAnyPinLocked
  671:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
-ARM GAS  /tmp/ccO145yx.s 			page 91
+ARM GAS  /tmp/ccB7ORci.s 			page 91
 
 
  672:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @retval State of bit (1 or 0).
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  726:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  727:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  728:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @brief  Write output data register for the port.
-ARM GAS  /tmp/ccO145yx.s 			page 92
+ARM GAS  /tmp/ccB7ORci.s 			page 92
 
 
  729:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll ODR          ODy           LL_GPIO_WriteOutputPort
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  783:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  PinMask This parameter can be a combination of the following values:
  784:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_0
  785:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_1
-ARM GAS  /tmp/ccO145yx.s 			page 93
+ARM GAS  /tmp/ccB7ORci.s 			page 93
 
 
  786:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_2
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  665              	.LBE114:
  666              	.LBE119:
  131:Core/Src/spi.c **** 		LCD_DC(ON);
-ARM GAS  /tmp/ccO145yx.s 			page 94
+ARM GAS  /tmp/ccB7ORci.s 			page 94
 
 
  667              		.loc 1 131 3 is_stmt 1 view .LVU194
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  713              	.LFE953:
  715              		.section	.text.DMA1_Channel5_Callback,"ax",%progbits
  716              		.align	1
-ARM GAS  /tmp/ccO145yx.s 			page 95
+ARM GAS  /tmp/ccB7ORci.s 			page 95
 
 
  717              		.global	DMA1_Channel5_Callback
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  765 0000 00       		.space	1
  766              		.text
  767              	.Letext0:
-ARM GAS  /tmp/ccO145yx.s 			page 96
+ARM GAS  /tmp/ccB7ORci.s 			page 96
 
 
  768              		.file 6 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/m
@@ -5708,28 +5708,28 @@ ARM GAS  /tmp/ccO145yx.s 			page 1
  772              		.file 10 "Core/Inc/typedef.h"
  773              		.file 11 "display/ssd1306.h"
  774              		.file 12 "<built-in>"
-ARM GAS  /tmp/ccO145yx.s 			page 97
+ARM GAS  /tmp/ccB7ORci.s 			page 97
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 spi.c
-     /tmp/ccO145yx.s:18     .text.MX_SPI2_Init:0000000000000000 $t
-     /tmp/ccO145yx.s:24     .text.MX_SPI2_Init:0000000000000000 MX_SPI2_Init
-     /tmp/ccO145yx.s:354    .text.MX_SPI2_Init:00000000000000f8 $d
-     /tmp/ccO145yx.s:363    .text.spi_write_byte:0000000000000000 $t
-     /tmp/ccO145yx.s:369    .text.spi_write_byte:0000000000000000 spi_write_byte
-     /tmp/ccO145yx.s:414    .text.spi_write_byte:0000000000000010 $d
-     /tmp/ccO145yx.s:419    .text.spi_write_buffer:0000000000000000 $t
-     /tmp/ccO145yx.s:425    .text.spi_write_buffer:0000000000000000 spi_write_buffer
-     /tmp/ccO145yx.s:499    .text.spi_write_buffer:0000000000000028 $d
-     /tmp/ccO145yx.s:504    .text.spi_write_buffer_DMA:0000000000000000 $t
-     /tmp/ccO145yx.s:510    .text.spi_write_buffer_DMA:0000000000000000 spi_write_buffer_DMA
-     /tmp/ccO145yx.s:707    .text.spi_write_buffer_DMA:0000000000000084 $d
-     /tmp/ccO145yx.s:716    .text.DMA1_Channel5_Callback:0000000000000000 $t
-     /tmp/ccO145yx.s:722    .text.DMA1_Channel5_Callback:0000000000000000 DMA1_Channel5_Callback
-     /tmp/ccO145yx.s:755    .text.DMA1_Channel5_Callback:0000000000000010 $d
-     /tmp/ccO145yx.s:764    .bss.count:0000000000000000 count
-     /tmp/ccO145yx.s:765    .bss.count:0000000000000000 $d
+     /tmp/ccB7ORci.s:18     .text.MX_SPI2_Init:0000000000000000 $t
+     /tmp/ccB7ORci.s:24     .text.MX_SPI2_Init:0000000000000000 MX_SPI2_Init
+     /tmp/ccB7ORci.s:354    .text.MX_SPI2_Init:00000000000000f8 $d
+     /tmp/ccB7ORci.s:363    .text.spi_write_byte:0000000000000000 $t
+     /tmp/ccB7ORci.s:369    .text.spi_write_byte:0000000000000000 spi_write_byte
+     /tmp/ccB7ORci.s:414    .text.spi_write_byte:0000000000000010 $d
+     /tmp/ccB7ORci.s:419    .text.spi_write_buffer:0000000000000000 $t
+     /tmp/ccB7ORci.s:425    .text.spi_write_buffer:0000000000000000 spi_write_buffer
+     /tmp/ccB7ORci.s:499    .text.spi_write_buffer:0000000000000028 $d
+     /tmp/ccB7ORci.s:504    .text.spi_write_buffer_DMA:0000000000000000 $t
+     /tmp/ccB7ORci.s:510    .text.spi_write_buffer_DMA:0000000000000000 spi_write_buffer_DMA
+     /tmp/ccB7ORci.s:707    .text.spi_write_buffer_DMA:0000000000000084 $d
+     /tmp/ccB7ORci.s:716    .text.DMA1_Channel5_Callback:0000000000000000 $t
+     /tmp/ccB7ORci.s:722    .text.DMA1_Channel5_Callback:0000000000000000 DMA1_Channel5_Callback
+     /tmp/ccB7ORci.s:755    .text.DMA1_Channel5_Callback:0000000000000010 $d
+     /tmp/ccB7ORci.s:764    .bss.count:0000000000000000 count
+     /tmp/ccB7ORci.s:765    .bss.count:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 memset

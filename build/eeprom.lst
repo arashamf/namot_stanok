@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccvqCjvd.s 			page 1
+ARM GAS  /tmp/cc0rFPuW.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccvqCjvd.s 			page 1
   33 0000 08B5     		push	{r3, lr}
   34              	.LCFI0:
   35              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccvqCjvd.s 			page 2
+ARM GAS  /tmp/cc0rFPuW.s 			page 2
 
 
   36              		.cfi_offset 3, -8
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccvqCjvd.s 			page 1
   76              	.LVL4:
   77              	.L5:
   40:Core/Src/eeprom.c **** 	{
-ARM GAS  /tmp/ccvqCjvd.s 			page 3
+ARM GAS  /tmp/cc0rFPuW.s 			page 3
 
 
   41:Core/Src/eeprom.c **** 		EEPROM_TX_Buf[i] = (uint8_t)(*(data+i)); //количество витков обмоток
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccvqCjvd.s 			page 1
  112              		.cfi_endproc
  113              	.LFE954:
  115              		.section	.text.GetCoilData,"ax",%progbits
-ARM GAS  /tmp/ccvqCjvd.s 			page 4
+ARM GAS  /tmp/cc0rFPuW.s 			page 4
 
 
  116              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccvqCjvd.s 			page 1
  162 0016 12F803C0 		ldrb	ip, [r2, r3]	@ zero_extendqisi2
  163              		.loc 1 64 11 discriminator 3 view .LVU33
  164 001a 05F803C0 		strb	ip, [r5, r3]
-ARM GAS  /tmp/ccvqCjvd.s 			page 5
+ARM GAS  /tmp/cc0rFPuW.s 			page 5
 
 
   62:Core/Src/eeprom.c **** 	{	
@@ -298,27 +298,27 @@ ARM GAS  /tmp/ccvqCjvd.s 			page 1
  209              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
  210              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
  211              		.file 6 "Core/Inc/typedef.h"
-ARM GAS  /tmp/ccvqCjvd.s 			page 6
+ARM GAS  /tmp/cc0rFPuW.s 			page 6
 
 
  212              		.file 7 "Core/Inc/i2c.h"
-ARM GAS  /tmp/ccvqCjvd.s 			page 7
+ARM GAS  /tmp/cc0rFPuW.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 eeprom.c
-     /tmp/ccvqCjvd.s:18     .text.SaveByte_In_EEPROM:0000000000000000 $t
-     /tmp/ccvqCjvd.s:24     .text.SaveByte_In_EEPROM:0000000000000000 SaveByte_In_EEPROM
-     /tmp/ccvqCjvd.s:47     .text.SaveCoilData:0000000000000000 $t
-     /tmp/ccvqCjvd.s:53     .text.SaveCoilData:0000000000000000 SaveCoilData
-     /tmp/ccvqCjvd.s:111    .text.SaveCoilData:0000000000000028 $d
-     /tmp/ccvqCjvd.s:116    .text.GetCoilData:0000000000000000 $t
-     /tmp/ccvqCjvd.s:122    .text.GetCoilData:0000000000000000 GetCoilData
-     /tmp/ccvqCjvd.s:185    .text.GetCoilData:0000000000000028 $d
-     /tmp/ccvqCjvd.s:196    .bss.EEPROM_RX_Buf:0000000000000000 EEPROM_RX_Buf
-     /tmp/ccvqCjvd.s:203    .bss.EEPROM_TX_Buf:0000000000000000 EEPROM_TX_Buf
-     /tmp/ccvqCjvd.s:192    .bss.EEPROM_RX_Buf:0000000000000000 $d
-     /tmp/ccvqCjvd.s:199    .bss.EEPROM_TX_Buf:0000000000000000 $d
+     /tmp/cc0rFPuW.s:18     .text.SaveByte_In_EEPROM:0000000000000000 $t
+     /tmp/cc0rFPuW.s:24     .text.SaveByte_In_EEPROM:0000000000000000 SaveByte_In_EEPROM
+     /tmp/cc0rFPuW.s:47     .text.SaveCoilData:0000000000000000 $t
+     /tmp/cc0rFPuW.s:53     .text.SaveCoilData:0000000000000000 SaveCoilData
+     /tmp/cc0rFPuW.s:111    .text.SaveCoilData:0000000000000028 $d
+     /tmp/cc0rFPuW.s:116    .text.GetCoilData:0000000000000000 $t
+     /tmp/cc0rFPuW.s:122    .text.GetCoilData:0000000000000000 GetCoilData
+     /tmp/cc0rFPuW.s:185    .text.GetCoilData:0000000000000028 $d
+     /tmp/cc0rFPuW.s:196    .bss.EEPROM_RX_Buf:0000000000000000 EEPROM_RX_Buf
+     /tmp/cc0rFPuW.s:203    .bss.EEPROM_TX_Buf:0000000000000000 EEPROM_TX_Buf
+     /tmp/cc0rFPuW.s:192    .bss.EEPROM_RX_Buf:0000000000000000 $d
+     /tmp/cc0rFPuW.s:199    .bss.EEPROM_TX_Buf:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 I2C_WriteByte

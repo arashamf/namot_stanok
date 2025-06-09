@@ -425,8 +425,9 @@ void timers_ini (void)
 	timer_bounce_init();	//инициализация TIM6 для привязки к xTimer
   SysTick_CallbackFunction = xTimer_Task; //присвоение указателю значения ф-и xTimer_Task
   xTimeNow = Get_SysTick; //инициализация указателя на ф-ю получения системного времени
-  xTimerBtnBounce = xTimer_Create(KEY_BOUNCE_TIME, ONCE, &vTimerBtnBounceCallback, DISABLE);;
-  xTimerEncDelay = xTimer_Create(ENC_DELAY_TIME, ONCE, &vTimerEncDelayCallback, DISABLE);;
+  xTimerBtnBounce = xTimer_Create(KEY_BOUNCE_TIME, ONCE, &vTimerBtnBounceCallback, DISABLE);
+
+  xTimerEncDelay = xTimer_Create(ENC_DELAY_TIME, ONCE, &vTimerEncDelayCallback, DISABLE);
 }
 
 //---------------------------------------------------------------------------------------//

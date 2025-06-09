@@ -45,15 +45,6 @@ void ssd1306_Init(void)
 	ssd1306_SendCommand(NORMALDISPLAY); //set normal display
 	ssd1306_SendCommand(DISPLAYALLON_RESUME); //0xA4-возобновить отображение содержимого RAM;0xA5- полное включение дисплея, вывод игнорирует содержимое RAM		
 	
-	/*ssd1306_SendCommand(MEMORYMODE); 	//Set Memory Addressing Mode, 0x20   
-	ssd1306_SendCommand(HORIZONTALMODE); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addressing Mode (RESET);11,Invalid
-	ssd1306_SendCommand(COLUMNADDR); //Настройка адреса начального и конечного столбца. только для режимов горизонтальной или вертикальной адресации
-	ssd1306_SendCommand(0x00);
-	ssd1306_SendCommand(0x7F);
-	ssd1306_SendCommand(PAGESADDR); //Настройка адреса начальной и конечной страницы. только для режимов горизонтальной или вертикальной адресации
-	ssd1306_SendCommand(0x00);
-	ssd1306_SendCommand(0x03);*/
-	
 	ssd1306_SendCommand(MEMORYMODE); 	//Set Memory Addressing Mode, 0x20   
 	ssd1306_SendCommand(PAGEMODE); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addressing Mode (RESET);11,Invalid
 	ssd1306_SendCommand(STARTPAGEADDR); //Set Page Start Address for Page Addressing Mode,0xB0-0xB7 (эта команда применяется только дляPage Addressing Mode) 

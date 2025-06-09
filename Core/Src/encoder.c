@@ -9,47 +9,54 @@
 #define MAX_CNT_TIMEOUT   15
 
 // Functions -------------------------------------------------------------------//
+static uint8_t read_state_encoder (encoder_data_t * ) ;
 static uint8_t read_gray_code_from_encoder(void) ;
 
 // Variables -------------------------------------------------------------------//
-static uint8_t val_old = 0, val_new = 0; //значения битов энкодера
-static uint8_t flag_dir = 0, flag_rev = 0; //флаг направления поворота
 static uint8_t state_machine = ENC_WAIT; //стадия конечного автомата
 static uint8_t cnt_timeout = 0; //количество таймаутов ожидания изменения показаний энкодера
-static int32_t enc_count = 0; //счётчик щелчков энкодера
 uint8_t	flag_end_delay = RESET;
 
 //-----------------------------------------------------------------------------//
 uint8_t read_encoder (encoder_data_t * HandleEncData) 
 {
-	HandleEncData->currCounter_SetClick = read_gray_code_from_encoder(); //чтение данных энкодера
+ 	if (read_state_encoder (HandleEncData) != 0)
+ 	{	return ON;	}
+	else
+	{	return OFF;	}
+}
+
+//-----------------------------------------------------------------------------//
+static uint8_t read_state_encoder (encoder_data_t * HandleEncData) 
+{
+	HandleEncData->val_new = read_gray_code_from_encoder(); //чтение данных энкодера
   	switch (state_machine) //проверка номера стадии конечного автомата
   	{
     	case ENC_WAIT: //стадия ожидания поворота энкодера
    	 	if (flag_end_delay == RESET) //если таймаут истёк
     	{
-      		if (val_new != val_old) //если показания энкодера изменились
+      		if (HandleEncData->val_new != HandleEncData->val_old) //если показания энкодера изменились
 	    	{ 
-        		if (val_new == PULSE_STATE_FIRST_REV) 
+        		if (HandleEncData->val_new == PULSE_STATE_FIRST_REV) 
         		{
           			state_machine = ENC_FIRST; //переход на следующую стадию автомата
-          			flag_rev = 1; //флаг реверсного поворота энкодера
+          			HandleEncData->flag_rev = 1; //флаг реверсного поворота энкодера
         		}
         		else
         		{
-          			if (val_new == PULSE_STATE_FIRST_DIR)
+          			if (HandleEncData->val_new == PULSE_STATE_FIRST_DIR)
           			{
             			state_machine = ENC_FIRST; //переход на следующую стадию автомата
-            			flag_dir = 1; //флаг прямого поворота энкодера
+            			HandleEncData->flag_dir = 1; //флаг прямого поворота энкодера
           			}
           			else 
           			{
-            			flag_rev = flag_dir = 0; //сброс флагов поворота энкодера
+            			HandleEncData->flag_rev = HandleEncData->flag_dir = 0; //сброс флагов поворота энкодера
             			state_machine = ENC_RESET;  //переход в начальную стадию конечного автомата
 					}
         		}
         		cnt_timeout = 0; //сброс счётчика таймаутов
-        		val_old = val_new; //сохранение текущего показания энкодера
+        		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущего показания энкодера
 				flag_end_delay = SET;
 				xTimerEncDelay_Reload(ENC_DELAY_TIME); //начало таймаута
       		}
@@ -59,13 +66,13 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
     	case ENC_FIRST: //стадия средней части импульса энкодера
       	if (flag_end_delay == RESET) //если таймаут истёк
       	{
-        	if (val_new == val_old)
+        	if (HandleEncData->val_new == HandleEncData->val_old)
 	      	{ 
           		cnt_timeout++;
           		if (cnt_timeout > MAX_CNT_TIMEOUT)
           		{
             		cnt_timeout = 0;  //сброс счётчика таймаутов
-            		flag_rev = flag_dir = 0; //сброс флагов поворота энкодера
+            		HandleEncData->flag_rev = HandleEncData->flag_dir = 0; //сброс флагов поворота энкодера
             		state_machine = ENC_RESET;
           		}
           		else
@@ -77,12 +84,12 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
       		else
       		{ 
         		cnt_timeout = 0; //сброс счётчика таймаутов             
-        		val_old = val_new; //сохранение текущего показания энкодера
-        		if (val_new == PULSE_STATE_SECOND) //если данные от экодера соотвествуют ожидаемым
+        		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущего показания энкодера
+        		if (HandleEncData->val_new == PULSE_STATE_SECOND) //если данные от экодера соотвествуют ожидаемым
         		{ state_machine = ENC_NULL; } //переход на следующую стадию автомата
         		else //если данные от энкодера не соотвествуют ожидаемым
         		{
-          			flag_rev = flag_dir = 0;
+          			HandleEncData->flag_rev = HandleEncData->flag_dir = 0;
           			state_machine = ENC_RESET; //переход на стадию сброса показаний энкодера
         		}
 				flag_end_delay = SET;
@@ -94,12 +101,12 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
     	case ENC_NULL: //стадия последней части импульса энкодера
       	if (flag_end_delay == RESET) //если таймаут истёк
       	{
-        	if (val_new == val_old) //если показания энкодера не изменилось
+        	if (HandleEncData->val_new == HandleEncData->val_old) //если показания энкодера не изменилось
 	      	{ 
           		if (cnt_timeout > MAX_CNT_TIMEOUT) //если количество таймаутов ожидания изменения показаний энкодера превышено
           		{
             		cnt_timeout = 0;  //сброс счётчика таймаутов
-            		flag_rev = flag_dir = 0; //сброс флагов поворота энкодера
+            		HandleEncData->flag_rev = HandleEncData->flag_dir = 0; //сброс флагов поворота энкодера
             		state_machine = ENC_RESET; //переход в начальную стадию конечного автомата
           		}
           		else
@@ -110,9 +117,9 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
         	}       
         	else
         	{ 
-          		if (val_new ==  PULSE_STATE_LAST_REV) //если данные от экодера соотвествуют ожидаемым
+          		if (HandleEncData->val_new ==  PULSE_STATE_LAST_REV) //если данные от экодера соотвествуют ожидаемым
           		{
-            		if (flag_rev == 1) //если установлен флаг реверсного поворота энкодера
+            		if (HandleEncData->flag_rev == 1) //если установлен флаг реверсного поворота энкодера
             		{ 
                   		state_machine = ENC_LAST;  //переход на следующую стадию автомата
                   		flag_end_delay = SET;
@@ -121,9 +128,9 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
           		}
           		else
           		{
-            		if (val_new == PULSE_STATE_LAST_DIR) //если данные от экодера соотвествуют ожидаемым
+            		if (HandleEncData->val_new == PULSE_STATE_LAST_DIR) //если данные от экодера соотвествуют ожидаемым
             		{
-              			if (flag_dir == 1) //если установлен флаг прямого поворота энкодера
+              			if (HandleEncData->flag_dir == 1) //если установлен флаг прямого поворота энкодера
               			{  
                 			state_machine = ENC_LAST;  //переход на следующую стадию автомата
                 			flag_end_delay = SET;
@@ -132,11 +139,11 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
             		}
            			else //если данные от энкодера не соотвествуют ожидаемым
             		{
-              			flag_rev = flag_dir = 0; //сброс флагов поворота энкодера
+              			HandleEncData->flag_rev = HandleEncData->flag_dir = 0; //сброс флагов поворота энкодера
               			state_machine = ENC_RESET;  //переход на стадию сброса показаний энкодера
             		}
           		}
-          		val_old = val_new; //сохранение текущего показания энкодера
+          		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущего показания энкодера
           		cnt_timeout = 0; //сброс счётчика таймаутов
         	}
       	}
@@ -145,12 +152,12 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
     	case ENC_LAST: //проверка стадии импульса энкодера по умолчанию
       	if (flag_end_delay == RESET) //если таймаут истёк
       	{
-        	if (val_new == val_old) //если показания энкодера не изменилось
+        	if (HandleEncData->val_new == HandleEncData->val_old) //если показания энкодера не изменилось
 	      	{ 
           		if (cnt_timeout > MAX_CNT_TIMEOUT) //если количество таймаутов ожидания изменения показаний энкодера превышено
           		{
             		cnt_timeout = 0;  //сброс счётчика таймаутов
-            		flag_rev = flag_dir = 0; 
+            		HandleEncData->flag_rev = HandleEncData->flag_dir = 0; 
             		state_machine = ENC_RESET; //переход к начальной стадии конечного автомата
           		}
           		else
@@ -161,19 +168,15 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
         	}       
         	else
         	{               
-          		if (flag_rev == 1) //если установлен флаг реверсного поворота энкодера
-          		{
-            		enc_count--;  
-          		}
+          		if (HandleEncData->flag_rev == 1) //если установлен флаг реверсного поворота энкодера
+          		{	HandleEncData->delta = -1;	}
           		else
           		{
-            		if (flag_dir == 1) //если установлен флаг прямого поворота энкодера
-            		{
-              			enc_count++;  
-            		} 
+            		if (HandleEncData->flag_dir == 1) //если установлен флаг прямого поворота энкодера
+            		{	HandleEncData->delta = 1;	} 
           		} 
-          		flag_rev = flag_dir = 0; //сброс флагов поворота энкодера
-          		val_old = val_new; //сохранение текущего показания энкодера
+          		HandleEncData->flag_rev = HandleEncData->flag_dir = 0; //сброс флагов поворота энкодера
+          		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущего показания энкодера
           		cnt_timeout = 0; //сброс счётчика таймаутов
           		state_machine = ENC_WAIT; //переход к начальной стадии конечного автомата
         	}            
@@ -183,13 +186,13 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
     	case ENC_RESET: //стадия ожидания сброса показанрий энкодера в состояние по умолчанию
       	if (flag_end_delay == RESET) //если таймаут истёк
       	{
-        	if (val_new != val_old) //если показания энкодера изменились
+        	if (HandleEncData->val_new != HandleEncData->val_old) //если показания энкодера изменились
         	{
-          		if (val_new == PULSE_STATE_DEFAULT) //если энкодер в состоянии по умолчанию (поворот закончен)
+          		if (HandleEncData->val_new == PULSE_STATE_DEFAULT) //если энкодер в состоянии по умолчанию (поворот закончен)
 	        	{ 
             		state_machine = ENC_WAIT; //переход к начальной стадии конечного автомата
           		}
-          		val_old = val_new; //сохранение текущего показания энкодера
+          		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущего показания энкодера
         	}               
         	flag_end_delay = SET;
 			xTimerEncDelay_Reload(ENC_DELAY_TIME); ///начало таймаута ожидания изменений показаний энкодера 
@@ -199,15 +202,7 @@ uint8_t read_encoder (encoder_data_t * HandleEncData)
     	default:
       	break;         
   	}
-	return HandleEncData->currCounter_SetClick ;
-}
-
-//---------------------------сброс показаний энкодера---------------------------//
-void encoder_reset (encoder_data_t * HandleEncData) 
-{
-	HandleEncData->currCounter_SetClick = 0; 
-	HandleEncData->prevCounter_SetClick = HandleEncData->currCounter_SetClick; //сохранение преобразованного текущего показания энкодера в структуру установки шага поворота	
-	HandleEncData->delta = 0; //показания от энкодера обнуляются
+	return HandleEncData->delta ;
 }
 
 //-----------------------------------------------------------------------------//

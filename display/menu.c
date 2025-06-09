@@ -63,7 +63,10 @@ void main_loop (encoder_data_t * HandleEncData, coil_data_t ** HandleCoilData)
 			case KEY_NULL_LONG:
 				mode_setup_null_screen(); //заставка режима установки сдвигающего двигеля в нулевую позицию
 				setup_null_position ();  //установка сдвигающего двигеля в нулевую позицию
-				main_menu_select_preset_screen(); //заставка главного меню
+				if (drive_mode != NO_PRESET) //если установлен номер выполняемого пресета (1..4)
+				{	turn_drive_menu (drive_mode, *(HandleCoilData + (drive_mode-1)), 0); }//отображение номера пресета, и количества оставшихся и установленного количества витков 1 обмотки
+				else
+				{	main_menu_select_preset_screen(); }	//заставка главного меню
 				break;
 			
 			case KEY_MANUAL_SHORT:
@@ -89,15 +92,22 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 	//ввод скорости
 	if(HandleCoilData->drive2_turn_in_minute == 0) 
 	{	HandleCoilData->drive2_turn_in_minute = BASE_TURN_IN_MINUTE; }
-	
+
+	if(HandleCoilData->gear_ratio == 0) 
+	{	HandleCoilData->gear_ratio = DEFAULT_GEAR_RATIO; }	
+
 	Stop_Count_Timers(); //остановка счётных таймеров
+	HandleCoilData->pulse_frequency = calc_rotation_speed(HandleCoilData->drive2_turn_in_minute); //расчёт количества оборотов в минуту
+	drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+	drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+
 	setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
 	while (1)
 	{
 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера изменилось
 		{
-		//	HandleCoilData->rotation_speed += 5*HandleEncData->delta; //увелечиние/уменьшение множителя скорости в импульсах (шаг изменения - 5)
-			HandleCoilData->drive2_turn_in_minute += 3*HandleEncData->delta;
+			HandleCoilData->drive2_turn_in_minute += 3*HandleEncData->delta; //добавление дельты показаний энкодера
+			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество оборотов в минуту превысило максимально допустимое значение
 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
 			else
@@ -107,23 +117,17 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 			}
 			HandleCoilData->pulse_frequency = calc_rotation_speed(HandleCoilData->drive2_turn_in_minute); //расчёт количества оборотов в минуту
 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
 			setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
 		}	
 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
 		{
 			if (key_code ==  KEY_SETUP_SHORT) //короткое нажатие кнопки энкодера - переход к вводу количества витков следующей обмотки
-			{	
-				SoftStop_Drives() ;
-				HardStop_Drives () ;
-				status_drives.end_turn_drive2 = DRIVE_FREE;
-				break;
-			}
+			{	break;	}
 		}
 	}	
 	
 	//установка передаточного соотношения
-	if(HandleCoilData->gear_ratio == 0) 
-	{	HandleCoilData->gear_ratio = DEFAULT_GEAR_RATIO; }	
 	setup_ratio_screen (HandleCoilData->gear_ratio);
 	
 	while (1)
@@ -131,6 +135,7 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера изменилось
 		{
 			HandleCoilData->gear_ratio += 5*HandleEncData->delta;
+			HandleEncData->delta = 0;
 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
 			else
@@ -138,8 +143,8 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 				if (HandleCoilData->gear_ratio < MIN_VALUE_RATIO)
 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
 			}
-			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
 			setup_ratio_screen (HandleCoilData->gear_ratio);
 		}	
 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
@@ -163,7 +168,8 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 		{
 			if (read_encoder (HandleEncData) == ON) //если данные от энкодера изменилось
 			{
-				HandleCoilData->set_coil[count] += HandleEncData->delta;	//прибавление приращения показаний энкодера
+				HandleCoilData->set_coil[count] += HandleEncData->delta; //прибавление приращения показаний энкодера
+				HandleEncData->delta = 0;				
 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
 				else
@@ -209,6 +215,7 @@ uint8_t menu_select_preset (encoder_data_t * HandleEncData, coil_data_t ** Handl
 		if (read_encoder (HandleEncData) == ON) //чтение данных энкодера
 		{
 			drive_mode += HandleEncData->delta; //изменение указателя на номер пресета
+			HandleEncData->delta = 0;	
 			if (drive_mode > PRESET4)
 			{	drive_mode = PRESET1;	}
 			else
@@ -216,7 +223,6 @@ uint8_t menu_select_preset (encoder_data_t * HandleEncData, coil_data_t ** Handl
 				if (drive_mode < PRESET1) 
 				{	drive_mode = PRESET4;	}
 			}	
-			HandleEncData->delta = 0;	
 			menu_select_preset_screen (drive_mode);				
 		}		
 			

@@ -39,11 +39,6 @@ void SaveCoilData (uint8_t * data, uint8_t number_byte, uint8_t EEPROM_adress)
 	for (uint8_t i = 0; i < number_byte; i++)
 	{
 		EEPROM_TX_Buf[i] = (uint8_t)(*(data+i)); //количество витков обмоток
-		
-		#ifdef __USE_DBG
-		sprintf ((char *)DBG_buffer,  "%d ", EEPROM_TX_Buf[i]);
-		DBG_PutString(DBG_buffer);
-		#endif	
 	}		
 	
 	#ifdef __USE_DBG

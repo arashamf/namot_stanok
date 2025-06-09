@@ -63,9 +63,11 @@ extern "C" {
 // Exported types ------------------------------------------------------------------//
 typedef struct 
 {
-	uint8_t 	prevCounter_SetClick; 			//сохранённое показание энкодера
-	uint8_t 	currCounter_SetClick; 			//текущее показание энкодера
-	int32_t delta;
+	uint8_t 	val_old; 	
+	uint8_t 	val_new;	//значения битов энкодера
+	uint8_t 	flag_dir; 	//флаг направления поворота
+	uint8_t 	flag_rev;	
+	int8_t 		delta; //текущее показание энкодера
 } encoder_data_t;
 
 //----------------------------------------------------------------------------------//

@@ -185,4 +185,5 @@ uint8_t I2C_ReadByte (uint16_t reg_addr)
 		
 	return byte;
 }
+
 /* USER CODE END 1 */

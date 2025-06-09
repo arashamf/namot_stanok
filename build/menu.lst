@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc8qpQbQ.s 			page 1
+ARM GAS  /tmp/ccAdRtMf.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc8qpQbQ.s 			page 1
   32              	.LCFI0:
   33              		.cfi_def_cfa_offset 4
   34              		.cfi_offset 14, -4
-ARM GAS  /tmp/cc8qpQbQ.s 			page 2
+ARM GAS  /tmp/ccAdRtMf.s 			page 2
 
 
   35 0002 83B0     		sub	sp, sp, #12
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc8qpQbQ.s 			page 1
   74              		.loc 1 28 3 is_stmt 1 view .LVU16
   28:display/menu.c **** 		{	count_delay++; }
   75              		.loc 1 28 19 is_stmt 0 view .LVU17
-ARM GAS  /tmp/cc8qpQbQ.s 			page 3
+ARM GAS  /tmp/ccAdRtMf.s 			page 3
 
 
   76 002c FFF7FEFF 		bl	start_scan_key_PEDAL
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc8qpQbQ.s 			page 1
   47:display/menu.c **** 		{	
   48:display/menu.c **** 			case KEY_PEDAL_LONG:
   49:display/menu.c **** 				start_drives_turn (drive_mode, *(HandleCoilData + (drive_mode-1))); //выпонение пре
-ARM GAS  /tmp/cc8qpQbQ.s 			page 4
+ARM GAS  /tmp/ccAdRtMf.s 			page 4
 
 
   50:display/menu.c **** 				while (scan_button_PEDAL() != OFF) {}	//ожидание отключения педали
@@ -197,32 +197,35 @@ ARM GAS  /tmp/cc8qpQbQ.s 			page 1
   63:display/menu.c **** 			case KEY_NULL_LONG:
   64:display/menu.c **** 				mode_setup_null_screen(); //заставка режима установки сдвигающе
   65:display/menu.c **** 				setup_null_position ();  //установка сдвигающего двигеля в нуле
-  66:display/menu.c **** 				main_menu_select_preset_screen(); //заставка главного меню
-  67:display/menu.c **** 				break;
-  68:display/menu.c **** 			
-  69:display/menu.c **** 			case KEY_MANUAL_SHORT:
-  70:display/menu.c **** 			case KEY_MANUAL_LONG:
-  71:display/menu.c **** 				mode_setup_manual_dir_screen(); //вывод заставки выбора направлени
-  72:display/menu.c **** 				while (select_direction() == ERROR) {} //ожидания нажатия кнопки выбо�
-  73:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
-  74:display/menu.c **** 				manual_control_drive1 ();	//ф-я ручной установки положения сдвиг
-  75:display/menu.c **** 				main_menu_select_preset_screen(); //вывод заставки режима выбора пр�
-  76:display/menu.c **** 				break;
-  77:display/menu.c **** 		
-  78:display/menu.c **** 			default:
-  79:display/menu.c **** 				break;	
-  80:display/menu.c **** 		}			
-  81:display/menu.c **** 	}
-  82:display/menu.c **** }
-  83:display/menu.c **** 
-  84:display/menu.c **** //-------------------------------------------------------------------------------------------------
-  85:display/menu.c **** void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
-  86:display/menu.c **** {
- 117              		.loc 1 86 1 is_stmt 1 view -0
+  66:display/menu.c **** 				if (drive_mode != NO_PRESET) //если установлен номер выполняемог�
+  67:display/menu.c **** 				{	turn_drive_menu (drive_mode, *(HandleCoilData + (drive_mode-1)), 0); }//отображени�
+  68:display/menu.c **** 				else
+  69:display/menu.c **** 				{	main_menu_select_preset_screen(); }	//заставка главного меню
+  70:display/menu.c **** 				break;
+  71:display/menu.c **** 			
+  72:display/menu.c **** 			case KEY_MANUAL_SHORT:
+  73:display/menu.c **** 			case KEY_MANUAL_LONG:
+  74:display/menu.c **** 				mode_setup_manual_dir_screen(); //вывод заставки выбора направлени
+  75:display/menu.c **** 				while (select_direction() == ERROR) {} //ожидания нажатия кнопки выбо�
+  76:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+  77:display/menu.c **** 				manual_control_drive1 ();	//ф-я ручной установки положения сдвиг
+  78:display/menu.c **** 				main_menu_select_preset_screen(); //вывод заставки режима выбора пр�
+  79:display/menu.c **** 				break;
+  80:display/menu.c **** 		
+  81:display/menu.c **** 			default:
+  82:display/menu.c **** 				break;	
+  83:display/menu.c **** 		}			
+  84:display/menu.c **** 	}
+  85:display/menu.c **** }
+  86:display/menu.c **** 
+  87:display/menu.c **** //-------------------------------------------------------------------------------------------------
+  88:display/menu.c **** void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
+  89:display/menu.c **** {
+ 117              		.loc 1 89 1 is_stmt 1 view -0
  118              		.cfi_startproc
  119              		@ args = 0, pretend = 0, frame = 0
  120              		@ frame_needed = 0, uses_anonymous_args = 0
- 121              		.loc 1 86 1 is_stmt 0 view .LVU25
+ 121              		.loc 1 89 1 is_stmt 0 view .LVU25
  122 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  123              	.LCFI3:
  124              		.cfi_def_cfa_offset 24
@@ -234,1148 +237,1220 @@ ARM GAS  /tmp/cc8qpQbQ.s 			page 1
  130              		.cfi_offset 14, -4
  131 0002 0546     		mov	r5, r0
  132 0004 0C46     		mov	r4, r1
-  87:display/menu.c **** 	uint16_t key_code = NO_KEY;	
- 133              		.loc 1 87 2 is_stmt 1 view .LVU26
+  90:display/menu.c **** 	uint16_t key_code = NO_KEY;	
+ARM GAS  /tmp/ccAdRtMf.s 			page 5
+
+
+ 133              		.loc 1 90 2 is_stmt 1 view .LVU26
  134              	.LVL6:
-  88:display/menu.c **** 	
-ARM GAS  /tmp/cc8qpQbQ.s 			page 5
-
-
-  89:display/menu.c **** 	//ввод скорости
-  90:display/menu.c **** 	if(HandleCoilData->drive2_turn_in_minute == 0) 
- 135              		.loc 1 90 2 view .LVU27
- 136              		.loc 1 90 19 is_stmt 0 view .LVU28
+  91:display/menu.c **** 	
+  92:display/menu.c **** 	//ввод скорости
+  93:display/menu.c **** 	if(HandleCoilData->drive2_turn_in_minute == 0) 
+ 135              		.loc 1 93 2 view .LVU27
+ 136              		.loc 1 93 19 is_stmt 0 view .LVU28
  137 0006 8B88     		ldrh	r3, [r1, #4]	@ unaligned
- 138              		.loc 1 90 4 view .LVU29
+ 138              		.loc 1 93 4 view .LVU29
  139 0008 1BB9     		cbnz	r3, .L12
-  91:display/menu.c **** 	{	HandleCoilData->drive2_turn_in_minute = BASE_TURN_IN_MINUTE; }
- 140              		.loc 1 91 4 is_stmt 1 view .LVU30
- 141              		.loc 1 91 42 is_stmt 0 view .LVU31
+  94:display/menu.c **** 	{	HandleCoilData->drive2_turn_in_minute = BASE_TURN_IN_MINUTE; }
+ 140              		.loc 1 94 4 is_stmt 1 view .LVU30
+ 141              		.loc 1 94 42 is_stmt 0 view .LVU31
  142 000a 1E23     		movs	r3, #30
  143 000c 0B71     		strb	r3, [r1, #4]
  144 000e 0023     		movs	r3, #0
  145 0010 4B71     		strb	r3, [r1, #5]
  146              	.L12:
-  92:display/menu.c **** 	
-  93:display/menu.c **** 	Stop_Count_Timers(); //остановка счётных таймеров
- 147              		.loc 1 93 2 is_stmt 1 view .LVU32
- 148 0012 FFF7FEFF 		bl	Stop_Count_Timers
- 149              	.LVL7:
-  94:display/menu.c **** 	setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
- 150              		.loc 1 94 2 view .LVU33
- 151 0016 B4F90400 		ldrsh	r0, [r4, #4]	@ unaligned
- 152 001a FFF7FEFF 		bl	setup_speed_screen
- 153              	.LVL8:
- 154              	.L16:
-  95:display/menu.c **** 	while (1)
- 155              		.loc 1 95 2 view .LVU34
-  96:display/menu.c **** 	{
-  97:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен�
- 156              		.loc 1 97 3 view .LVU35
- 157              		.loc 1 97 7 is_stmt 0 view .LVU36
- 158 001e 2846     		mov	r0, r5
- 159 0020 FFF7FEFF 		bl	read_encoder
- 160              	.LVL9:
- 161              		.loc 1 97 6 view .LVU37
- 162 0024 0128     		cmp	r0, #1
- 163 0026 52D0     		beq	.L31
- 164              	.L13:
-  98:display/menu.c **** 		{
-  99:display/menu.c **** 		//	HandleCoilData->rotation_speed += 5*HandleEncData->delta; //увелечиние/уменьш�
- 100:display/menu.c **** 			HandleCoilData->drive2_turn_in_minute += 3*HandleEncData->delta;
- 101:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
- 102:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
- 103:display/menu.c **** 			else
- 104:display/menu.c **** 			{
- 105:display/menu.c **** 				if (HandleCoilData->drive2_turn_in_minute <	MIN_VALUE_TURN)
- 106:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
- 107:display/menu.c **** 			}
- 108:display/menu.c **** 			HandleCoilData->pulse_frequency = calc_rotation_speed(HandleCoilData->drive2_turn_in_minute); //
- 109:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 110:display/menu.c **** 			setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
- 111:display/menu.c **** 		}	
- 112:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
- 165              		.loc 1 112 3 is_stmt 1 view .LVU38
- 166              		.loc 1 112 19 is_stmt 0 view .LVU39
- 167 0028 FFF7FEFF 		bl	scan_keys
-ARM GAS  /tmp/cc8qpQbQ.s 			page 6
+  95:display/menu.c **** 
+  96:display/menu.c **** 	if(HandleCoilData->gear_ratio == 0) 
+ 147              		.loc 1 96 2 is_stmt 1 view .LVU32
+ 148              		.loc 1 96 19 is_stmt 0 view .LVU33
+ 149 0012 E388     		ldrh	r3, [r4, #6]	@ unaligned
+ 150              		.loc 1 96 4 view .LVU34
+ 151 0014 1BB9     		cbnz	r3, .L13
+  97:display/menu.c **** 	{	HandleCoilData->gear_ratio = DEFAULT_GEAR_RATIO; }	
+ 152              		.loc 1 97 4 is_stmt 1 view .LVU35
+ 153              		.loc 1 97 31 is_stmt 0 view .LVU36
+ 154 0016 6423     		movs	r3, #100
+ 155 0018 A371     		strb	r3, [r4, #6]
+ 156 001a 0023     		movs	r3, #0
+ 157 001c E371     		strb	r3, [r4, #7]
+ 158              	.L13:
+  98:display/menu.c **** 
+  99:display/menu.c **** 	Stop_Count_Timers(); //остановка счётных таймеров
+ 159              		.loc 1 99 2 is_stmt 1 view .LVU37
+ 160 001e FFF7FEFF 		bl	Stop_Count_Timers
+ 161              	.LVL7:
+ 100:display/menu.c **** 	HandleCoilData->pulse_frequency = calc_rotation_speed(HandleCoilData->drive2_turn_in_minute); //р
+ 162              		.loc 1 100 2 view .LVU38
+ 163              		.loc 1 100 36 is_stmt 0 view .LVU39
+ 164 0022 A088     		ldrh	r0, [r4, #4]	@ unaligned
+ 165 0024 FFF7FEFF 		bl	calc_rotation_speed
+ 166              	.LVL8:
+ 167              		.loc 1 100 34 view .LVU40
+ 168 0028 6080     		strh	r0, [r4, #2]	@ unaligned
+ 101:display/menu.c **** 	drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 169              		.loc 1 101 2 is_stmt 1 view .LVU41
+ 170 002a 2046     		mov	r0, r4
+ 171 002c FFF7FEFF 		bl	drive2_turn
+ 172              	.LVL9:
+ 102:display/menu.c **** 	drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+ 173              		.loc 1 102 2 view .LVU42
+ 174 0030 2046     		mov	r0, r4
+ 175 0032 FFF7FEFF 		bl	drive1_turn
+ 176              	.LVL10:
+ 103:display/menu.c **** 
+ARM GAS  /tmp/ccAdRtMf.s 			page 6
 
 
- 168              	.LVL10:
- 169              		.loc 1 112 6 view .LVU40
- 170 002c 0028     		cmp	r0, #0
- 171 002e F6D0     		beq	.L16
- 113:display/menu.c **** 		{
- 114:display/menu.c **** 			if (key_code ==  KEY_SETUP_SHORT) //короткое нажатие кнопки энкодер�
- 172              		.loc 1 114 4 is_stmt 1 view .LVU41
- 173              		.loc 1 114 7 is_stmt 0 view .LVU42
- 174 0030 0528     		cmp	r0, #5
- 175 0032 F4D1     		bne	.L16
- 115:display/menu.c **** 			{	
- 116:display/menu.c **** 				SoftStop_Drives() ;
- 176              		.loc 1 116 5 is_stmt 1 view .LVU43
- 177 0034 FFF7FEFF 		bl	SoftStop_Drives
- 178              	.LVL11:
- 117:display/menu.c **** 				HardStop_Drives () ;
- 179              		.loc 1 117 5 view .LVU44
- 180 0038 FFF7FEFF 		bl	HardStop_Drives
- 181              	.LVL12:
- 118:display/menu.c **** 				status_drives.end_turn_drive2 = DRIVE_FREE;
- 182              		.loc 1 118 5 view .LVU45
- 183              		.loc 1 118 35 is_stmt 0 view .LVU46
- 184 003c 5E4A     		ldr	r2, .L36
- 185 003e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 186 0040 43F00403 		orr	r3, r3, #4
- 187 0044 1370     		strb	r3, [r2]
- 119:display/menu.c **** 				break;
- 188              		.loc 1 119 5 is_stmt 1 view .LVU47
- 120:display/menu.c **** 			}
- 121:display/menu.c **** 		}
- 122:display/menu.c **** 	}	
- 123:display/menu.c **** 	
- 124:display/menu.c **** 	//установка передаточного соотношения
- 125:display/menu.c **** 	if(HandleCoilData->gear_ratio == 0) 
- 189              		.loc 1 125 2 view .LVU48
- 190              		.loc 1 125 19 is_stmt 0 view .LVU49
- 191 0046 E388     		ldrh	r3, [r4, #6]	@ unaligned
- 192              		.loc 1 125 4 view .LVU50
- 193 0048 1BB9     		cbnz	r3, .L17
- 126:display/menu.c **** 	{	HandleCoilData->gear_ratio = DEFAULT_GEAR_RATIO; }	
- 194              		.loc 1 126 4 is_stmt 1 view .LVU51
- 195              		.loc 1 126 31 is_stmt 0 view .LVU52
- 196 004a 6423     		movs	r3, #100
- 197 004c A371     		strb	r3, [r4, #6]
- 198 004e 0023     		movs	r3, #0
- 199 0050 E371     		strb	r3, [r4, #7]
- 200              	.L17:
- 127:display/menu.c **** 	setup_ratio_screen (HandleCoilData->gear_ratio);
- 201              		.loc 1 127 2 is_stmt 1 view .LVU53
- 202 0052 B4F90600 		ldrsh	r0, [r4, #6]	@ unaligned
- 203 0056 FFF7FEFF 		bl	setup_ratio_screen
- 204              	.LVL13:
- 205              	.L21:
- 128:display/menu.c **** 	
- 129:display/menu.c **** 	while (1)
- 206              		.loc 1 129 2 view .LVU54
- 130:display/menu.c **** 	{
-ARM GAS  /tmp/cc8qpQbQ.s 			page 7
+ 104:display/menu.c **** 	setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
+ 177              		.loc 1 104 2 view .LVU43
+ 178 0036 B4F90400 		ldrsh	r0, [r4, #4]	@ unaligned
+ 179 003a FFF7FEFF 		bl	setup_speed_screen
+ 180              	.LVL11:
+ 181              	.L17:
+ 105:display/menu.c **** 	while (1)
+ 182              		.loc 1 105 2 view .LVU44
+ 106:display/menu.c **** 	{
+ 107:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен�
+ 183              		.loc 1 107 3 view .LVU45
+ 184              		.loc 1 107 7 is_stmt 0 view .LVU46
+ 185 003e 2846     		mov	r0, r5
+ 186 0040 FFF7FEFF 		bl	read_encoder
+ 187              	.LVL12:
+ 188              		.loc 1 107 6 view .LVU47
+ 189 0044 0128     		cmp	r0, #1
+ 190 0046 44D0     		beq	.L31
+ 191              	.L14:
+ 108:display/menu.c **** 		{
+ 109:display/menu.c **** 			HandleCoilData->drive2_turn_in_minute += 3*HandleEncData->delta; //добавление дель
+ 110:display/menu.c **** 			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
+ 111:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
+ 112:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
+ 113:display/menu.c **** 			else
+ 114:display/menu.c **** 			{
+ 115:display/menu.c **** 				if (HandleCoilData->drive2_turn_in_minute <	MIN_VALUE_TURN)
+ 116:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
+ 117:display/menu.c **** 			}
+ 118:display/menu.c **** 			HandleCoilData->pulse_frequency = calc_rotation_speed(HandleCoilData->drive2_turn_in_minute); //
+ 119:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 120:display/menu.c **** 			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+ 121:display/menu.c **** 			setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
+ 122:display/menu.c **** 		}	
+ 123:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
+ 192              		.loc 1 123 3 is_stmt 1 view .LVU48
+ 193              		.loc 1 123 19 is_stmt 0 view .LVU49
+ 194 0048 FFF7FEFF 		bl	scan_keys
+ 195              	.LVL13:
+ 196              		.loc 1 123 6 view .LVU50
+ 197 004c 0028     		cmp	r0, #0
+ 198 004e F6D0     		beq	.L17
+ 124:display/menu.c **** 		{
+ 125:display/menu.c **** 			if (key_code ==  KEY_SETUP_SHORT) //короткое нажатие кнопки энкодер�
+ 199              		.loc 1 125 4 is_stmt 1 view .LVU51
+ 200              		.loc 1 125 7 is_stmt 0 view .LVU52
+ 201 0050 0528     		cmp	r0, #5
+ 202 0052 F4D1     		bne	.L17
+ 126:display/menu.c **** 			{	break;	}
+ 127:display/menu.c **** 		}
+ 128:display/menu.c **** 	}	
+ 129:display/menu.c **** 	
+ 130:display/menu.c **** 	//установка передаточного соотношения
+ 131:display/menu.c **** 	setup_ratio_screen (HandleCoilData->gear_ratio);
+ 203              		.loc 1 131 2 is_stmt 1 view .LVU53
+ 204 0054 B4F90600 		ldrsh	r0, [r4, #6]	@ unaligned
+ 205              	.LVL14:
+ARM GAS  /tmp/ccAdRtMf.s 			page 7
 
 
- 131:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен�
- 207              		.loc 1 131 3 view .LVU55
- 208              		.loc 1 131 7 is_stmt 0 view .LVU56
- 209 005a 2846     		mov	r0, r5
- 210 005c FFF7FEFF 		bl	read_encoder
- 211              	.LVL14:
- 212              		.loc 1 131 6 view .LVU57
- 213 0060 0128     		cmp	r0, #1
- 214 0062 55D0     		beq	.L32
- 215              	.L18:
- 132:display/menu.c **** 		{
- 133:display/menu.c **** 			HandleCoilData->gear_ratio += 5*HandleEncData->delta;
- 134:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
- 135:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
- 136:display/menu.c **** 			else
- 137:display/menu.c **** 			{
- 138:display/menu.c **** 				if (HandleCoilData->gear_ratio < MIN_VALUE_RATIO)
- 139:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
- 140:display/menu.c **** 			}
- 141:display/menu.c **** 			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
- 142:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 143:display/menu.c **** 			setup_ratio_screen (HandleCoilData->gear_ratio);
- 144:display/menu.c **** 		}	
- 145:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
- 216              		.loc 1 145 3 is_stmt 1 view .LVU58
- 217              		.loc 1 145 19 is_stmt 0 view .LVU59
- 218 0064 FFF7FEFF 		bl	scan_keys
- 219              	.LVL15:
- 220              		.loc 1 145 6 view .LVU60
- 221 0068 0028     		cmp	r0, #0
- 222 006a F6D0     		beq	.L21
- 146:display/menu.c **** 		{
- 147:display/menu.c **** 			if (key_code == KEY_SETUP_SHORT) //короткое нажатие кнопки энкодера
- 223              		.loc 1 147 4 is_stmt 1 view .LVU61
- 224              		.loc 1 147 7 is_stmt 0 view .LVU62
- 225 006c 0528     		cmp	r0, #5
- 226 006e F4D1     		bne	.L21
- 148:display/menu.c **** 			{	
- 149:display/menu.c **** 				SoftStop_Drives() ;
- 227              		.loc 1 149 5 is_stmt 1 view .LVU63
- 228 0070 FFF7FEFF 		bl	SoftStop_Drives
- 229              	.LVL16:
- 150:display/menu.c **** 				HardStop_Drives () ;
- 230              		.loc 1 150 5 view .LVU64
- 231 0074 FFF7FEFF 		bl	HardStop_Drives
- 232              	.LVL17:
- 151:display/menu.c **** 				status_drives.end_turn_drive1 = DRIVE_FREE;		
- 233              		.loc 1 151 5 view .LVU65
- 234              		.loc 1 151 35 is_stmt 0 view .LVU66
- 235 0078 4F4B     		ldr	r3, .L36
- 236 007a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 237 007c 42F00202 		orr	r2, r2, #2
- 238 0080 1A70     		strb	r2, [r3]
- 152:display/menu.c **** 				status_drives.end_turn_drive2 = DRIVE_FREE;
- 239              		.loc 1 152 5 is_stmt 1 view .LVU67
- 240              		.loc 1 152 35 is_stmt 0 view .LVU68
- 241 0082 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-ARM GAS  /tmp/cc8qpQbQ.s 			page 8
+ 206              		.loc 1 131 2 is_stmt 0 view .LVU54
+ 207 0058 FFF7FEFF 		bl	setup_ratio_screen
+ 208              	.LVL15:
+ 209              	.L21:
+ 132:display/menu.c **** 	
+ 133:display/menu.c **** 	while (1)
+ 210              		.loc 1 133 2 is_stmt 1 view .LVU55
+ 134:display/menu.c **** 	{
+ 135:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен�
+ 211              		.loc 1 135 3 view .LVU56
+ 212              		.loc 1 135 7 is_stmt 0 view .LVU57
+ 213 005c 2846     		mov	r0, r5
+ 214 005e FFF7FEFF 		bl	read_encoder
+ 215              	.LVL16:
+ 216              		.loc 1 135 6 view .LVU58
+ 217 0062 0128     		cmp	r0, #1
+ 218 0064 5ED0     		beq	.L32
+ 219              	.L18:
+ 136:display/menu.c **** 		{
+ 137:display/menu.c **** 			HandleCoilData->gear_ratio += 5*HandleEncData->delta;
+ 138:display/menu.c **** 			HandleEncData->delta = 0;
+ 139:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
+ 140:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
+ 141:display/menu.c **** 			else
+ 142:display/menu.c **** 			{
+ 143:display/menu.c **** 				if (HandleCoilData->gear_ratio < MIN_VALUE_RATIO)
+ 144:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
+ 145:display/menu.c **** 			}
+ 146:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 147:display/menu.c **** 			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+ 148:display/menu.c **** 			setup_ratio_screen (HandleCoilData->gear_ratio);
+ 149:display/menu.c **** 		}	
+ 150:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
+ 220              		.loc 1 150 3 is_stmt 1 view .LVU59
+ 221              		.loc 1 150 19 is_stmt 0 view .LVU60
+ 222 0066 FFF7FEFF 		bl	scan_keys
+ 223              	.LVL17:
+ 224              		.loc 1 150 6 view .LVU61
+ 225 006a 0028     		cmp	r0, #0
+ 226 006c F6D0     		beq	.L21
+ 151:display/menu.c **** 		{
+ 152:display/menu.c **** 			if (key_code == KEY_SETUP_SHORT) //короткое нажатие кнопки энкодера
+ 227              		.loc 1 152 4 is_stmt 1 view .LVU62
+ 228              		.loc 1 152 7 is_stmt 0 view .LVU63
+ 229 006e 0528     		cmp	r0, #5
+ 230 0070 F4D1     		bne	.L21
+ 153:display/menu.c **** 			{	
+ 154:display/menu.c **** 				SoftStop_Drives() ;
+ 231              		.loc 1 154 5 is_stmt 1 view .LVU64
+ 232 0072 FFF7FEFF 		bl	SoftStop_Drives
+ 233              	.LVL18:
+ 155:display/menu.c **** 				HardStop_Drives () ;
+ 234              		.loc 1 155 5 view .LVU65
+ 235 0076 FFF7FEFF 		bl	HardStop_Drives
+ 236              	.LVL19:
+ 156:display/menu.c **** 				status_drives.end_turn_drive1 = DRIVE_FREE;		
+ 237              		.loc 1 156 5 view .LVU66
+ARM GAS  /tmp/ccAdRtMf.s 			page 8
 
 
- 242 0084 42F00402 		orr	r2, r2, #4
- 243 0088 1A70     		strb	r2, [r3]
- 153:display/menu.c **** 				break;
- 244              		.loc 1 153 5 is_stmt 1 view .LVU69
- 154:display/menu.c **** 			}
- 155:display/menu.c **** 		}
- 156:display/menu.c **** 	}	
- 157:display/menu.c **** 
- 158:display/menu.c **** 	//установка количества витков обмоток
- 159:display/menu.c **** 	for (uint8_t count = 0; count < MAX_NUMBER_COIL; count++)
- 245              		.loc 1 159 2 view .LVU70
- 246              	.LBB2:
- 247              		.loc 1 159 7 view .LVU71
- 248              	.LVL18:
- 249              		.loc 1 159 15 is_stmt 0 view .LVU72
- 250 008a 0023     		movs	r3, #0
- 251              	.LVL19:
- 252              	.L22:
- 253              		.loc 1 159 26 is_stmt 1 discriminator 1 view .LVU73
- 254              		.loc 1 159 2 is_stmt 0 discriminator 1 view .LVU74
- 255 008c 022B     		cmp	r3, #2
- 256 008e 00F28D80 		bhi	.L33
- 160:display/menu.c **** 	{
- 161:display/menu.c **** 		setup_coil_screen (count+1, HandleCoilData->set_coil[count]); //заставка режима у�
- 257              		.loc 1 161 3 is_stmt 1 view .LVU75
- 258 0092 5F1C     		adds	r7, r3, #1
- 259 0094 FFB2     		uxtb	r7, r7
- 260              		.loc 1 161 55 is_stmt 0 view .LVU76
- 261 0096 1E46     		mov	r6, r3
- 262 0098 0433     		adds	r3, r3, #4
- 263              	.LVL20:
- 264              		.loc 1 161 3 view .LVU77
- 265 009a 34F81310 		ldrh	r1, [r4, r3, lsl #1]	@ unaligned
- 266 009e 3846     		mov	r0, r7
- 267 00a0 FFF7FEFF 		bl	setup_coil_screen
- 268              	.LVL21:
- 269              	.L26:
- 162:display/menu.c **** 		while (1)
- 270              		.loc 1 162 3 is_stmt 1 view .LVU78
- 163:display/menu.c **** 		{
- 164:display/menu.c **** 			if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен
- 271              		.loc 1 164 4 view .LVU79
- 272              		.loc 1 164 8 is_stmt 0 view .LVU80
- 273 00a4 2846     		mov	r0, r5
- 274 00a6 FFF7FEFF 		bl	read_encoder
- 275              	.LVL22:
- 276              		.loc 1 164 7 view .LVU81
- 277 00aa 0128     		cmp	r0, #1
- 278 00ac 50D0     		beq	.L34
- 279              	.L23:
- 165:display/menu.c **** 			{
- 166:display/menu.c **** 				HandleCoilData->set_coil[count] += HandleEncData->delta;	//прибавление приращ�
- 167:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
- 168:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
- 169:display/menu.c **** 				else
- 170:display/menu.c **** 				{
- 171:display/menu.c **** 					if (HandleCoilData->set_coil[count] > MAX_VALUE_COIL)
-ARM GAS  /tmp/cc8qpQbQ.s 			page 9
+ 238              		.loc 1 156 35 is_stmt 0 view .LVU67
+ 239 007a 594B     		ldr	r3, .L36
+ 240 007c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 241 007e 42F00202 		orr	r2, r2, #2
+ 242 0082 1A70     		strb	r2, [r3]
+ 157:display/menu.c **** 				status_drives.end_turn_drive2 = DRIVE_FREE;
+ 243              		.loc 1 157 5 is_stmt 1 view .LVU68
+ 244              		.loc 1 157 35 is_stmt 0 view .LVU69
+ 245 0084 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 246 0086 42F00402 		orr	r2, r2, #4
+ 247 008a 1A70     		strb	r2, [r3]
+ 158:display/menu.c **** 				break;
+ 248              		.loc 1 158 5 is_stmt 1 view .LVU70
+ 159:display/menu.c **** 			}
+ 160:display/menu.c **** 		}
+ 161:display/menu.c **** 	}	
+ 162:display/menu.c **** 
+ 163:display/menu.c **** 	//установка количества витков обмоток
+ 164:display/menu.c **** 	for (uint8_t count = 0; count < MAX_NUMBER_COIL; count++)
+ 249              		.loc 1 164 2 view .LVU71
+ 250              	.LBB2:
+ 251              		.loc 1 164 7 view .LVU72
+ 252              	.LVL20:
+ 253              		.loc 1 164 15 is_stmt 0 view .LVU73
+ 254 008c 0023     		movs	r3, #0
+ 255              	.LVL21:
+ 256              	.L22:
+ 257              		.loc 1 164 26 is_stmt 1 discriminator 1 view .LVU74
+ 258              		.loc 1 164 2 is_stmt 0 discriminator 1 view .LVU75
+ 259 008e 022B     		cmp	r3, #2
+ 260 0090 00F2A080 		bhi	.L33
+ 165:display/menu.c **** 	{
+ 166:display/menu.c **** 		setup_coil_screen (count+1, HandleCoilData->set_coil[count]); //заставка режима у�
+ 261              		.loc 1 166 3 is_stmt 1 view .LVU76
+ 262 0094 5F1C     		adds	r7, r3, #1
+ 263 0096 FFB2     		uxtb	r7, r7
+ 264              		.loc 1 166 55 is_stmt 0 view .LVU77
+ 265 0098 1E46     		mov	r6, r3
+ 266 009a 0433     		adds	r3, r3, #4
+ 267              	.LVL22:
+ 268              		.loc 1 166 3 view .LVU78
+ 269 009c 34F81310 		ldrh	r1, [r4, r3, lsl #1]	@ unaligned
+ 270 00a0 3846     		mov	r0, r7
+ 271 00a2 FFF7FEFF 		bl	setup_coil_screen
+ 272              	.LVL23:
+ 273              	.L26:
+ 167:display/menu.c **** 		while (1)
+ 274              		.loc 1 167 3 is_stmt 1 view .LVU79
+ 168:display/menu.c **** 		{
+ 169:display/menu.c **** 			if (read_encoder (HandleEncData) == ON) //если данные от энкодера измен
+ 275              		.loc 1 169 4 view .LVU80
+ 276              		.loc 1 169 8 is_stmt 0 view .LVU81
+ 277 00a6 2846     		mov	r0, r5
+ 278 00a8 FFF7FEFF 		bl	read_encoder
+ 279              	.LVL24:
+ 280              		.loc 1 169 7 view .LVU82
+ 281 00ac 0128     		cmp	r0, #1
+ARM GAS  /tmp/ccAdRtMf.s 			page 9
 
 
- 172:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
- 173:display/menu.c **** 				}
- 174:display/menu.c **** 				setup_coil_screen (count+1, HandleCoilData->set_coil[count]); //заставка режима �
- 175:display/menu.c **** 			}
- 176:display/menu.c **** 			if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
- 280              		.loc 1 176 4 is_stmt 1 view .LVU82
- 281              		.loc 1 176 20 is_stmt 0 view .LVU83
- 282 00ae FFF7FEFF 		bl	scan_keys
- 283              	.LVL23:
- 284              		.loc 1 176 7 view .LVU84
- 285 00b2 0028     		cmp	r0, #0
- 286 00b4 F6D0     		beq	.L26
- 177:display/menu.c **** 			{
- 178:display/menu.c **** 				if (key_code == KEY_SETUP_LONG) //длинное нажатие кнопки энкодера -
- 287              		.loc 1 178 5 is_stmt 1 view .LVU85
- 288              		.loc 1 178 8 is_stmt 0 view .LVU86
- 289 00b6 0628     		cmp	r0, #6
- 290 00b8 6ED0     		beq	.L35
- 179:display/menu.c **** 				{		
- 180:display/menu.c **** 					HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка о
- 181:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
- 182:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
- 183:display/menu.c **** 					return;
- 184:display/menu.c **** 				}	
- 185:display/menu.c **** 				else
- 186:display/menu.c **** 				{
- 187:display/menu.c **** 					if (key_code == KEY_SETUP_SHORT) //короткое нажатие кнопки энкодер
- 291              		.loc 1 187 6 is_stmt 1 view .LVU87
- 292              		.loc 1 187 9 is_stmt 0 view .LVU88
- 293 00ba 0528     		cmp	r0, #5
- 294 00bc F2D1     		bne	.L26
- 188:display/menu.c **** 					{
- 189:display/menu.c **** 						HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка �
- 295              		.loc 1 189 7 is_stmt 1 view .LVU89
- 296              		.loc 1 189 69 is_stmt 0 view .LVU90
- 297 00be 0436     		adds	r6, r6, #4
- 298 00c0 34F81630 		ldrh	r3, [r4, r6, lsl #1]	@ unaligned
- 299              		.loc 1 189 43 view .LVU91
- 300 00c4 04EB4606 		add	r6, r4, r6, lsl #1
- 301 00c8 F380     		strh	r3, [r6, #6]	@ unaligned
- 190:display/menu.c **** 						break;
- 302              		.loc 1 190 7 is_stmt 1 view .LVU92
- 159:display/menu.c **** 	{
- 303              		.loc 1 159 51 view .LVU93
- 304              	.LVL24:
- 159:display/menu.c **** 	{
- 305              		.loc 1 159 56 is_stmt 0 view .LVU94
- 306 00ca 3B46     		mov	r3, r7
- 307 00cc DEE7     		b	.L22
- 308              	.LVL25:
- 309              	.L31:
- 159:display/menu.c **** 	{
- 310              		.loc 1 159 56 view .LVU95
- 311              	.LBE2:
- 100:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
- 312              		.loc 1 100 4 is_stmt 1 view .LVU96
- 100:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
-ARM GAS  /tmp/cc8qpQbQ.s 			page 10
+ 282 00ae 5ED0     		beq	.L34
+ 283              	.L23:
+ 170:display/menu.c **** 			{
+ 171:display/menu.c **** 				HandleCoilData->set_coil[count] += HandleEncData->delta; //прибавление приращ�
+ 172:display/menu.c **** 				HandleEncData->delta = 0;				
+ 173:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
+ 174:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
+ 175:display/menu.c **** 				else
+ 176:display/menu.c **** 				{
+ 177:display/menu.c **** 					if (HandleCoilData->set_coil[count] > MAX_VALUE_COIL)
+ 178:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
+ 179:display/menu.c **** 				}
+ 180:display/menu.c **** 				setup_coil_screen (count+1, HandleCoilData->set_coil[count]); //заставка режима �
+ 181:display/menu.c **** 			}
+ 182:display/menu.c **** 			if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
+ 284              		.loc 1 182 4 is_stmt 1 view .LVU83
+ 285              		.loc 1 182 20 is_stmt 0 view .LVU84
+ 286 00b0 FFF7FEFF 		bl	scan_keys
+ 287              	.LVL25:
+ 288              		.loc 1 182 7 view .LVU85
+ 289 00b4 0028     		cmp	r0, #0
+ 290 00b6 F6D0     		beq	.L26
+ 183:display/menu.c **** 			{
+ 184:display/menu.c **** 				if (key_code == KEY_SETUP_LONG) //длинное нажатие кнопки энкодера -
+ 291              		.loc 1 184 5 is_stmt 1 view .LVU86
+ 292              		.loc 1 184 8 is_stmt 0 view .LVU87
+ 293 00b8 0628     		cmp	r0, #6
+ 294 00ba 00F08180 		beq	.L35
+ 185:display/menu.c **** 				{		
+ 186:display/menu.c **** 					HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка о
+ 187:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
+ 188:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
+ 189:display/menu.c **** 					return;
+ 190:display/menu.c **** 				}	
+ 191:display/menu.c **** 				else
+ 192:display/menu.c **** 				{
+ 193:display/menu.c **** 					if (key_code == KEY_SETUP_SHORT) //короткое нажатие кнопки энкодер
+ 295              		.loc 1 193 6 is_stmt 1 view .LVU88
+ 296              		.loc 1 193 9 is_stmt 0 view .LVU89
+ 297 00be 0528     		cmp	r0, #5
+ 298 00c0 F1D1     		bne	.L26
+ 194:display/menu.c **** 					{
+ 195:display/menu.c **** 						HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка �
+ 299              		.loc 1 195 7 is_stmt 1 view .LVU90
+ 300              		.loc 1 195 69 is_stmt 0 view .LVU91
+ 301 00c2 0436     		adds	r6, r6, #4
+ 302 00c4 34F81630 		ldrh	r3, [r4, r6, lsl #1]	@ unaligned
+ 303              		.loc 1 195 43 view .LVU92
+ 304 00c8 04EB4606 		add	r6, r4, r6, lsl #1
+ 305 00cc F380     		strh	r3, [r6, #6]	@ unaligned
+ 196:display/menu.c **** 						break;
+ 306              		.loc 1 196 7 is_stmt 1 view .LVU93
+ 164:display/menu.c **** 	{
+ 307              		.loc 1 164 51 view .LVU94
+ 308              	.LVL26:
+ 164:display/menu.c **** 	{
+ 309              		.loc 1 164 56 is_stmt 0 view .LVU95
+ARM GAS  /tmp/ccAdRtMf.s 			page 10
 
 
- 313              		.loc 1 100 60 is_stmt 0 view .LVU97
- 314 00ce 6A68     		ldr	r2, [r5, #4]
- 100:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
- 315              		.loc 1 100 42 view .LVU98
- 316 00d0 A388     		ldrh	r3, [r4, #4]	@ unaligned
- 317 00d2 02EB4202 		add	r2, r2, r2, lsl #1
- 318 00d6 1344     		add	r3, r3, r2
- 319 00d8 9AB2     		uxth	r2, r3
- 320 00da A380     		strh	r3, [r4, #4]	@ unaligned
- 101:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
- 321              		.loc 1 101 4 is_stmt 1 view .LVU99
- 101:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
- 322              		.loc 1 101 7 is_stmt 0 view .LVU100
- 323 00dc 962A     		cmp	r2, #150
- 324 00de 0FD9     		bls	.L14
- 102:display/menu.c **** 			else
- 325              		.loc 1 102 6 is_stmt 1 view .LVU101
- 102:display/menu.c **** 			else
- 326              		.loc 1 102 44 is_stmt 0 view .LVU102
- 327 00e0 0C23     		movs	r3, #12
- 328 00e2 2371     		strb	r3, [r4, #4]
+ 310 00ce 3B46     		mov	r3, r7
+ 311 00d0 DDE7     		b	.L22
+ 312              	.LVL27:
+ 313              	.L31:
+ 164:display/menu.c **** 	{
+ 314              		.loc 1 164 56 view .LVU96
+ 315              	.LBE2:
+ 109:display/menu.c **** 			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
+ 316              		.loc 1 109 4 is_stmt 1 view .LVU97
+ 109:display/menu.c **** 			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
+ 317              		.loc 1 109 60 is_stmt 0 view .LVU98
+ 318 00d2 95F90430 		ldrsb	r3, [r5, #4]
+ 319 00d6 9BB2     		uxth	r3, r3
+ 109:display/menu.c **** 			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
+ 320              		.loc 1 109 46 view .LVU99
+ 321 00d8 03EB4303 		add	r3, r3, r3, lsl #1
+ 322 00dc 9BB2     		uxth	r3, r3
+ 109:display/menu.c **** 			HandleEncData->delta = 0; //обнуление дельты показаний энкодера
+ 323              		.loc 1 109 42 view .LVU100
+ 324 00de A288     		ldrh	r2, [r4, #4]	@ unaligned
+ 325 00e0 1344     		add	r3, r3, r2
+ 326 00e2 A380     		strh	r3, [r4, #4]	@ unaligned
+ 110:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
+ 327              		.loc 1 110 4 is_stmt 1 view .LVU101
+ 110:display/menu.c **** 			if (HandleCoilData->drive2_turn_in_minute > MAX_VALUE_TURN) //если количество об
+ 328              		.loc 1 110 25 is_stmt 0 view .LVU102
  329 00e4 0023     		movs	r3, #0
- 330 00e6 6371     		strb	r3, [r4, #5]
- 331              	.L15:
- 108:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 332              		.loc 1 108 4 is_stmt 1 view .LVU103
- 108:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 333              		.loc 1 108 38 is_stmt 0 view .LVU104
- 334 00e8 A088     		ldrh	r0, [r4, #4]	@ unaligned
- 335 00ea FFF7FEFF 		bl	calc_rotation_speed
- 336              	.LVL26:
- 108:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 337              		.loc 1 108 36 view .LVU105
- 338 00ee 6080     		strh	r0, [r4, #2]	@ unaligned
- 109:display/menu.c **** 			setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
- 339              		.loc 1 109 4 is_stmt 1 view .LVU106
- 340 00f0 2046     		mov	r0, r4
- 341 00f2 FFF7FEFF 		bl	drive2_turn
- 342              	.LVL27:
- 110:display/menu.c **** 		}	
- 343              		.loc 1 110 4 view .LVU107
- 344 00f6 B4F90400 		ldrsh	r0, [r4, #4]	@ unaligned
- 345 00fa FFF7FEFF 		bl	setup_speed_screen
- 346              	.LVL28:
- 347 00fe 93E7     		b	.L13
- 348              	.L14:
- 105:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
- 349              		.loc 1 105 5 view .LVU108
- 105:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
- 350              		.loc 1 105 8 is_stmt 0 view .LVU109
- 351 0100 0B2A     		cmp	r2, #11
- 352 0102 F1D8     		bhi	.L15
- 106:display/menu.c **** 			}
- 353              		.loc 1 106 7 is_stmt 1 view .LVU110
- 106:display/menu.c **** 			}
- 354              		.loc 1 106 45 is_stmt 0 view .LVU111
- 355 0104 6FF06903 		mvn	r3, #105
-ARM GAS  /tmp/cc8qpQbQ.s 			page 11
+ 330 00e6 2B71     		strb	r3, [r5, #4]
+ 111:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
+ 331              		.loc 1 111 4 is_stmt 1 view .LVU103
+ 111:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
+ 332              		.loc 1 111 22 is_stmt 0 view .LVU104
+ 333 00e8 A388     		ldrh	r3, [r4, #4]	@ unaligned
+ 111:display/menu.c **** 			{	HandleCoilData->drive2_turn_in_minute = MIN_VALUE_TURN;	}
+ 334              		.loc 1 111 7 view .LVU105
+ 335 00ea 962B     		cmp	r3, #150
+ 336 00ec 12D9     		bls	.L15
+ 112:display/menu.c **** 			else
+ 337              		.loc 1 112 6 is_stmt 1 view .LVU106
+ 112:display/menu.c **** 			else
+ 338              		.loc 1 112 44 is_stmt 0 view .LVU107
+ 339 00ee 0C23     		movs	r3, #12
+ 340 00f0 2371     		strb	r3, [r4, #4]
+ 341 00f2 0023     		movs	r3, #0
+ 342 00f4 6371     		strb	r3, [r4, #5]
+ 343              	.L16:
+ 118:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 344              		.loc 1 118 4 is_stmt 1 view .LVU108
+ 118:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 345              		.loc 1 118 38 is_stmt 0 view .LVU109
+ 346 00f6 A088     		ldrh	r0, [r4, #4]	@ unaligned
+ 347 00f8 FFF7FEFF 		bl	calc_rotation_speed
+ 348              	.LVL28:
+ 118:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
+ 349              		.loc 1 118 36 view .LVU110
+ 350 00fc 6080     		strh	r0, [r4, #2]	@ unaligned
+ 119:display/menu.c **** 			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+ARM GAS  /tmp/ccAdRtMf.s 			page 11
 
 
- 356 0108 2371     		strb	r3, [r4, #4]
- 357 010a 0023     		movs	r3, #0
- 358 010c 6371     		strb	r3, [r4, #5]
- 359 010e EBE7     		b	.L15
- 360              	.L32:
- 133:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
- 361              		.loc 1 133 4 is_stmt 1 view .LVU112
- 133:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
- 362              		.loc 1 133 49 is_stmt 0 view .LVU113
- 363 0110 6A68     		ldr	r2, [r5, #4]
- 133:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
- 364              		.loc 1 133 31 view .LVU114
- 365 0112 E388     		ldrh	r3, [r4, #6]	@ unaligned
- 366 0114 02EB8202 		add	r2, r2, r2, lsl #2
- 367 0118 1344     		add	r3, r3, r2
- 368 011a 9AB2     		uxth	r2, r3
- 369 011c E380     		strh	r3, [r4, #6]	@ unaligned
- 134:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
- 370              		.loc 1 134 4 is_stmt 1 view .LVU115
- 134:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
- 371              		.loc 1 134 7 is_stmt 0 view .LVU116
- 372 011e B2F5967F 		cmp	r2, #300
- 373 0122 0ED9     		bls	.L19
- 135:display/menu.c **** 			else
- 374              		.loc 1 135 6 is_stmt 1 view .LVU117
- 135:display/menu.c **** 			else
- 375              		.loc 1 135 33 is_stmt 0 view .LVU118
- 376 0124 1923     		movs	r3, #25
- 377 0126 A371     		strb	r3, [r4, #6]
- 378 0128 0023     		movs	r3, #0
- 379 012a E371     		strb	r3, [r4, #7]
- 380              	.L20:
- 141:display/menu.c **** 			drive2_turn (HandleCoilData);	//запуск вращающего двигателя
- 381              		.loc 1 141 4 is_stmt 1 view .LVU119
- 382 012c 2046     		mov	r0, r4
- 383 012e FFF7FEFF 		bl	drive1_turn
- 384              	.LVL29:
- 142:display/menu.c **** 			setup_ratio_screen (HandleCoilData->gear_ratio);
- 385              		.loc 1 142 4 view .LVU120
- 386 0132 2046     		mov	r0, r4
- 387 0134 FFF7FEFF 		bl	drive2_turn
- 388              	.LVL30:
- 143:display/menu.c **** 		}	
- 389              		.loc 1 143 4 view .LVU121
- 390 0138 B4F90600 		ldrsh	r0, [r4, #6]	@ unaligned
- 391 013c FFF7FEFF 		bl	setup_ratio_screen
- 392              	.LVL31:
- 393 0140 90E7     		b	.L18
- 394              	.L19:
- 138:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
- 395              		.loc 1 138 5 view .LVU122
- 138:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
- 396              		.loc 1 138 8 is_stmt 0 view .LVU123
- 397 0142 182A     		cmp	r2, #24
- 398 0144 F2D8     		bhi	.L20
- 139:display/menu.c **** 			}
- 399              		.loc 1 139 7 is_stmt 1 view .LVU124
-ARM GAS  /tmp/cc8qpQbQ.s 			page 12
+ 351              		.loc 1 119 4 is_stmt 1 view .LVU111
+ 352 00fe 2046     		mov	r0, r4
+ 353 0100 FFF7FEFF 		bl	drive2_turn
+ 354              	.LVL29:
+ 120:display/menu.c **** 			setup_speed_screen (HandleCoilData->drive2_turn_in_minute);
+ 355              		.loc 1 120 4 view .LVU112
+ 356 0104 2046     		mov	r0, r4
+ 357 0106 FFF7FEFF 		bl	drive1_turn
+ 358              	.LVL30:
+ 121:display/menu.c **** 		}	
+ 359              		.loc 1 121 4 view .LVU113
+ 360 010a B4F90400 		ldrsh	r0, [r4, #4]	@ unaligned
+ 361 010e FFF7FEFF 		bl	setup_speed_screen
+ 362              	.LVL31:
+ 363 0112 99E7     		b	.L14
+ 364              	.L15:
+ 115:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
+ 365              		.loc 1 115 5 view .LVU114
+ 115:display/menu.c **** 				{	HandleCoilData->drive2_turn_in_minute = MAX_VALUE_TURN;	}
+ 366              		.loc 1 115 8 is_stmt 0 view .LVU115
+ 367 0114 0B2B     		cmp	r3, #11
+ 368 0116 EED8     		bhi	.L16
+ 116:display/menu.c **** 			}
+ 369              		.loc 1 116 7 is_stmt 1 view .LVU116
+ 116:display/menu.c **** 			}
+ 370              		.loc 1 116 45 is_stmt 0 view .LVU117
+ 371 0118 6FF06903 		mvn	r3, #105
+ 372 011c 2371     		strb	r3, [r4, #4]
+ 373 011e 0023     		movs	r3, #0
+ 374 0120 6371     		strb	r3, [r4, #5]
+ 375 0122 E8E7     		b	.L16
+ 376              	.L32:
+ 137:display/menu.c **** 			HandleEncData->delta = 0;
+ 377              		.loc 1 137 4 is_stmt 1 view .LVU118
+ 137:display/menu.c **** 			HandleEncData->delta = 0;
+ 378              		.loc 1 137 49 is_stmt 0 view .LVU119
+ 379 0124 95F90430 		ldrsb	r3, [r5, #4]
+ 380 0128 9BB2     		uxth	r3, r3
+ 137:display/menu.c **** 			HandleEncData->delta = 0;
+ 381              		.loc 1 137 35 view .LVU120
+ 382 012a 03EB8303 		add	r3, r3, r3, lsl #2
+ 383 012e 9BB2     		uxth	r3, r3
+ 137:display/menu.c **** 			HandleEncData->delta = 0;
+ 384              		.loc 1 137 31 view .LVU121
+ 385 0130 E288     		ldrh	r2, [r4, #6]	@ unaligned
+ 386 0132 1344     		add	r3, r3, r2
+ 387 0134 E380     		strh	r3, [r4, #6]	@ unaligned
+ 138:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
+ 388              		.loc 1 138 4 is_stmt 1 view .LVU122
+ 138:display/menu.c **** 			if (HandleCoilData->gear_ratio > MAX_VALUE_RATIO)
+ 389              		.loc 1 138 25 is_stmt 0 view .LVU123
+ 390 0136 0023     		movs	r3, #0
+ 391 0138 2B71     		strb	r3, [r5, #4]
+ 139:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
+ 392              		.loc 1 139 4 is_stmt 1 view .LVU124
+ 139:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
+ 393              		.loc 1 139 22 is_stmt 0 view .LVU125
+ARM GAS  /tmp/ccAdRtMf.s 			page 12
 
 
- 139:display/menu.c **** 			}
- 400              		.loc 1 139 34 is_stmt 0 view .LVU125
- 401 0146 2C23     		movs	r3, #44
- 402 0148 A371     		strb	r3, [r4, #6]
- 403 014a 0123     		movs	r3, #1
- 404 014c E371     		strb	r3, [r4, #7]
- 405 014e EDE7     		b	.L20
- 406              	.L34:
- 407              	.LBB3:
- 166:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
- 408              		.loc 1 166 5 is_stmt 1 view .LVU126
- 166:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
- 409              		.loc 1 166 53 is_stmt 0 view .LVU127
- 410 0150 6968     		ldr	r1, [r5, #4]
- 166:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
- 411              		.loc 1 166 37 view .LVU128
- 412 0152 321D     		adds	r2, r6, #4
- 413 0154 34F81230 		ldrh	r3, [r4, r2, lsl #1]	@ unaligned
- 414 0158 0B44     		add	r3, r3, r1
- 415 015a 99B2     		uxth	r1, r3
- 416 015c 24F81230 		strh	r3, [r4, r2, lsl #1]	@ unaligned
- 167:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
- 417              		.loc 1 167 5 is_stmt 1 view .LVU129
- 167:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
- 418              		.loc 1 167 8 is_stmt 0 view .LVU130
- 419 0160 79B9     		cbnz	r1, .L24
- 168:display/menu.c **** 				else
- 420              		.loc 1 168 7 is_stmt 1 view .LVU131
- 168:display/menu.c **** 				else
- 421              		.loc 1 168 39 is_stmt 0 view .LVU132
- 422 0162 1346     		mov	r3, r2
- 423 0164 6FF00502 		mvn	r2, #5
- 424 0168 04F81320 		strb	r2, [r4, r3, lsl #1]
- 425 016c 04EB4303 		add	r3, r4, r3, lsl #1
- 426 0170 0022     		movs	r2, #0
- 427 0172 5A70     		strb	r2, [r3, #1]
- 428              	.L25:
- 174:display/menu.c **** 			}
- 429              		.loc 1 174 5 is_stmt 1 view .LVU133
- 174:display/menu.c **** 			}
- 430              		.loc 1 174 57 is_stmt 0 view .LVU134
- 431 0174 331D     		adds	r3, r6, #4
- 174:display/menu.c **** 			}
- 432              		.loc 1 174 5 view .LVU135
- 433 0176 34F81310 		ldrh	r1, [r4, r3, lsl #1]	@ unaligned
- 434 017a 3846     		mov	r0, r7
- 435 017c FFF7FEFF 		bl	setup_coil_screen
- 436              	.LVL32:
- 437 0180 95E7     		b	.L23
- 438              	.L24:
- 171:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
- 439              		.loc 1 171 6 is_stmt 1 view .LVU136
- 171:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
- 440              		.loc 1 171 9 is_stmt 0 view .LVU137
- 441 0182 FA29     		cmp	r1, #250
- 442 0184 F6D9     		bls	.L25
- 172:display/menu.c **** 				}
-ARM GAS  /tmp/cc8qpQbQ.s 			page 13
+ 394 013a E388     		ldrh	r3, [r4, #6]	@ unaligned
+ 139:display/menu.c **** 			{	HandleCoilData->gear_ratio = MIN_VALUE_RATIO;	}
+ 395              		.loc 1 139 7 view .LVU126
+ 396 013c B3F5967F 		cmp	r3, #300
+ 397 0140 0ED9     		bls	.L19
+ 140:display/menu.c **** 			else
+ 398              		.loc 1 140 6 is_stmt 1 view .LVU127
+ 140:display/menu.c **** 			else
+ 399              		.loc 1 140 33 is_stmt 0 view .LVU128
+ 400 0142 1923     		movs	r3, #25
+ 401 0144 A371     		strb	r3, [r4, #6]
+ 402 0146 0023     		movs	r3, #0
+ 403 0148 E371     		strb	r3, [r4, #7]
+ 404              	.L20:
+ 146:display/menu.c **** 			drive1_turn (HandleCoilData);	//запуск сдвигающего двигателя
+ 405              		.loc 1 146 4 is_stmt 1 view .LVU129
+ 406 014a 2046     		mov	r0, r4
+ 407 014c FFF7FEFF 		bl	drive2_turn
+ 408              	.LVL32:
+ 147:display/menu.c **** 			setup_ratio_screen (HandleCoilData->gear_ratio);
+ 409              		.loc 1 147 4 view .LVU130
+ 410 0150 2046     		mov	r0, r4
+ 411 0152 FFF7FEFF 		bl	drive1_turn
+ 412              	.LVL33:
+ 148:display/menu.c **** 		}	
+ 413              		.loc 1 148 4 view .LVU131
+ 414 0156 B4F90600 		ldrsh	r0, [r4, #6]	@ unaligned
+ 415 015a FFF7FEFF 		bl	setup_ratio_screen
+ 416              	.LVL34:
+ 417 015e 82E7     		b	.L18
+ 418              	.L19:
+ 143:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
+ 419              		.loc 1 143 5 view .LVU132
+ 143:display/menu.c **** 				{	HandleCoilData->gear_ratio = MAX_VALUE_RATIO;	}
+ 420              		.loc 1 143 8 is_stmt 0 view .LVU133
+ 421 0160 182B     		cmp	r3, #24
+ 422 0162 F2D8     		bhi	.L20
+ 144:display/menu.c **** 			}
+ 423              		.loc 1 144 7 is_stmt 1 view .LVU134
+ 144:display/menu.c **** 			}
+ 424              		.loc 1 144 34 is_stmt 0 view .LVU135
+ 425 0164 2C23     		movs	r3, #44
+ 426 0166 A371     		strb	r3, [r4, #6]
+ 427 0168 0123     		movs	r3, #1
+ 428 016a E371     		strb	r3, [r4, #7]
+ 429 016c EDE7     		b	.L20
+ 430              	.L34:
+ 431              	.LBB3:
+ 171:display/menu.c **** 				HandleEncData->delta = 0;				
+ 432              		.loc 1 171 5 is_stmt 1 view .LVU136
+ 171:display/menu.c **** 				HandleEncData->delta = 0;				
+ 433              		.loc 1 171 53 is_stmt 0 view .LVU137
+ 434 016e 95F90430 		ldrsb	r3, [r5, #4]
+ 435 0172 9BB2     		uxth	r3, r3
+ 171:display/menu.c **** 				HandleEncData->delta = 0;				
+ 436              		.loc 1 171 37 view .LVU138
+ 437 0174 321D     		adds	r2, r6, #4
+ARM GAS  /tmp/ccAdRtMf.s 			page 13
 
 
- 443              		.loc 1 172 8 is_stmt 1 view .LVU138
- 172:display/menu.c **** 				}
- 444              		.loc 1 172 40 is_stmt 0 view .LVU139
- 445 0186 331D     		adds	r3, r6, #4
- 446 0188 0122     		movs	r2, #1
- 447 018a 04F81320 		strb	r2, [r4, r3, lsl #1]
- 448 018e 04EB4303 		add	r3, r4, r3, lsl #1
- 449 0192 0022     		movs	r2, #0
- 450 0194 5A70     		strb	r2, [r3, #1]
- 451 0196 EDE7     		b	.L25
- 452              	.LVL33:
- 453              	.L35:
- 180:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
- 454              		.loc 1 180 6 is_stmt 1 view .LVU140
- 180:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
- 455              		.loc 1 180 68 is_stmt 0 view .LVU141
- 456 0198 0436     		adds	r6, r6, #4
- 457 019a 34F81630 		ldrh	r3, [r4, r6, lsl #1]	@ unaligned
- 180:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
- 458              		.loc 1 180 42 view .LVU142
- 459 019e 04EB4606 		add	r6, r4, r6, lsl #1
- 460 01a2 F380     		strh	r3, [r6, #6]	@ unaligned
- 181:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
- 461              		.loc 1 181 6 is_stmt 1 view .LVU143
- 181:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
- 462              		.loc 1 181 39 is_stmt 0 view .LVU144
- 463 01a4 2770     		strb	r7, [r4]
- 182:display/menu.c **** 					return;
- 464              		.loc 1 182 6 is_stmt 1 view .LVU145
- 182:display/menu.c **** 					return;
- 465              		.loc 1 182 38 is_stmt 0 view .LVU146
- 466 01a6 0023     		movs	r3, #0
- 467 01a8 6370     		strb	r3, [r4, #1]
- 183:display/menu.c **** 				}	
- 468              		.loc 1 183 6 is_stmt 1 view .LVU147
- 469              	.LVL34:
- 470              	.L11:
- 183:display/menu.c **** 				}	
- 471              		.loc 1 183 6 is_stmt 0 view .LVU148
- 472              	.LBE3:
- 191:display/menu.c **** 					}
- 192:display/menu.c **** 				}
- 193:display/menu.c **** 			}			
- 194:display/menu.c **** 		}
- 195:display/menu.c **** 	}
- 196:display/menu.c **** 	HandleCoilData->set_numb_winding = MAX_NUMBER_COIL; //необходимое количество 
- 197:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
- 198:display/menu.c **** 	return;
- 199:display/menu.c **** }
- 473              		.loc 1 199 1 view .LVU149
- 474 01aa F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 475              	.LVL35:
- 476              	.L33:
- 196:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
- 477              		.loc 1 196 2 is_stmt 1 view .LVU150
- 196:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
- 478              		.loc 1 196 35 is_stmt 0 view .LVU151
-ARM GAS  /tmp/cc8qpQbQ.s 			page 14
+ 438 0176 34F81210 		ldrh	r1, [r4, r2, lsl #1]	@ unaligned
+ 439 017a 0B44     		add	r3, r3, r1
+ 440 017c 24F81230 		strh	r3, [r4, r2, lsl #1]	@ unaligned
+ 172:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
+ 441              		.loc 1 172 5 is_stmt 1 view .LVU139
+ 172:display/menu.c **** 				if (HandleCoilData->set_coil[count] < MIN_VALUE_COIL)
+ 442              		.loc 1 172 26 is_stmt 0 view .LVU140
+ 443 0180 0023     		movs	r3, #0
+ 444 0182 2B71     		strb	r3, [r5, #4]
+ 173:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
+ 445              		.loc 1 173 5 is_stmt 1 view .LVU141
+ 173:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
+ 446              		.loc 1 173 33 is_stmt 0 view .LVU142
+ 447 0184 34F81230 		ldrh	r3, [r4, r2, lsl #1]	@ unaligned
+ 173:display/menu.c **** 				{	HandleCoilData->set_coil[count] = MAX_VALUE_COIL;	}
+ 448              		.loc 1 173 8 view .LVU143
+ 449 0188 7BB9     		cbnz	r3, .L24
+ 174:display/menu.c **** 				else
+ 450              		.loc 1 174 7 is_stmt 1 view .LVU144
+ 174:display/menu.c **** 				else
+ 451              		.loc 1 174 39 is_stmt 0 view .LVU145
+ 452 018a 1346     		mov	r3, r2
+ 453 018c 6FF00502 		mvn	r2, #5
+ 454 0190 04F81320 		strb	r2, [r4, r3, lsl #1]
+ 455 0194 04EB4303 		add	r3, r4, r3, lsl #1
+ 456 0198 0022     		movs	r2, #0
+ 457 019a 5A70     		strb	r2, [r3, #1]
+ 458              	.L25:
+ 180:display/menu.c **** 			}
+ 459              		.loc 1 180 5 is_stmt 1 view .LVU146
+ 180:display/menu.c **** 			}
+ 460              		.loc 1 180 57 is_stmt 0 view .LVU147
+ 461 019c 331D     		adds	r3, r6, #4
+ 180:display/menu.c **** 			}
+ 462              		.loc 1 180 5 view .LVU148
+ 463 019e 34F81310 		ldrh	r1, [r4, r3, lsl #1]	@ unaligned
+ 464 01a2 3846     		mov	r0, r7
+ 465 01a4 FFF7FEFF 		bl	setup_coil_screen
+ 466              	.LVL35:
+ 467 01a8 82E7     		b	.L23
+ 468              	.L24:
+ 177:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
+ 469              		.loc 1 177 6 is_stmt 1 view .LVU149
+ 177:display/menu.c **** 					{	HandleCoilData->set_coil[count] = MIN_VALUE_COIL;	}
+ 470              		.loc 1 177 9 is_stmt 0 view .LVU150
+ 471 01aa FA2B     		cmp	r3, #250
+ 472 01ac F6D9     		bls	.L25
+ 178:display/menu.c **** 				}
+ 473              		.loc 1 178 8 is_stmt 1 view .LVU151
+ 178:display/menu.c **** 				}
+ 474              		.loc 1 178 40 is_stmt 0 view .LVU152
+ 475 01ae 331D     		adds	r3, r6, #4
+ 476 01b0 0122     		movs	r2, #1
+ 477 01b2 04F81320 		strb	r2, [r4, r3, lsl #1]
+ 478 01b6 04EB4303 		add	r3, r4, r3, lsl #1
+ 479 01ba 0022     		movs	r2, #0
+ 480 01bc 5A70     		strb	r2, [r3, #1]
+ARM GAS  /tmp/ccAdRtMf.s 			page 14
 
 
- 479 01ac 0323     		movs	r3, #3
- 480              	.LVL36:
- 196:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
- 481              		.loc 1 196 35 view .LVU152
- 482 01ae 2370     		strb	r3, [r4]
- 197:display/menu.c **** 	return;
- 483              		.loc 1 197 2 is_stmt 1 view .LVU153
- 197:display/menu.c **** 	return;
- 484              		.loc 1 197 34 is_stmt 0 view .LVU154
- 485 01b0 0023     		movs	r3, #0
- 486 01b2 6370     		strb	r3, [r4, #1]
- 198:display/menu.c **** }
- 487              		.loc 1 198 2 is_stmt 1 view .LVU155
- 488 01b4 F9E7     		b	.L11
- 489              	.L37:
- 490 01b6 00BF     		.align	2
- 491              	.L36:
- 492 01b8 00000000 		.word	status_drives
- 493              		.cfi_endproc
- 494              	.LFE952:
- 496              		.section	.text.turn_drive_menu,"ax",%progbits
- 497              		.align	1
- 498              		.global	turn_drive_menu
- 499              		.syntax unified
- 500              		.thumb
- 501              		.thumb_func
- 503              	turn_drive_menu:
- 504              	.LVL37:
- 505              	.LFB954:
- 200:display/menu.c **** 
- 201:display/menu.c **** //-------------------------------------------------------------------------------------------------
- 202:display/menu.c **** uint8_t menu_select_preset (encoder_data_t * HandleEncData, coil_data_t ** HandleBufCoilData)
- 203:display/menu.c **** {
- 204:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
- 205:display/menu.c **** 	
- 206:display/menu.c **** 	menu_select_preset_screen (drive_mode);
- 207:display/menu.c **** 	while (1)
- 208:display/menu.c **** 	{		
- 209:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //чтение данных энкодера
- 210:display/menu.c **** 		{
- 211:display/menu.c **** 			drive_mode += HandleEncData->delta; //изменение указателя на номер пр
- 212:display/menu.c **** 			if (drive_mode > PRESET4)
- 213:display/menu.c **** 			{	drive_mode = PRESET1;	}
- 214:display/menu.c **** 			else
- 215:display/menu.c **** 			{	
- 216:display/menu.c **** 				if (drive_mode < PRESET1) 
- 217:display/menu.c **** 				{	drive_mode = PRESET4;	}
- 218:display/menu.c **** 			}	
- 219:display/menu.c **** 			HandleEncData->delta = 0;	
- 220:display/menu.c **** 			menu_select_preset_screen (drive_mode);				
- 221:display/menu.c **** 		}		
- 222:display/menu.c **** 			
- 223:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY)
- 224:display/menu.c **** 		{
- 225:display/menu.c **** 			switch (key_code) //обработка кода нажатой кнопки
- 226:display/menu.c **** 			{	
- 227:display/menu.c **** 				case KEY_SETUP_SHORT:
-ARM GAS  /tmp/cc8qpQbQ.s 			page 15
+ 481 01be EDE7     		b	.L25
+ 482              	.LVL36:
+ 483              	.L35:
+ 186:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
+ 484              		.loc 1 186 6 is_stmt 1 view .LVU153
+ 186:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
+ 485              		.loc 1 186 68 is_stmt 0 view .LVU154
+ 486 01c0 0436     		adds	r6, r6, #4
+ 487 01c2 34F81630 		ldrh	r3, [r4, r6, lsl #1]	@ unaligned
+ 186:display/menu.c **** 					HandleCoilData->set_numb_winding = count+1; //необходимое количество об
+ 488              		.loc 1 186 42 view .LVU155
+ 489 01c6 04EB4606 		add	r6, r4, r6, lsl #1
+ 490 01ca F380     		strh	r3, [r6, #6]	@ unaligned
+ 187:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
+ 491              		.loc 1 187 6 is_stmt 1 view .LVU156
+ 187:display/menu.c **** 					HandleCoilData->complet_winding = 0; //количество полностью намотан�
+ 492              		.loc 1 187 39 is_stmt 0 view .LVU157
+ 493 01cc 2770     		strb	r7, [r4]
+ 188:display/menu.c **** 					return;
+ 494              		.loc 1 188 6 is_stmt 1 view .LVU158
+ 188:display/menu.c **** 					return;
+ 495              		.loc 1 188 38 is_stmt 0 view .LVU159
+ 496 01ce 0023     		movs	r3, #0
+ 497 01d0 6370     		strb	r3, [r4, #1]
+ 189:display/menu.c **** 				}	
+ 498              		.loc 1 189 6 is_stmt 1 view .LVU160
+ 499              	.LVL37:
+ 500              	.L11:
+ 189:display/menu.c **** 				}	
+ 501              		.loc 1 189 6 is_stmt 0 view .LVU161
+ 502              	.LBE3:
+ 197:display/menu.c **** 					}
+ 198:display/menu.c **** 				}
+ 199:display/menu.c **** 			}			
+ 200:display/menu.c **** 		}
+ 201:display/menu.c **** 	}
+ 202:display/menu.c **** 	HandleCoilData->set_numb_winding = MAX_NUMBER_COIL; //необходимое количество 
+ 203:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
+ 204:display/menu.c **** 	return;
+ 205:display/menu.c **** }
+ 503              		.loc 1 205 1 view .LVU162
+ 504 01d2 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 505              	.LVL38:
+ 506              	.L33:
+ 202:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
+ 507              		.loc 1 202 2 is_stmt 1 view .LVU163
+ 202:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
+ 508              		.loc 1 202 35 is_stmt 0 view .LVU164
+ 509 01d4 0323     		movs	r3, #3
+ 510              	.LVL39:
+ 202:display/menu.c **** 	HandleCoilData->complet_winding = 0;	//количество полностью намотанны�
+ 511              		.loc 1 202 35 view .LVU165
+ 512 01d6 2370     		strb	r3, [r4]
+ 203:display/menu.c **** 	return;
+ 513              		.loc 1 203 2 is_stmt 1 view .LVU166
+ 203:display/menu.c **** 	return;
+ 514              		.loc 1 203 34 is_stmt 0 view .LVU167
+ARM GAS  /tmp/ccAdRtMf.s 			page 15
 
 
- 228:display/menu.c **** 					setup_menu (HandleEncData, *(HandleBufCoilData+drive_mode-1)); //переход в меню н
- 229:display/menu.c **** 					break;
- 230:display/menu.c **** 				
- 231:display/menu.c **** 				case KEY_SETUP_LONG:
- 232:display/menu.c **** 					turn_drive_menu (drive_mode, HandleBufCoilData[drive_mode-1], 0); //отображение н�
- 233:display/menu.c **** 					return drive_mode; //выход в главное меню
- 234:display/menu.c **** 					break;
- 235:display/menu.c **** 			}
- 236:display/menu.c **** 			menu_select_preset_screen (drive_mode);		
- 237:display/menu.c **** 		}
- 238:display/menu.c **** 	}
- 239:display/menu.c **** }
- 240:display/menu.c **** 
- 241:display/menu.c **** 
- 242:display/menu.c **** //-------------------------------------------------------------------------------------------------
- 243:display/menu.c **** void turn_drive_menu (uint8_t numb_preset, coil_data_t * HandleCoilData, uint8_t numb_coil)
- 244:display/menu.c **** {
- 506              		.loc 1 244 1 view -0
- 507              		.cfi_startproc
- 508              		@ args = 0, pretend = 0, frame = 0
- 509              		@ frame_needed = 0, uses_anonymous_args = 0
- 510              		.loc 1 244 1 is_stmt 0 view .LVU157
- 511 0000 08B5     		push	{r3, lr}
- 512              	.LCFI4:
- 513              		.cfi_def_cfa_offset 8
- 514              		.cfi_offset 3, -8
- 515              		.cfi_offset 14, -4
- 245:display/menu.c **** 	default_screen (numb_preset, HandleCoilData->remains_coil[numb_coil], HandleCoilData->set_coil[num
- 516              		.loc 1 245 2 is_stmt 1 view .LVU158
- 517              		.loc 1 245 59 is_stmt 0 view .LVU159
- 518 0002 02F1040C 		add	ip, r2, #4
- 519 0006 01EB4C0E 		add	lr, r1, ip, lsl #1
- 520              		.loc 1 245 2 view .LVU160
- 521 000a 0132     		adds	r2, r2, #1
- 522              	.LVL38:
- 523              		.loc 1 245 2 view .LVU161
- 524 000c D3B2     		uxtb	r3, r2
- 525 000e 31F91C20 		ldrsh	r2, [r1, ip, lsl #1]	@ unaligned
- 526 0012 BEF90610 		ldrsh	r1, [lr, #6]	@ unaligned
- 527              	.LVL39:
- 528              		.loc 1 245 2 view .LVU162
- 529 0016 FFF7FEFF 		bl	default_screen
- 530              	.LVL40:
- 246:display/menu.c **** }
- 531              		.loc 1 246 1 view .LVU163
- 532 001a 08BD     		pop	{r3, pc}
- 533              		.cfi_endproc
- 534              	.LFE954:
- 536              		.section	.text.menu_select_preset,"ax",%progbits
- 537              		.align	1
- 538              		.global	menu_select_preset
- 539              		.syntax unified
- 540              		.thumb
- 541              		.thumb_func
- 543              	menu_select_preset:
- 544              	.LVL41:
- 545              	.LFB953:
-ARM GAS  /tmp/cc8qpQbQ.s 			page 16
+ 515 01d8 0023     		movs	r3, #0
+ 516 01da 6370     		strb	r3, [r4, #1]
+ 204:display/menu.c **** }
+ 517              		.loc 1 204 2 is_stmt 1 view .LVU168
+ 518 01dc F9E7     		b	.L11
+ 519              	.L37:
+ 520 01de 00BF     		.align	2
+ 521              	.L36:
+ 522 01e0 00000000 		.word	status_drives
+ 523              		.cfi_endproc
+ 524              	.LFE952:
+ 526              		.section	.text.turn_drive_menu,"ax",%progbits
+ 527              		.align	1
+ 528              		.global	turn_drive_menu
+ 529              		.syntax unified
+ 530              		.thumb
+ 531              		.thumb_func
+ 533              	turn_drive_menu:
+ 534              	.LVL40:
+ 535              	.LFB954:
+ 206:display/menu.c **** 
+ 207:display/menu.c **** //-------------------------------------------------------------------------------------------------
+ 208:display/menu.c **** uint8_t menu_select_preset (encoder_data_t * HandleEncData, coil_data_t ** HandleBufCoilData)
+ 209:display/menu.c **** {
+ 210:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
+ 211:display/menu.c **** 	
+ 212:display/menu.c **** 	menu_select_preset_screen (drive_mode);
+ 213:display/menu.c **** 	while (1)
+ 214:display/menu.c **** 	{		
+ 215:display/menu.c **** 		if (read_encoder (HandleEncData) == ON) //чтение данных энкодера
+ 216:display/menu.c **** 		{
+ 217:display/menu.c **** 			drive_mode += HandleEncData->delta; //изменение указателя на номер пр
+ 218:display/menu.c **** 			HandleEncData->delta = 0;	
+ 219:display/menu.c **** 			if (drive_mode > PRESET4)
+ 220:display/menu.c **** 			{	drive_mode = PRESET1;	}
+ 221:display/menu.c **** 			else
+ 222:display/menu.c **** 			{	
+ 223:display/menu.c **** 				if (drive_mode < PRESET1) 
+ 224:display/menu.c **** 				{	drive_mode = PRESET4;	}
+ 225:display/menu.c **** 			}	
+ 226:display/menu.c **** 			menu_select_preset_screen (drive_mode);				
+ 227:display/menu.c **** 		}		
+ 228:display/menu.c **** 			
+ 229:display/menu.c **** 		if ((key_code = scan_keys()) != NO_KEY)
+ 230:display/menu.c **** 		{
+ 231:display/menu.c **** 			switch (key_code) //обработка кода нажатой кнопки
+ 232:display/menu.c **** 			{	
+ 233:display/menu.c **** 				case KEY_SETUP_SHORT:
+ 234:display/menu.c **** 					setup_menu (HandleEncData, *(HandleBufCoilData+drive_mode-1)); //переход в меню н
+ 235:display/menu.c **** 					break;
+ 236:display/menu.c **** 				
+ 237:display/menu.c **** 				case KEY_SETUP_LONG:
+ 238:display/menu.c **** 					turn_drive_menu (drive_mode, HandleBufCoilData[drive_mode-1], 0); //отображение н�
+ 239:display/menu.c **** 					return drive_mode; //выход в главное меню
+ 240:display/menu.c **** 					break;
+ 241:display/menu.c **** 			}
+ 242:display/menu.c **** 			menu_select_preset_screen (drive_mode);		
+ARM GAS  /tmp/ccAdRtMf.s 			page 16
 
 
- 203:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
- 546              		.loc 1 203 1 is_stmt 1 view -0
- 547              		.cfi_startproc
- 548              		@ args = 0, pretend = 0, frame = 8
- 549              		@ frame_needed = 0, uses_anonymous_args = 0
- 203:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
- 550              		.loc 1 203 1 is_stmt 0 view .LVU165
- 551 0000 30B5     		push	{r4, r5, lr}
- 552              	.LCFI5:
- 553              		.cfi_def_cfa_offset 12
- 554              		.cfi_offset 4, -12
- 555              		.cfi_offset 5, -8
- 556              		.cfi_offset 14, -4
- 557 0002 83B0     		sub	sp, sp, #12
- 558              	.LCFI6:
- 559              		.cfi_def_cfa_offset 24
- 560 0004 0446     		mov	r4, r0
- 561 0006 0D46     		mov	r5, r1
- 204:display/menu.c **** 	
- 562              		.loc 1 204 2 is_stmt 1 view .LVU166
- 204:display/menu.c **** 	
- 563              		.loc 1 204 16 is_stmt 0 view .LVU167
- 564 0008 0023     		movs	r3, #0
- 565 000a ADF80630 		strh	r3, [sp, #6]	@ movhi
- 206:display/menu.c **** 	while (1)
- 566              		.loc 1 206 2 is_stmt 1 view .LVU168
- 567 000e 274B     		ldr	r3, .L52
- 568 0010 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 569              	.LVL42:
- 206:display/menu.c **** 	while (1)
- 570              		.loc 1 206 2 is_stmt 0 view .LVU169
- 571 0012 FFF7FEFF 		bl	menu_select_preset_screen
- 572              	.LVL43:
- 206:display/menu.c **** 	while (1)
- 573              		.loc 1 206 2 view .LVU170
- 574 0016 10E0     		b	.L44
- 575              	.L42:
- 216:display/menu.c **** 				{	drive_mode = PRESET4;	}
- 576              		.loc 1 216 5 is_stmt 1 view .LVU171
- 216:display/menu.c **** 				{	drive_mode = PRESET4;	}
- 577              		.loc 1 216 20 is_stmt 0 view .LVU172
- 578 0018 244B     		ldr	r3, .L52
- 579 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 216:display/menu.c **** 				{	drive_mode = PRESET4;	}
- 580              		.loc 1 216 8 view .LVU173
- 581 001c 13B9     		cbnz	r3, .L43
- 217:display/menu.c **** 			}	
- 582              		.loc 1 217 7 is_stmt 1 view .LVU174
- 217:display/menu.c **** 			}	
- 583              		.loc 1 217 18 is_stmt 0 view .LVU175
- 584 001e 234B     		ldr	r3, .L52
- 585 0020 0422     		movs	r2, #4
- 586 0022 1A70     		strb	r2, [r3]
- 587              	.L43:
- 219:display/menu.c **** 			menu_select_preset_screen (drive_mode);				
- 588              		.loc 1 219 4 is_stmt 1 view .LVU176
- 219:display/menu.c **** 			menu_select_preset_screen (drive_mode);				
-ARM GAS  /tmp/cc8qpQbQ.s 			page 17
+ 243:display/menu.c **** 		}
+ 244:display/menu.c **** 	}
+ 245:display/menu.c **** }
+ 246:display/menu.c **** 
+ 247:display/menu.c **** 
+ 248:display/menu.c **** //-------------------------------------------------------------------------------------------------
+ 249:display/menu.c **** void turn_drive_menu (uint8_t numb_preset, coil_data_t * HandleCoilData, uint8_t numb_coil)
+ 250:display/menu.c **** {
+ 536              		.loc 1 250 1 view -0
+ 537              		.cfi_startproc
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+ 540              		.loc 1 250 1 is_stmt 0 view .LVU170
+ 541 0000 08B5     		push	{r3, lr}
+ 542              	.LCFI4:
+ 543              		.cfi_def_cfa_offset 8
+ 544              		.cfi_offset 3, -8
+ 545              		.cfi_offset 14, -4
+ 251:display/menu.c **** 	default_screen (numb_preset, HandleCoilData->remains_coil[numb_coil], HandleCoilData->set_coil[num
+ 546              		.loc 1 251 2 is_stmt 1 view .LVU171
+ 547              		.loc 1 251 59 is_stmt 0 view .LVU172
+ 548 0002 02F1040C 		add	ip, r2, #4
+ 549 0006 01EB4C0E 		add	lr, r1, ip, lsl #1
+ 550              		.loc 1 251 2 view .LVU173
+ 551 000a 0132     		adds	r2, r2, #1
+ 552              	.LVL41:
+ 553              		.loc 1 251 2 view .LVU174
+ 554 000c D3B2     		uxtb	r3, r2
+ 555 000e 31F91C20 		ldrsh	r2, [r1, ip, lsl #1]	@ unaligned
+ 556 0012 BEF90610 		ldrsh	r1, [lr, #6]	@ unaligned
+ 557              	.LVL42:
+ 558              		.loc 1 251 2 view .LVU175
+ 559 0016 FFF7FEFF 		bl	default_screen
+ 560              	.LVL43:
+ 252:display/menu.c **** }
+ 561              		.loc 1 252 1 view .LVU176
+ 562 001a 08BD     		pop	{r3, pc}
+ 563              		.cfi_endproc
+ 564              	.LFE954:
+ 566              		.section	.text.menu_select_preset,"ax",%progbits
+ 567              		.align	1
+ 568              		.global	menu_select_preset
+ 569              		.syntax unified
+ 570              		.thumb
+ 571              		.thumb_func
+ 573              	menu_select_preset:
+ 574              	.LVL44:
+ 575              	.LFB953:
+ 209:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
+ 576              		.loc 1 209 1 is_stmt 1 view -0
+ 577              		.cfi_startproc
+ 578              		@ args = 0, pretend = 0, frame = 8
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209:display/menu.c **** 	__IO uint16_t key_code = NO_KEY;
+ 580              		.loc 1 209 1 is_stmt 0 view .LVU178
+ 581 0000 30B5     		push	{r4, r5, lr}
+ 582              	.LCFI5:
+ARM GAS  /tmp/ccAdRtMf.s 			page 17
 
 
- 589              		.loc 1 219 25 is_stmt 0 view .LVU177
- 590 0024 0023     		movs	r3, #0
- 591 0026 6360     		str	r3, [r4, #4]
- 220:display/menu.c **** 		}		
- 592              		.loc 1 220 4 is_stmt 1 view .LVU178
- 593 0028 204B     		ldr	r3, .L52
- 594 002a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 595 002c FFF7FEFF 		bl	menu_select_preset_screen
- 596              	.LVL44:
- 597              	.L41:
- 223:display/menu.c **** 		{
- 598              		.loc 1 223 3 view .LVU179
- 223:display/menu.c **** 		{
- 599              		.loc 1 223 19 is_stmt 0 view .LVU180
- 600 0030 FFF7FEFF 		bl	scan_keys
- 601              	.LVL45:
- 223:display/menu.c **** 		{
- 602              		.loc 1 223 17 view .LVU181
- 603 0034 ADF80600 		strh	r0, [sp, #6]	@ movhi
- 223:display/menu.c **** 		{
- 604              		.loc 1 223 6 view .LVU182
- 605 0038 90B9     		cbnz	r0, .L51
- 606              	.L44:
- 207:display/menu.c **** 	{		
- 607              		.loc 1 207 2 is_stmt 1 view .LVU183
- 209:display/menu.c **** 		{
- 608              		.loc 1 209 3 view .LVU184
- 209:display/menu.c **** 		{
- 609              		.loc 1 209 7 is_stmt 0 view .LVU185
- 610 003a 2046     		mov	r0, r4
- 611 003c FFF7FEFF 		bl	read_encoder
- 612              	.LVL46:
- 209:display/menu.c **** 		{
- 613              		.loc 1 209 6 view .LVU186
- 614 0040 0128     		cmp	r0, #1
- 615 0042 F5D1     		bne	.L41
- 211:display/menu.c **** 			if (drive_mode > PRESET4)
- 616              		.loc 1 211 4 is_stmt 1 view .LVU187
- 211:display/menu.c **** 			if (drive_mode > PRESET4)
- 617              		.loc 1 211 31 is_stmt 0 view .LVU188
- 618 0044 6168     		ldr	r1, [r4, #4]
- 211:display/menu.c **** 			if (drive_mode > PRESET4)
- 619              		.loc 1 211 15 view .LVU189
- 620 0046 194A     		ldr	r2, .L52
- 621 0048 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 622 004a 0B44     		add	r3, r3, r1
- 623 004c DBB2     		uxtb	r3, r3
- 624 004e 1370     		strb	r3, [r2]
- 212:display/menu.c **** 			{	drive_mode = PRESET1;	}
- 625              		.loc 1 212 4 is_stmt 1 view .LVU190
- 212:display/menu.c **** 			{	drive_mode = PRESET1;	}
- 626              		.loc 1 212 19 is_stmt 0 view .LVU191
- 627 0050 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 628 0052 DBB2     		uxtb	r3, r3
- 212:display/menu.c **** 			{	drive_mode = PRESET1;	}
- 629              		.loc 1 212 7 view .LVU192
- 630 0054 042B     		cmp	r3, #4
-ARM GAS  /tmp/cc8qpQbQ.s 			page 18
+ 583              		.cfi_def_cfa_offset 12
+ 584              		.cfi_offset 4, -12
+ 585              		.cfi_offset 5, -8
+ 586              		.cfi_offset 14, -4
+ 587 0002 83B0     		sub	sp, sp, #12
+ 588              	.LCFI6:
+ 589              		.cfi_def_cfa_offset 24
+ 590 0004 0446     		mov	r4, r0
+ 591 0006 0D46     		mov	r5, r1
+ 210:display/menu.c **** 	
+ 592              		.loc 1 210 2 is_stmt 1 view .LVU179
+ 210:display/menu.c **** 	
+ 593              		.loc 1 210 16 is_stmt 0 view .LVU180
+ 594 0008 0023     		movs	r3, #0
+ 595 000a ADF80630 		strh	r3, [sp, #6]	@ movhi
+ 212:display/menu.c **** 	while (1)
+ 596              		.loc 1 212 2 is_stmt 1 view .LVU181
+ 597 000e 274B     		ldr	r3, .L52
+ 598 0010 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 599              	.LVL45:
+ 212:display/menu.c **** 	while (1)
+ 600              		.loc 1 212 2 is_stmt 0 view .LVU182
+ 601 0012 FFF7FEFF 		bl	menu_select_preset_screen
+ 602              	.LVL46:
+ 212:display/menu.c **** 	while (1)
+ 603              		.loc 1 212 2 view .LVU183
+ 604 0016 0EE0     		b	.L44
+ 605              	.L42:
+ 223:display/menu.c **** 				{	drive_mode = PRESET4;	}
+ 606              		.loc 1 223 5 is_stmt 1 view .LVU184
+ 223:display/menu.c **** 				{	drive_mode = PRESET4;	}
+ 607              		.loc 1 223 20 is_stmt 0 view .LVU185
+ 608 0018 244B     		ldr	r3, .L52
+ 609 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 223:display/menu.c **** 				{	drive_mode = PRESET4;	}
+ 610              		.loc 1 223 8 view .LVU186
+ 611 001c 13B9     		cbnz	r3, .L43
+ 224:display/menu.c **** 			}	
+ 612              		.loc 1 224 7 is_stmt 1 view .LVU187
+ 224:display/menu.c **** 			}	
+ 613              		.loc 1 224 18 is_stmt 0 view .LVU188
+ 614 001e 234B     		ldr	r3, .L52
+ 615 0020 0422     		movs	r2, #4
+ 616 0022 1A70     		strb	r2, [r3]
+ 617              	.L43:
+ 226:display/menu.c **** 		}		
+ 618              		.loc 1 226 4 is_stmt 1 view .LVU189
+ 619 0024 214B     		ldr	r3, .L52
+ 620 0026 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 621 0028 FFF7FEFF 		bl	menu_select_preset_screen
+ 622              	.LVL47:
+ 623              	.L41:
+ 229:display/menu.c **** 		{
+ 624              		.loc 1 229 3 view .LVU190
+ 229:display/menu.c **** 		{
+ 625              		.loc 1 229 19 is_stmt 0 view .LVU191
+ 626 002c FFF7FEFF 		bl	scan_keys
+ARM GAS  /tmp/ccAdRtMf.s 			page 18
 
 
- 631 0056 DFD9     		bls	.L42
- 213:display/menu.c **** 			else
- 632              		.loc 1 213 6 is_stmt 1 view .LVU193
- 213:display/menu.c **** 			else
- 633              		.loc 1 213 17 is_stmt 0 view .LVU194
- 634 0058 1346     		mov	r3, r2
- 635 005a 0122     		movs	r2, #1
- 636 005c 1A70     		strb	r2, [r3]
- 637 005e E1E7     		b	.L43
- 638              	.L51:
- 225:display/menu.c **** 			{	
- 639              		.loc 1 225 4 is_stmt 1 view .LVU195
- 640 0060 BDF80630 		ldrh	r3, [sp, #6]
- 641 0064 9BB2     		uxth	r3, r3
- 642 0066 052B     		cmp	r3, #5
- 643 0068 06D0     		beq	.L45
- 644 006a 062B     		cmp	r3, #6
- 645 006c 0FD0     		beq	.L46
- 646              	.L47:
- 234:display/menu.c **** 			}
- 647              		.loc 1 234 6 view .LVU196
- 236:display/menu.c **** 		}
- 648              		.loc 1 236 4 view .LVU197
- 649 006e 0F4B     		ldr	r3, .L52
- 650 0070 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 651 0072 FFF7FEFF 		bl	menu_select_preset_screen
- 652              	.LVL47:
- 653 0076 E0E7     		b	.L44
- 654              	.L45:
- 228:display/menu.c **** 					break;
- 655              		.loc 1 228 6 view .LVU198
- 228:display/menu.c **** 					break;
- 656              		.loc 1 228 63 is_stmt 0 view .LVU199
- 657 0078 0C4B     		ldr	r3, .L52
- 658 007a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 659 007c 03F18043 		add	r3, r3, #1073741824
- 660 0080 013B     		subs	r3, r3, #1
- 228:display/menu.c **** 					break;
- 661              		.loc 1 228 6 view .LVU200
- 662 0082 55F82310 		ldr	r1, [r5, r3, lsl #2]
- 663 0086 2046     		mov	r0, r4
- 664 0088 FFF7FEFF 		bl	setup_menu
- 665              	.LVL48:
- 229:display/menu.c **** 				
- 666              		.loc 1 229 6 is_stmt 1 view .LVU201
- 667 008c EFE7     		b	.L47
- 668              	.L46:
- 232:display/menu.c **** 					return drive_mode; //выход в главное меню
- 669              		.loc 1 232 6 view .LVU202
- 670 008e 074C     		ldr	r4, .L52
- 671              	.LVL49:
- 232:display/menu.c **** 					return drive_mode; //выход в главное меню
- 672              		.loc 1 232 6 is_stmt 0 view .LVU203
- 673 0090 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
- 232:display/menu.c **** 					return drive_mode; //выход в главное меню
- 674              		.loc 1 232 52 view .LVU204
- 675 0092 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-ARM GAS  /tmp/cc8qpQbQ.s 			page 19
+ 627              	.LVL48:
+ 229:display/menu.c **** 		{
+ 628              		.loc 1 229 17 view .LVU192
+ 629 0030 ADF80600 		strh	r0, [sp, #6]	@ movhi
+ 229:display/menu.c **** 		{
+ 630              		.loc 1 229 6 view .LVU193
+ 631 0034 A0B9     		cbnz	r0, .L51
+ 632              	.L44:
+ 213:display/menu.c **** 	{		
+ 633              		.loc 1 213 2 is_stmt 1 view .LVU194
+ 215:display/menu.c **** 		{
+ 634              		.loc 1 215 3 view .LVU195
+ 215:display/menu.c **** 		{
+ 635              		.loc 1 215 7 is_stmt 0 view .LVU196
+ 636 0036 2046     		mov	r0, r4
+ 637 0038 FFF7FEFF 		bl	read_encoder
+ 638              	.LVL49:
+ 215:display/menu.c **** 		{
+ 639              		.loc 1 215 6 view .LVU197
+ 640 003c 0128     		cmp	r0, #1
+ 641 003e F5D1     		bne	.L41
+ 217:display/menu.c **** 			HandleEncData->delta = 0;	
+ 642              		.loc 1 217 4 is_stmt 1 view .LVU198
+ 217:display/menu.c **** 			HandleEncData->delta = 0;	
+ 643              		.loc 1 217 31 is_stmt 0 view .LVU199
+ 644 0040 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
+ 217:display/menu.c **** 			HandleEncData->delta = 0;	
+ 645              		.loc 1 217 15 view .LVU200
+ 646 0042 1A4A     		ldr	r2, .L52
+ 647 0044 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 648 0046 0B44     		add	r3, r3, r1
+ 649 0048 DBB2     		uxtb	r3, r3
+ 650 004a 1370     		strb	r3, [r2]
+ 218:display/menu.c **** 			if (drive_mode > PRESET4)
+ 651              		.loc 1 218 4 is_stmt 1 view .LVU201
+ 218:display/menu.c **** 			if (drive_mode > PRESET4)
+ 652              		.loc 1 218 25 is_stmt 0 view .LVU202
+ 653 004c 0023     		movs	r3, #0
+ 654 004e 2371     		strb	r3, [r4, #4]
+ 219:display/menu.c **** 			{	drive_mode = PRESET1;	}
+ 655              		.loc 1 219 4 is_stmt 1 view .LVU203
+ 219:display/menu.c **** 			{	drive_mode = PRESET1;	}
+ 656              		.loc 1 219 19 is_stmt 0 view .LVU204
+ 657 0050 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 658 0052 DBB2     		uxtb	r3, r3
+ 219:display/menu.c **** 			{	drive_mode = PRESET1;	}
+ 659              		.loc 1 219 7 view .LVU205
+ 660 0054 042B     		cmp	r3, #4
+ 661 0056 DFD9     		bls	.L42
+ 220:display/menu.c **** 			else
+ 662              		.loc 1 220 6 is_stmt 1 view .LVU206
+ 220:display/menu.c **** 			else
+ 663              		.loc 1 220 17 is_stmt 0 view .LVU207
+ 664 0058 1346     		mov	r3, r2
+ 665 005a 0122     		movs	r2, #1
+ 666 005c 1A70     		strb	r2, [r3]
+ 667 005e E1E7     		b	.L43
+ARM GAS  /tmp/ccAdRtMf.s 			page 19
 
 
- 676 0094 03F18043 		add	r3, r3, #1073741824
- 677 0098 013B     		subs	r3, r3, #1
- 232:display/menu.c **** 					return drive_mode; //выход в главное меню
- 678              		.loc 1 232 6 view .LVU205
- 679 009a 0022     		movs	r2, #0
- 680 009c 55F82310 		ldr	r1, [r5, r3, lsl #2]
- 681 00a0 FFF7FEFF 		bl	turn_drive_menu
+ 668              	.L51:
+ 231:display/menu.c **** 			{	
+ 669              		.loc 1 231 4 is_stmt 1 view .LVU208
+ 670 0060 BDF80630 		ldrh	r3, [sp, #6]
+ 671 0064 9BB2     		uxth	r3, r3
+ 672 0066 052B     		cmp	r3, #5
+ 673 0068 06D0     		beq	.L45
+ 674 006a 062B     		cmp	r3, #6
+ 675 006c 0FD0     		beq	.L46
+ 676              	.L47:
+ 240:display/menu.c **** 			}
+ 677              		.loc 1 240 6 view .LVU209
+ 242:display/menu.c **** 		}
+ 678              		.loc 1 242 4 view .LVU210
+ 679 006e 0F4B     		ldr	r3, .L52
+ 680 0070 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 681 0072 FFF7FEFF 		bl	menu_select_preset_screen
  682              	.LVL50:
- 233:display/menu.c **** 					break;
- 683              		.loc 1 233 6 is_stmt 1 view .LVU206
- 233:display/menu.c **** 					break;
- 684              		.loc 1 233 13 is_stmt 0 view .LVU207
- 685 00a4 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
- 686 00a6 C0B2     		uxtb	r0, r0
- 239:display/menu.c **** 
- 687              		.loc 1 239 1 view .LVU208
- 688 00a8 03B0     		add	sp, sp, #12
- 689              	.LCFI7:
- 690              		.cfi_def_cfa_offset 12
- 691              		@ sp needed
- 692 00aa 30BD     		pop	{r4, r5, pc}
- 693              	.LVL51:
- 694              	.L53:
- 239:display/menu.c **** 
- 695              		.loc 1 239 1 view .LVU209
- 696              		.align	2
- 697              	.L52:
- 698 00ac 00000000 		.word	.LANCHOR1
- 699              		.cfi_endproc
- 700              	.LFE953:
- 702              		.section	.text.main_loop,"ax",%progbits
- 703              		.align	1
- 704              		.global	main_loop
- 705              		.syntax unified
- 706              		.thumb
- 707              		.thumb_func
- 709              	main_loop:
- 710              	.LVL52:
- 711              	.LFB951:
-  42:display/menu.c **** 	__IO uint16_t key_code = NO_KEY; //код кнопки
- 712              		.loc 1 42 1 is_stmt 1 view -0
- 713              		.cfi_startproc
- 714              		@ args = 0, pretend = 0, frame = 8
- 715              		@ frame_needed = 0, uses_anonymous_args = 0
-  42:display/menu.c **** 	__IO uint16_t key_code = NO_KEY; //код кнопки
- 716              		.loc 1 42 1 is_stmt 0 view .LVU211
- 717 0000 30B5     		push	{r4, r5, lr}
- 718              	.LCFI8:
- 719              		.cfi_def_cfa_offset 12
- 720              		.cfi_offset 4, -12
- 721              		.cfi_offset 5, -8
- 722              		.cfi_offset 14, -4
- 723 0002 83B0     		sub	sp, sp, #12
- 724              	.LCFI9:
- 725              		.cfi_def_cfa_offset 24
- 726 0004 0446     		mov	r4, r0
- 727 0006 0D46     		mov	r5, r1
-ARM GAS  /tmp/cc8qpQbQ.s 			page 20
+ 683 0076 DEE7     		b	.L44
+ 684              	.L45:
+ 234:display/menu.c **** 					break;
+ 685              		.loc 1 234 6 view .LVU211
+ 234:display/menu.c **** 					break;
+ 686              		.loc 1 234 63 is_stmt 0 view .LVU212
+ 687 0078 0C4B     		ldr	r3, .L52
+ 688 007a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 689 007c 03F18043 		add	r3, r3, #1073741824
+ 690 0080 013B     		subs	r3, r3, #1
+ 234:display/menu.c **** 					break;
+ 691              		.loc 1 234 6 view .LVU213
+ 692 0082 55F82310 		ldr	r1, [r5, r3, lsl #2]
+ 693 0086 2046     		mov	r0, r4
+ 694 0088 FFF7FEFF 		bl	setup_menu
+ 695              	.LVL51:
+ 235:display/menu.c **** 				
+ 696              		.loc 1 235 6 is_stmt 1 view .LVU214
+ 697 008c EFE7     		b	.L47
+ 698              	.L46:
+ 238:display/menu.c **** 					return drive_mode; //выход в главное меню
+ 699              		.loc 1 238 6 view .LVU215
+ 700 008e 074C     		ldr	r4, .L52
+ 701              	.LVL52:
+ 238:display/menu.c **** 					return drive_mode; //выход в главное меню
+ 702              		.loc 1 238 6 is_stmt 0 view .LVU216
+ 703 0090 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 238:display/menu.c **** 					return drive_mode; //выход в главное меню
+ 704              		.loc 1 238 52 view .LVU217
+ 705 0092 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 706 0094 03F18043 		add	r3, r3, #1073741824
+ 707 0098 013B     		subs	r3, r3, #1
+ 238:display/menu.c **** 					return drive_mode; //выход в главное меню
+ 708              		.loc 1 238 6 view .LVU218
+ 709 009a 0022     		movs	r2, #0
+ 710 009c 55F82310 		ldr	r1, [r5, r3, lsl #2]
+ 711 00a0 FFF7FEFF 		bl	turn_drive_menu
+ 712              	.LVL53:
+ 239:display/menu.c **** 					break;
+ARM GAS  /tmp/ccAdRtMf.s 			page 20
 
 
+ 713              		.loc 1 239 6 is_stmt 1 view .LVU219
+ 239:display/menu.c **** 					break;
+ 714              		.loc 1 239 13 is_stmt 0 view .LVU220
+ 715 00a4 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 716 00a6 C0B2     		uxtb	r0, r0
+ 245:display/menu.c **** 
+ 717              		.loc 1 245 1 view .LVU221
+ 718 00a8 03B0     		add	sp, sp, #12
+ 719              	.LCFI7:
+ 720              		.cfi_def_cfa_offset 12
+ 721              		@ sp needed
+ 722 00aa 30BD     		pop	{r4, r5, pc}
+ 723              	.LVL54:
+ 724              	.L53:
+ 245:display/menu.c **** 
+ 725              		.loc 1 245 1 view .LVU222
+ 726              		.align	2
+ 727              	.L52:
+ 728 00ac 00000000 		.word	.LANCHOR1
+ 729              		.cfi_endproc
+ 730              	.LFE953:
+ 732              		.section	.text.main_loop,"ax",%progbits
+ 733              		.align	1
+ 734              		.global	main_loop
+ 735              		.syntax unified
+ 736              		.thumb
+ 737              		.thumb_func
+ 739              	main_loop:
+ 740              	.LVL55:
+ 741              	.LFB951:
+  42:display/menu.c **** 	__IO uint16_t key_code = NO_KEY; //код кнопки
+ 742              		.loc 1 42 1 is_stmt 1 view -0
+ 743              		.cfi_startproc
+ 744              		@ args = 0, pretend = 0, frame = 8
+ 745              		@ frame_needed = 0, uses_anonymous_args = 0
+  42:display/menu.c **** 	__IO uint16_t key_code = NO_KEY; //код кнопки
+ 746              		.loc 1 42 1 is_stmt 0 view .LVU224
+ 747 0000 30B5     		push	{r4, r5, lr}
+ 748              	.LCFI8:
+ 749              		.cfi_def_cfa_offset 12
+ 750              		.cfi_offset 4, -12
+ 751              		.cfi_offset 5, -8
+ 752              		.cfi_offset 14, -4
+ 753 0002 83B0     		sub	sp, sp, #12
+ 754              	.LCFI9:
+ 755              		.cfi_def_cfa_offset 24
+ 756 0004 0446     		mov	r4, r0
+ 757 0006 0D46     		mov	r5, r1
   43:display/menu.c **** 	if ((key_code = scan_keys()) != NO_KEY)
- 728              		.loc 1 43 2 is_stmt 1 view .LVU212
+ 758              		.loc 1 43 2 is_stmt 1 view .LVU225
   43:display/menu.c **** 	if ((key_code = scan_keys()) != NO_KEY)
- 729              		.loc 1 43 16 is_stmt 0 view .LVU213
- 730 0008 0023     		movs	r3, #0
- 731 000a ADF80630 		strh	r3, [sp, #6]	@ movhi
+ 759              		.loc 1 43 16 is_stmt 0 view .LVU226
+ 760 0008 0023     		movs	r3, #0
+ 761 000a ADF80630 		strh	r3, [sp, #6]	@ movhi
   44:display/menu.c **** 	{
- 732              		.loc 1 44 2 is_stmt 1 view .LVU214
+ 762              		.loc 1 44 2 is_stmt 1 view .LVU227
   44:display/menu.c **** 	{
- 733              		.loc 1 44 18 is_stmt 0 view .LVU215
- 734 000e FFF7FEFF 		bl	scan_keys
- 735              	.LVL53:
+ARM GAS  /tmp/ccAdRtMf.s 			page 21
+
+
+ 763              		.loc 1 44 18 is_stmt 0 view .LVU228
+ 764 000e FFF7FEFF 		bl	scan_keys
+ 765              	.LVL56:
   44:display/menu.c **** 	{
- 736              		.loc 1 44 16 view .LVU216
- 737 0012 ADF80600 		strh	r0, [sp, #6]	@ movhi
+ 766              		.loc 1 44 16 view .LVU229
+ 767 0012 ADF80600 		strh	r0, [sp, #6]	@ movhi
   44:display/menu.c **** 	{
- 738              		.loc 1 44 5 view .LVU217
- 739 0016 C8B1     		cbz	r0, .L54
+ 768              		.loc 1 44 5 view .LVU230
+ 769 0016 C8B1     		cbz	r0, .L54
   46:display/menu.c **** 		{	
- 740              		.loc 1 46 3 is_stmt 1 view .LVU218
- 741 0018 BDF80630 		ldrh	r3, [sp, #6]
- 742 001c 9BB2     		uxth	r3, r3
- 743 001e 023B     		subs	r3, r3, #2
- 744 0020 062B     		cmp	r3, #6
- 745 0022 13D8     		bhi	.L54
- 746 0024 DFE803F0 		tbb	[pc, r3]
- 747              	.L57:
- 748 0028 04       		.byte	(.L61-.L57)/2
- 749 0029 2A       		.byte	(.L60-.L57)/2
- 750 002a 2A       		.byte	(.L60-.L57)/2
- 751 002b 14       		.byte	(.L59-.L57)/2
- 752 002c 1B       		.byte	(.L58-.L57)/2
- 753 002d 31       		.byte	(.L56-.L57)/2
- 754 002e 31       		.byte	(.L56-.L57)/2
- 755 002f 00       		.p2align 1
- 756              	.L61:
+ 770              		.loc 1 46 3 is_stmt 1 view .LVU231
+ 771 0018 BDF80630 		ldrh	r3, [sp, #6]
+ 772 001c 9BB2     		uxth	r3, r3
+ 773 001e 023B     		subs	r3, r3, #2
+ 774 0020 062B     		cmp	r3, #6
+ 775 0022 13D8     		bhi	.L54
+ 776 0024 DFE803F0 		tbb	[pc, r3]
+ 777              	.L57:
+ 778 0028 04       		.byte	(.L61-.L57)/2
+ 779 0029 2A       		.byte	(.L60-.L57)/2
+ 780 002a 2A       		.byte	(.L60-.L57)/2
+ 781 002b 14       		.byte	(.L59-.L57)/2
+ 782 002c 1B       		.byte	(.L58-.L57)/2
+ 783 002d 40       		.byte	(.L56-.L57)/2
+ 784 002e 40       		.byte	(.L56-.L57)/2
+ 785 002f 00       		.p2align 1
+ 786              	.L61:
   49:display/menu.c **** 				while (scan_button_PEDAL() != OFF) {}	//ожидание отключения педали
- 757              		.loc 1 49 5 view .LVU219
- 758 0030 1D4B     		ldr	r3, .L65
- 759 0032 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 787              		.loc 1 49 5 view .LVU232
+ 788 0030 244B     		ldr	r3, .L66
+ 789 0032 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
   49:display/menu.c **** 				while (scan_button_PEDAL() != OFF) {}	//ожидание отключения педали
- 760              		.loc 1 49 53 is_stmt 0 view .LVU220
- 761 0034 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 762 0036 03F18043 		add	r3, r3, #1073741824
- 763 003a 013B     		subs	r3, r3, #1
+ 790              		.loc 1 49 53 is_stmt 0 view .LVU233
+ 791 0034 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 792 0036 03F18043 		add	r3, r3, #1073741824
+ 793 003a 013B     		subs	r3, r3, #1
   49:display/menu.c **** 				while (scan_button_PEDAL() != OFF) {}	//ожидание отключения педали
- 764              		.loc 1 49 5 view .LVU221
- 765 003c 55F82310 		ldr	r1, [r5, r3, lsl #2]
- 766 0040 FFF7FEFF 		bl	start_drives_turn
- 767              	.LVL54:
+ 794              		.loc 1 49 5 view .LVU234
+ 795 003c 55F82310 		ldr	r1, [r5, r3, lsl #2]
+ 796 0040 FFF7FEFF 		bl	start_drives_turn
+ 797              	.LVL57:
   50:display/menu.c **** 				break;
- 768              		.loc 1 50 5 is_stmt 1 view .LVU222
- 769              	.L62:
+ 798              		.loc 1 50 5 is_stmt 1 view .LVU235
+ 799              	.L62:
   50:display/menu.c **** 				break;
- 770              		.loc 1 50 41 discriminator 1 view .LVU223
+ 800              		.loc 1 50 41 discriminator 1 view .LVU236
   50:display/menu.c **** 				break;
- 771              		.loc 1 50 11 discriminator 1 view .LVU224
-ARM GAS  /tmp/cc8qpQbQ.s 			page 21
+ 801              		.loc 1 50 11 discriminator 1 view .LVU237
+  50:display/menu.c **** 				break;
+ 802              		.loc 1 50 12 is_stmt 0 discriminator 1 view .LVU238
+ 803 0044 FFF7FEFF 		bl	scan_button_PEDAL
+ 804              	.LVL58:
+  50:display/menu.c **** 				break;
+ 805              		.loc 1 50 11 discriminator 1 view .LVU239
+ 806 0048 0028     		cmp	r0, #0
+ 807 004a FBD1     		bne	.L62
+ 808              	.L54:
+ARM GAS  /tmp/ccAdRtMf.s 			page 22
 
 
-  50:display/menu.c **** 				break;
- 772              		.loc 1 50 12 is_stmt 0 discriminator 1 view .LVU225
- 773 0044 FFF7FEFF 		bl	scan_button_PEDAL
- 774              	.LVL55:
-  50:display/menu.c **** 				break;
- 775              		.loc 1 50 11 discriminator 1 view .LVU226
- 776 0048 0028     		cmp	r0, #0
- 777 004a FBD1     		bne	.L62
- 778              	.L54:
-  82:display/menu.c **** 
- 779              		.loc 1 82 1 view .LVU227
- 780 004c 03B0     		add	sp, sp, #12
- 781              	.LCFI10:
- 782              		.cfi_remember_state
- 783              		.cfi_def_cfa_offset 12
- 784              		@ sp needed
- 785 004e 30BD     		pop	{r4, r5, pc}
- 786              	.LVL56:
- 787              	.L59:
- 788              	.LCFI11:
- 789              		.cfi_restore_state
+  85:display/menu.c **** 
+ 809              		.loc 1 85 1 view .LVU240
+ 810 004c 03B0     		add	sp, sp, #12
+ 811              	.LCFI10:
+ 812              		.cfi_remember_state
+ 813              		.cfi_def_cfa_offset 12
+ 814              		@ sp needed
+ 815 004e 30BD     		pop	{r4, r5, pc}
+ 816              	.LVL59:
+ 817              	.L59:
+ 818              	.LCFI11:
+ 819              		.cfi_restore_state
   54:display/menu.c **** 				break;
- 790              		.loc 1 54 5 is_stmt 1 view .LVU228
+ 820              		.loc 1 54 5 is_stmt 1 view .LVU241
   54:display/menu.c **** 				break;
- 791              		.loc 1 54 18 is_stmt 0 view .LVU229
- 792 0050 2946     		mov	r1, r5
- 793 0052 2046     		mov	r0, r4
- 794 0054 FFF7FEFF 		bl	menu_select_preset
- 795              	.LVL57:
+ 821              		.loc 1 54 18 is_stmt 0 view .LVU242
+ 822 0050 2946     		mov	r1, r5
+ 823 0052 2046     		mov	r0, r4
+ 824 0054 FFF7FEFF 		bl	menu_select_preset
+ 825              	.LVL60:
   54:display/menu.c **** 				break;
- 796              		.loc 1 54 16 view .LVU230
- 797 0058 134B     		ldr	r3, .L65
- 798 005a 1870     		strb	r0, [r3]
+ 826              		.loc 1 54 16 view .LVU243
+ 827 0058 1A4B     		ldr	r3, .L66
+ 828 005a 1870     		strb	r0, [r3]
   55:display/menu.c **** 			
- 799              		.loc 1 55 5 is_stmt 1 view .LVU231
- 800 005c F6E7     		b	.L54
- 801              	.L58:
+ 829              		.loc 1 55 5 is_stmt 1 view .LVU244
+ 830 005c F6E7     		b	.L54
+ 831              	.L58:
   58:display/menu.c **** 				{	settings_preset_reset (drive_mode, *(HandleCoilData + (drive_mode-1))); }//сброс вып�
- 802              		.loc 1 58 5 view .LVU232
+ 832              		.loc 1 58 5 view .LVU245
   58:display/menu.c **** 				{	settings_preset_reset (drive_mode, *(HandleCoilData + (drive_mode-1))); }//сброс вып�
- 803              		.loc 1 58 20 is_stmt 0 view .LVU233
- 804 005e 124B     		ldr	r3, .L65
- 805 0060 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 833              		.loc 1 58 20 is_stmt 0 view .LVU246
+ 834 005e 194B     		ldr	r3, .L66
+ 835 0060 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
   58:display/menu.c **** 				{	settings_preset_reset (drive_mode, *(HandleCoilData + (drive_mode-1))); }//сброс вып�
- 806              		.loc 1 58 8 view .LVU234
- 807 0062 002B     		cmp	r3, #0
- 808 0064 F2D0     		beq	.L54
+ 836              		.loc 1 58 8 view .LVU247
+ 837 0062 002B     		cmp	r3, #0
+ 838 0064 F2D0     		beq	.L54
   59:display/menu.c **** 				break;
- 809              		.loc 1 59 7 is_stmt 1 view .LVU235
- 810 0066 104B     		ldr	r3, .L65
- 811 0068 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 839              		.loc 1 59 7 is_stmt 1 view .LVU248
+ 840 0066 174B     		ldr	r3, .L66
+ 841 0068 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
   59:display/menu.c **** 				break;
- 812              		.loc 1 59 59 is_stmt 0 view .LVU236
- 813 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 814 006c 03F18043 		add	r3, r3, #1073741824
- 815 0070 013B     		subs	r3, r3, #1
+ 842              		.loc 1 59 59 is_stmt 0 view .LVU249
+ 843 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 844 006c 03F18043 		add	r3, r3, #1073741824
+ 845 0070 013B     		subs	r3, r3, #1
   59:display/menu.c **** 				break;
-ARM GAS  /tmp/cc8qpQbQ.s 			page 22
-
-
- 816              		.loc 1 59 7 view .LVU237
- 817 0072 55F82310 		ldr	r1, [r5, r3, lsl #2]
- 818 0076 FFF7FEFF 		bl	settings_preset_reset
- 819              	.LVL58:
- 820 007a E7E7     		b	.L54
- 821              	.L60:
+ 846              		.loc 1 59 7 view .LVU250
+ 847 0072 55F82310 		ldr	r1, [r5, r3, lsl #2]
+ 848 0076 FFF7FEFF 		bl	settings_preset_reset
+ 849              	.LVL61:
+ 850 007a E7E7     		b	.L54
+ 851              	.L60:
   64:display/menu.c **** 				setup_null_position ();  //установка сдвигающего двигеля в нуле
- 822              		.loc 1 64 5 is_stmt 1 view .LVU238
- 823 007c FFF7FEFF 		bl	mode_setup_null_screen
- 824              	.LVL59:
-  65:display/menu.c **** 				main_menu_select_preset_screen(); //заставка главного меню
- 825              		.loc 1 65 5 view .LVU239
- 826 0080 FFF7FEFF 		bl	setup_null_position
- 827              	.LVL60:
-  66:display/menu.c **** 				break;
- 828              		.loc 1 66 5 view .LVU240
- 829 0084 FFF7FEFF 		bl	main_menu_select_preset_screen
- 830              	.LVL61:
-  67:display/menu.c **** 			
- 831              		.loc 1 67 5 view .LVU241
- 832 0088 E0E7     		b	.L54
- 833              	.L56:
-  71:display/menu.c **** 				while (select_direction() == ERROR) {} //ожидания нажатия кнопки выбо�
- 834              		.loc 1 71 5 view .LVU242
- 835 008a FFF7FEFF 		bl	mode_setup_manual_dir_screen
- 836              	.LVL62:
-  72:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
- 837              		.loc 1 72 5 view .LVU243
- 838              	.L63:
-  72:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
- 839              		.loc 1 72 42 discriminator 1 view .LVU244
-  72:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
- 840              		.loc 1 72 11 discriminator 1 view .LVU245
-  72:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
- 841              		.loc 1 72 12 is_stmt 0 discriminator 1 view .LVU246
- 842 008e FFF7FEFF 		bl	select_direction
- 843              	.LVL63:
-  72:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
- 844              		.loc 1 72 11 discriminator 1 view .LVU247
- 845 0092 B0F1FF3F 		cmp	r0, #-1
- 846 0096 FAD0     		beq	.L63
-  73:display/menu.c **** 				manual_control_drive1 ();	//ф-я ручной установки положения сдвиг
- 847              		.loc 1 73 5 is_stmt 1 view .LVU248
- 848 0098 FFF7FEFF 		bl	mode_setup_manual_screen
- 849              	.LVL64:
-  74:display/menu.c **** 				main_menu_select_preset_screen(); //вывод заставки режима выбора пр�
- 850              		.loc 1 74 5 view .LVU249
- 851 009c FFF7FEFF 		bl	manual_control_drive1
- 852              	.LVL65:
-  75:display/menu.c **** 				break;
- 853              		.loc 1 75 5 view .LVU250
- 854 00a0 FFF7FEFF 		bl	main_menu_select_preset_screen
- 855              	.LVL66:
-  76:display/menu.c **** 		
- 856              		.loc 1 76 5 view .LVU251
-  82:display/menu.c **** 
- 857              		.loc 1 82 1 is_stmt 0 view .LVU252
-ARM GAS  /tmp/cc8qpQbQ.s 			page 23
+ 852              		.loc 1 64 5 is_stmt 1 view .LVU251
+ 853 007c FFF7FEFF 		bl	mode_setup_null_screen
+ARM GAS  /tmp/ccAdRtMf.s 			page 23
 
 
- 858 00a4 D2E7     		b	.L54
- 859              	.L66:
- 860 00a6 00BF     		.align	2
- 861              	.L65:
- 862 00a8 00000000 		.word	.LANCHOR1
- 863              		.cfi_endproc
- 864              	.LFE951:
- 866              		.global	drive_mode
- 867              		.global	count_delay
- 868              		.section	.bss.count_delay,"aw",%nobits
- 869              		.set	.LANCHOR0,. + 0
- 872              	count_delay:
- 873 0000 00       		.space	1
- 874              		.section	.data.drive_mode,"aw"
- 875              		.set	.LANCHOR1,. + 0
- 878              	drive_mode:
- 879 0000 01       		.byte	1
- 880              		.text
- 881              	.Letext0:
- 882              		.file 2 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/m
- 883              		.file 3 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/s
- 884              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
- 885              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
- 886              		.file 6 "Core/Inc/typedef.h"
- 887              		.file 7 "Core/Inc/drive.h"
- 888              		.file 8 "display/ssd1306.h"
- 889              		.file 9 "Core/Inc/button.h"
- 890              		.file 10 "Core/Inc/encoder.h"
- 891              		.file 11 "Core/Inc/tim.h"
- 892              		.file 12 "Core/Inc/calc_value.h"
-ARM GAS  /tmp/cc8qpQbQ.s 			page 24
+ 854              	.LVL62:
+  65:display/menu.c **** 				if (drive_mode != NO_PRESET) //если установлен номер выполняемог�
+ 855              		.loc 1 65 5 view .LVU252
+ 856 0080 FFF7FEFF 		bl	setup_null_position
+ 857              	.LVL63:
+  66:display/menu.c **** 				{	turn_drive_menu (drive_mode, *(HandleCoilData + (drive_mode-1)), 0); }//отображени�
+ 858              		.loc 1 66 5 view .LVU253
+  66:display/menu.c **** 				{	turn_drive_menu (drive_mode, *(HandleCoilData + (drive_mode-1)), 0); }//отображени�
+ 859              		.loc 1 66 20 is_stmt 0 view .LVU254
+ 860 0084 0F4B     		ldr	r3, .L66
+ 861 0086 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  66:display/menu.c **** 				{	turn_drive_menu (drive_mode, *(HandleCoilData + (drive_mode-1)), 0); }//отображени�
+ 862              		.loc 1 66 8 view .LVU255
+ 863 0088 5BB1     		cbz	r3, .L63
+  67:display/menu.c **** 				else
+ 864              		.loc 1 67 7 is_stmt 1 view .LVU256
+ 865 008a 0E4B     		ldr	r3, .L66
+ 866 008c 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  67:display/menu.c **** 				else
+ 867              		.loc 1 67 53 is_stmt 0 view .LVU257
+ 868 008e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 869 0090 03F18043 		add	r3, r3, #1073741824
+ 870 0094 013B     		subs	r3, r3, #1
+  67:display/menu.c **** 				else
+ 871              		.loc 1 67 7 view .LVU258
+ 872 0096 0022     		movs	r2, #0
+ 873 0098 55F82310 		ldr	r1, [r5, r3, lsl #2]
+ 874 009c FFF7FEFF 		bl	turn_drive_menu
+ 875              	.LVL64:
+ 876 00a0 D4E7     		b	.L54
+ 877              	.L63:
+  69:display/menu.c **** 				break;
+ 878              		.loc 1 69 7 is_stmt 1 view .LVU259
+ 879 00a2 FFF7FEFF 		bl	main_menu_select_preset_screen
+ 880              	.LVL65:
+ 881 00a6 D1E7     		b	.L54
+ 882              	.L56:
+  74:display/menu.c **** 				while (select_direction() == ERROR) {} //ожидания нажатия кнопки выбо�
+ 883              		.loc 1 74 5 view .LVU260
+ 884 00a8 FFF7FEFF 		bl	mode_setup_manual_dir_screen
+ 885              	.LVL66:
+  75:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+ 886              		.loc 1 75 5 view .LVU261
+ 887              	.L64:
+  75:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+ 888              		.loc 1 75 42 discriminator 1 view .LVU262
+  75:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+ 889              		.loc 1 75 11 discriminator 1 view .LVU263
+  75:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+ 890              		.loc 1 75 12 is_stmt 0 discriminator 1 view .LVU264
+ 891 00ac FFF7FEFF 		bl	select_direction
+ 892              	.LVL67:
+  75:display/menu.c **** 				mode_setup_manual_screen (); //вывод заставки режима ручной устан
+ 893              		.loc 1 75 11 discriminator 1 view .LVU265
+ 894 00b0 B0F1FF3F 		cmp	r0, #-1
+ 895 00b4 FAD0     		beq	.L64
+  76:display/menu.c **** 				manual_control_drive1 ();	//ф-я ручной установки положения сдвиг
+ARM GAS  /tmp/ccAdRtMf.s 			page 24
+
+
+ 896              		.loc 1 76 5 is_stmt 1 view .LVU266
+ 897 00b6 FFF7FEFF 		bl	mode_setup_manual_screen
+ 898              	.LVL68:
+  77:display/menu.c **** 				main_menu_select_preset_screen(); //вывод заставки режима выбора пр�
+ 899              		.loc 1 77 5 view .LVU267
+ 900 00ba FFF7FEFF 		bl	manual_control_drive1
+ 901              	.LVL69:
+  78:display/menu.c **** 				break;
+ 902              		.loc 1 78 5 view .LVU268
+ 903 00be FFF7FEFF 		bl	main_menu_select_preset_screen
+ 904              	.LVL70:
+  79:display/menu.c **** 		
+ 905              		.loc 1 79 5 view .LVU269
+  85:display/menu.c **** 
+ 906              		.loc 1 85 1 is_stmt 0 view .LVU270
+ 907 00c2 C3E7     		b	.L54
+ 908              	.L67:
+ 909              		.align	2
+ 910              	.L66:
+ 911 00c4 00000000 		.word	.LANCHOR1
+ 912              		.cfi_endproc
+ 913              	.LFE951:
+ 915              		.global	drive_mode
+ 916              		.global	count_delay
+ 917              		.section	.bss.count_delay,"aw",%nobits
+ 918              		.set	.LANCHOR0,. + 0
+ 921              	count_delay:
+ 922 0000 00       		.space	1
+ 923              		.section	.data.drive_mode,"aw"
+ 924              		.set	.LANCHOR1,. + 0
+ 927              	drive_mode:
+ 928 0000 01       		.byte	1
+ 929              		.text
+ 930              	.Letext0:
+ 931              		.file 2 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/m
+ 932              		.file 3 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/s
+ 933              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
+ 934              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
+ 935              		.file 6 "Core/Inc/typedef.h"
+ 936              		.file 7 "Core/Inc/drive.h"
+ 937              		.file 8 "display/ssd1306.h"
+ 938              		.file 9 "Core/Inc/button.h"
+ 939              		.file 10 "Core/Inc/encoder.h"
+ 940              		.file 11 "Core/Inc/tim.h"
+ 941              		.file 12 "Core/Inc/calc_value.h"
+ARM GAS  /tmp/ccAdRtMf.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 menu.c
-     /tmp/cc8qpQbQ.s:18     .text.init_loop:0000000000000000 $t
-     /tmp/cc8qpQbQ.s:24     .text.init_loop:0000000000000000 init_loop
-     /tmp/cc8qpQbQ.s:103    .text.init_loop:000000000000004c $d
-     /tmp/cc8qpQbQ.s:108    .text.setup_menu:0000000000000000 $t
-     /tmp/cc8qpQbQ.s:114    .text.setup_menu:0000000000000000 setup_menu
-     /tmp/cc8qpQbQ.s:492    .text.setup_menu:00000000000001b8 $d
-     /tmp/cc8qpQbQ.s:497    .text.turn_drive_menu:0000000000000000 $t
-     /tmp/cc8qpQbQ.s:503    .text.turn_drive_menu:0000000000000000 turn_drive_menu
-     /tmp/cc8qpQbQ.s:537    .text.menu_select_preset:0000000000000000 $t
-     /tmp/cc8qpQbQ.s:543    .text.menu_select_preset:0000000000000000 menu_select_preset
-     /tmp/cc8qpQbQ.s:698    .text.menu_select_preset:00000000000000ac $d
-     /tmp/cc8qpQbQ.s:703    .text.main_loop:0000000000000000 $t
-     /tmp/cc8qpQbQ.s:709    .text.main_loop:0000000000000000 main_loop
-     /tmp/cc8qpQbQ.s:748    .text.main_loop:0000000000000028 $d
-     /tmp/cc8qpQbQ.s:862    .text.main_loop:00000000000000a8 $d
-     /tmp/cc8qpQbQ.s:878    .data.drive_mode:0000000000000000 drive_mode
-     /tmp/cc8qpQbQ.s:872    .bss.count_delay:0000000000000000 count_delay
-     /tmp/cc8qpQbQ.s:873    .bss.count_delay:0000000000000000 $d
-     /tmp/cc8qpQbQ.s:755    .text.main_loop:000000000000002f $d
-     /tmp/cc8qpQbQ.s:755    .text.main_loop:0000000000000030 $t
+     /tmp/ccAdRtMf.s:18     .text.init_loop:0000000000000000 $t
+     /tmp/ccAdRtMf.s:24     .text.init_loop:0000000000000000 init_loop
+     /tmp/ccAdRtMf.s:103    .text.init_loop:000000000000004c $d
+     /tmp/ccAdRtMf.s:108    .text.setup_menu:0000000000000000 $t
+     /tmp/ccAdRtMf.s:114    .text.setup_menu:0000000000000000 setup_menu
+     /tmp/ccAdRtMf.s:522    .text.setup_menu:00000000000001e0 $d
+     /tmp/ccAdRtMf.s:527    .text.turn_drive_menu:0000000000000000 $t
+     /tmp/ccAdRtMf.s:533    .text.turn_drive_menu:0000000000000000 turn_drive_menu
+     /tmp/ccAdRtMf.s:567    .text.menu_select_preset:0000000000000000 $t
+     /tmp/ccAdRtMf.s:573    .text.menu_select_preset:0000000000000000 menu_select_preset
+     /tmp/ccAdRtMf.s:728    .text.menu_select_preset:00000000000000ac $d
+     /tmp/ccAdRtMf.s:733    .text.main_loop:0000000000000000 $t
+     /tmp/ccAdRtMf.s:739    .text.main_loop:0000000000000000 main_loop
+     /tmp/ccAdRtMf.s:778    .text.main_loop:0000000000000028 $d
+     /tmp/ccAdRtMf.s:911    .text.main_loop:00000000000000c4 $d
+     /tmp/ccAdRtMf.s:927    .data.drive_mode:0000000000000000 drive_mode
+     /tmp/ccAdRtMf.s:921    .bss.count_delay:0000000000000000 count_delay
+     /tmp/ccAdRtMf.s:922    .bss.count_delay:0000000000000000 $d
+     /tmp/ccAdRtMf.s:785    .text.main_loop:000000000000002f $d
+     /tmp/ccAdRtMf.s:785    .text.main_loop:0000000000000030 $t
 
 UNDEFINED SYMBOLS
 release_pedal_menu
@@ -1383,16 +1458,16 @@ start_scan_key_PEDAL
 delay_us
 init_status_flags_drives
 Stop_Count_Timers
-setup_speed_screen
-read_encoder
-scan_keys
-SoftStop_Drives
-HardStop_Drives
-setup_ratio_screen
-setup_coil_screen
 calc_rotation_speed
 drive2_turn
 drive1_turn
+setup_speed_screen
+read_encoder
+scan_keys
+setup_ratio_screen
+SoftStop_Drives
+HardStop_Drives
+setup_coil_screen
 status_drives
 default_screen
 menu_select_preset_screen

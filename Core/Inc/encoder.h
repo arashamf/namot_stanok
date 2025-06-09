@@ -14,7 +14,6 @@ extern "C" {
 
 // Prototypes ------------------------------------------------------------------//
 uint8_t read_encoder (encoder_data_t * );
-void encoder_reset (encoder_data_t * );
 void EncoderDelayCallback (void);
 
 // Variables ------------------------------------------------------------------//
