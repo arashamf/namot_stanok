@@ -10,9 +10,9 @@ extern "C" {
 #include "main.h"
 
 // Defines ----------------------------------------------------------------------//
-#define 	I2C_REQUEST_WRITE       0x00
-#define 	I2C_REQUEST_READ        0x01
-#define 	SLAVE_OWN_ADDRESS       0xA0 //адрес EEPROM микросхемы
+#define 	I2C_REQUEST_WRITE       	0x00
+#define 	I2C_REQUEST_READ        	0x01
+#define 	EEPROM_I2C1_ADDRESS        	0xA0 //адрес EEPROM микросхемы
 
 #define 	PULSE_IN_TURN			1600 	//количество микрошагов в одном полном обороте (360 гр) с учётом делителя драйвера
 #define 	PULSE_IN_TIM_RCR		100
@@ -49,16 +49,17 @@ extern "C" {
 #define 	DRIVE_FREE							1
 #define 	DRIVE_BUSY							0
 #define 	ERROR								-1
-//#define 	EEPROM_NUMBER_BYTES 				4
 #define 	CPU_CLOCK_VALUE						(72000000UL)		//частота контроллера 
 #define 	MS_PER_SECOND						1000 
 #define 	START_DELAY							0x64
 #define 	MAX_NUMBER_COIL 					3
 #define 	MAX_PRESET 							4
+#define 	NUMB_COIL_DATA						20 
 
 #define 	ENC_DELAY_TIME 						5
 #define 	KEY_BOUNCE_TIME 					50 		// время дребезга в мс
 #define 	KEY_AUTOREPEAT_TIME 				100 	// время автоповтора в мс
+#define 	I2C_TIMEOUT_TIME 					100
 
 // Exported types ------------------------------------------------------------------//
 typedef struct 
@@ -86,9 +87,8 @@ typedef struct
 			uint16_t 	set_coil[MAX_NUMBER_COIL]; //установленное количество витков обмотки
 			uint16_t 	remains_coil[MAX_NUMBER_COIL]; //оставшееся количество витков обмотки		
 		};
-		uint8_t coil_buffer[MAX_NUMBER_COIL*2*2+5];
+		uint8_t coil_buffer[NUMB_COIL_DATA];
 	};
-	struct coil_data_t *next;
 } coil_data_t;
 
 //----------------------------------------------------------------------------------//

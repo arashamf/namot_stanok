@@ -14,9 +14,9 @@ extern "C" {
 #define 	EEPROM_MEMORY_PAGE 	0x0001
 
 // Prototypes -----------------------------------------------------------------//
-void SaveByte_In_EEPROM (uint8_t , uint8_t );
-void SaveCoilData (uint8_t * , uint8_t , uint8_t );
-void GetCoilData (uint8_t * , uint8_t , uint8_t);
+void SaveByte_In_EEPROM (uint8_t );
+void SaveCoilData (uint8_t * );
+void GetCoilData (uint8_t * );
 
 // Variables ------------------------------------------------------------------//
 

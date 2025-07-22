@@ -15,7 +15,7 @@
             // Set you programmer and target controller
             "configFiles": 
             [
-                //"interface/cmsis-dap.cfg",
+               // "interface/cmsis-dap.cfg",
                 "interface/stlink.cfg",
                 "target/stm32f1x.cfg"
             ],
@@ -24,13 +24,13 @@
             "swoConfig": 
             {
                 "enabled": true,
-                "swoFrequency": 480000,
+                "swoFrequency": 240000,
                 "cpuFrequency": 72000000,
                 "decoders": 
                 [
                     {
-                        "label": "RTT channel 1",
-                        "port": 1,
+                        "label": "RTT channel 0",
+                        "port": 0,
                         "timestamp": true,
                         "type": "console"
                     }

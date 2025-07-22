@@ -27,12 +27,12 @@
 #include "gpio.h"
 #include "encoder.h"
 #include "button.h"
+#include "i2c.h"
 
 // Defines ---------------------------------------------------------------------//
 #define 	PERIODIC 										1
 #define 	ONCE 												0
 #define   NULL                        0
-
 // Variables --------------------------------------------------------------------//
 static portTickType xTimeNow; //указатель на ф-ю возврата системного времени вида uint32_t Get_SysTick(void)
 static SysTick_CALLBACK SysTick_CallbackFunction = NULL; //инициализация указателя на ф-ю обработки (коллбэка) системного таймера
@@ -41,13 +41,16 @@ static uint32_t TicksCounter = 0; //счётчик системных тиков
 static xTIMER xTimerList[MAX_xTIMERS]; //массив структур программных таймеров
 static xTimerHandle xTimerBtnBounce;
 static xTimerHandle xTimerEncDelay;
+static xTimerHandle xTimerI2CTimeout;
 
 // Functions --------------------------------------------------------------------//
-static void vTimerBtnBounceCallback(xTimerHandle xTimer); 
-static void vTimerEncDelayCallback(xTimerHandle xTimer); 
+static void enable_TIM_cnt_PWM (TIM_TypeDef * , IRQn_Type );
 static void tim_delay_init (void);
 static void timer_bounce_init (void);
 static uint32_t Get_SysTick(void);
+static void vTimerBtnBounceCallback(xTimerHandle xTimer); 
+static void vTimerEncDelayCallback(xTimerHandle xTimer); 
+static void vTimerI2CTimeoutCallback (xTimerHandle xTimer);
 
 /* USER CODE END 0 */
 
@@ -190,11 +193,7 @@ void MX_TIM4_Init(void)
   LL_TIM_SetTriggerOutput(TIM4, LL_TIM_TRGO_RESET);
   LL_TIM_DisableMasterSlaveMode(TIM4);
   /* USER CODE BEGIN TIM4_Init 2 */
-	LL_TIM_ClearFlag_UPDATE(TIM_cnt_PWM_DRIVE2); 		//сброс флага обновления таймера
-	LL_TIM_EnableIT_UPDATE(TIM_cnt_PWM_DRIVE2); 		//Enable update interrupt
-	NVIC_SetPriority(TIM_cnt_PWM_DRIVE2_IRQn, 1); 	//приоритет прерывания
-  NVIC_EnableIRQ(TIM_cnt_PWM_DRIVE2_IRQn);	
-	LL_TIM_SetCounter(TIM_cnt_PWM_DRIVE2, 0); 			//сброс счётного регистра
+  enable_TIM_cnt_PWM (TIM_cnt_PWM_DRIVE2, TIM_cnt_PWM_DRIVE2_IRQn);
   /* USER CODE END TIM4_Init 2 */
 
 }
@@ -227,17 +226,23 @@ void MX_TIM5_Init(void)
   LL_TIM_SetTriggerOutput(TIM5, LL_TIM_TRGO_RESET);
   LL_TIM_DisableMasterSlaveMode(TIM5);
   /* USER CODE BEGIN TIM5_Init 2 */
-	LL_TIM_ClearFlag_UPDATE(TIM_cnt_PWM_DRIVE1); 		//сброс флага обновления таймера
-	LL_TIM_EnableIT_UPDATE(TIM_cnt_PWM_DRIVE1); 		//Enable update interrupt
-	NVIC_SetPriority(TIM_cnt_PWM_DRIVE1_IRQn, 1); 	//приоритет прерывания
-  NVIC_EnableIRQ(TIM_cnt_PWM_DRIVE1_IRQn);	
-	LL_TIM_SetCounter(TIM_cnt_PWM_DRIVE1, 0); 			//сброс счётного регистра
+  enable_TIM_cnt_PWM (TIM_cnt_PWM_DRIVE1, TIM_cnt_PWM_DRIVE1_IRQn);
   /* USER CODE END TIM5_Init 2 */
 
 }
 
 /* USER CODE BEGIN 1 */
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
+static void enable_TIM_cnt_PWM (TIM_TypeDef * TIM, IRQn_Type numbIRQ) 
+{
+  LL_TIM_ClearFlag_UPDATE(TIM); 		//сброс флага обновления таймера
+	LL_TIM_EnableIT_UPDATE(TIM); 		//Enable update interrupt
+	NVIC_SetPriority(numbIRQ, 1); 	//приоритет прерывания
+  NVIC_EnableIRQ(numbIRQ);	
+	LL_TIM_SetCounter(TIM, 0); 			//сброс счётного регистра
+}
+
+//------------------------------------------------------------------------------------//
 void Drives_PWM_start(PWM_data_t * PWM_data) 
 {
 	LL_TIM_DisableCounter(TIM_cnt_PWM_DRIVE1);
@@ -259,17 +264,15 @@ void Drives_PWM_start(PWM_data_t * PWM_data)
 	LL_TIM_OC_SetCompareCH1(TIM_PWM_Drive2, PWM_data->Compare_Drive2); //Set compare value for output channel 
 	LL_TIM_CC_EnableChannel(TIM_PWM_Drive1,  Drive1_PWM_Channel); //включение канала ШИМ таймера
 	LL_TIM_CC_EnableChannel(TIM_PWM_Drive2,  Drive2_PWM_Channel); //включение канала ШИМ таймера
-	if (TIM_PWM_Drive1 == TIM1)
+  if (TIM_PWM_Drive1 == TIM1)
 	{	LL_TIM_EnableAllOutputs(TIM_PWM_Drive1);	}	//включение таймера  для генерации ШИМ
-	
 	if (TIM_PWM_Drive2 == TIM1)
 	{	LL_TIM_EnableAllOutputs(TIM_PWM_Drive2);	}//включение таймера  для генерации ШИМ
-
 	LL_TIM_EnableCounter(TIM_PWM_Drive1); 		//Enable timer counter
 	LL_TIM_EnableCounter(TIM_PWM_Drive2); 
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive1_PWM_start(PWM_data_t * PWM_data) 
 {	
 	LL_TIM_DisableCounter(TIM_PWM_Drive1); //выключение таймера, управляющий нижнем двигателем (сдвигающем)
@@ -278,27 +281,25 @@ void Drive1_PWM_start(PWM_data_t * PWM_data)
 	LL_TIM_OC_SetCompareCH2(TIM_PWM_Drive1,	PWM_data->Compare_Drive1);
 	LL_TIM_CC_EnableChannel(TIM_PWM_Drive1,  Drive1_PWM_Channel); //включение канала ШИМ таймера
 	if (TIM_PWM_Drive1 == TIM1)
-	{
-		LL_TIM_EnableAllOutputs(TIM_PWM_Drive1);	//включение таймера  для генерации ШИМ
-	}
+	{ LL_TIM_EnableAllOutputs(TIM_PWM_Drive1);	} //включение таймера  для генерации ШИМ
 	LL_TIM_EnableCounter(TIM_PWM_Drive1); 		//Enable timer counter
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive1_PWM_repeat(void) 
 {
 	LL_TIM_SetCounter(TIM_PWM_Drive1, 0);
 	LL_TIM_EnableCounter(TIM_PWM_Drive1); //включение таймера  для генерации ШИМ двигателя 1
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive1_PWM_stop(void) 
 {
 		LL_TIM_DisableCounter(TIM_PWM_Drive1); //выключение таймера
 		LL_TIM_CC_DisableChannel(TIM_PWM_Drive1, Drive1_PWM_Channel ); //выключение таймера  для генерации ШИМ двигателя 1
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void TIM_cnt_PWM_DRIVE1_IRQHandler(void)
 {
 	if (LL_TIM_IsActiveFlag_UPDATE(TIM_cnt_PWM_DRIVE1) == SET)
@@ -308,7 +309,7 @@ void TIM_cnt_PWM_DRIVE1_IRQHandler(void)
 	}
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive2_PWM_start(PWM_data_t * PWM_data) 
 {
 	LL_TIM_DisableCounter(TIM_PWM_Drive2); //выключение таймера
@@ -320,7 +321,7 @@ void Drive2_PWM_start(PWM_data_t * PWM_data)
 	LL_TIM_EnableCounter(TIM_PWM_Drive2); //Enable timer counter
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive2_PWM_repeat(void) 
 {
 	LL_TIM_SetCounter(TIM_PWM_Drive2, 0);
@@ -328,7 +329,7 @@ void Drive2_PWM_repeat(void)
 	LL_TIM_EnableAllOutputs(TIM_PWM_Drive2);	//включение каналов таймера 
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Drive2_PWM_stop(void) 
 {
 	LL_TIM_DisableCounter(TIM_PWM_Drive2); //выключение таймера
@@ -336,14 +337,14 @@ void Drive2_PWM_stop(void)
 	LL_TIM_CC_DisableChannel(TIM_PWM_Drive2, Drive2_PWM_Channel );
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void Stop_Count_Timers(void)
 {
 	LL_TIM_DisableCounter(TIM_cnt_PWM_DRIVE1);
 	LL_TIM_DisableCounter(TIM_cnt_PWM_DRIVE2);
 }	
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void TIM_cnt_PWM_DRIVE2_IRQHandler(void)
 {
 	if (LL_TIM_IsActiveFlag_UPDATE(TIM_cnt_PWM_DRIVE2) == SET)
@@ -353,7 +354,7 @@ void TIM_cnt_PWM_DRIVE2_IRQHandler(void)
 	}
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 static void tim_delay_init (void)
 {
 	LL_TIM_InitTypeDef TIM_InitStruct = {0};
@@ -368,7 +369,7 @@ static void tim_delay_init (void)
   LL_TIM_DisableARRPreload(TIM_DELAY_us);
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void delay_us(uint16_t delay)
 {
   LL_TIM_SetAutoReload(TIM_DELAY_us, delay); //установка задержки в мкс
@@ -379,7 +380,7 @@ void delay_us(uint16_t delay)
 	LL_TIM_DisableCounter(TIM_DELAY_us); //выключение таймера		
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 static void timer_bounce_init (void)
 {
 	LL_TIM_InitTypeDef TIM_InitStruct = {0};
@@ -404,33 +405,32 @@ static void timer_bounce_init (void)
 
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void TIM_BOUNCE_DELAY_IRQHandler(void)
 {
 	if (LL_TIM_IsActiveFlag_UPDATE(TIM_BOUNCE_DELAY) == SET)
 	{	
 	  LL_TIM_ClearFlag_UPDATE (TIM_BOUNCE_DELAY); //сброс флага обновления таймера
-		//LL_TIM_DisableCounter(TIM_BOUNCE_DELAY); //выключение таймера
-		//end_bounce = SET; //установка флага окончания ожидания прекращения дребезга		
     TicksCounter++; 
 	  if ( SysTick_CallbackFunction != NULL ) //если указатель на коллбэк xTimer_Task проинициализирован
 	  { SysTick_CallbackFunction(TicksCounter); } //вызов коллбэка
 	}
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void timers_ini (void)
 {
 	tim_delay_init(); 		//инициализация TIM7 для микросекундных задержек
 	timer_bounce_init();	//инициализация TIM6 для привязки к xTimer
   SysTick_CallbackFunction = xTimer_Task; //присвоение указателю значения ф-и xTimer_Task
   xTimeNow = Get_SysTick; //инициализация указателя на ф-ю получения системного времени
+  
   xTimerBtnBounce = xTimer_Create(KEY_BOUNCE_TIME, ONCE, &vTimerBtnBounceCallback, DISABLE);
-
   xTimerEncDelay = xTimer_Create(ENC_DELAY_TIME, ONCE, &vTimerEncDelayCallback, DISABLE);
+  xTimerI2CTimeout = xTimer_Create(I2C_TIMEOUT_TIME, ONCE, &vTimerI2CTimeoutCallback, DISABLE);
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 xTimerHandle xTimer_Create(uint32_t xTimerPeriodInTicks, FunctionalState AutoReload, 
 tmrTIMER_CALLBACK CallbackFunction, FunctionalState NewState)
 {
@@ -458,14 +458,14 @@ tmrTIMER_CALLBACK CallbackFunction, FunctionalState NewState)
 	return NewTimer;
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void xTimer_SetPeriod(xTimerHandle xTimer, uint32_t xTimerPeriodInTicks) 
 {
 	if ( xTimer != NULL )  
 	{	xTimerList[(uint32_t)xTimer-1].periodic = xTimerPeriodInTicks;	} //установка нового значения задержки таймера
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void xTimer_Reload(xTimerHandle xTimer) 
 {
 	if ( xTimer != NULL ) 
@@ -475,7 +475,7 @@ void xTimer_Reload(xTimerHandle xTimer)
 	}
 }
 
-//---------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void xTimer_Delete(xTimerHandle xTimer)
 {
 	if ( xTimer != NULL ) 
@@ -486,7 +486,7 @@ void xTimer_Delete(xTimerHandle xTimer)
 	}		
 }
 
-//---------------------------------ф-я диспетчера xTimer---------------------------------//
+//--------------------------------ф-я диспетчера xTimer--------------------------------//
 void xTimer_Task(uint32_t portTick)
 {
 	uint16_t i;
@@ -512,7 +512,7 @@ void xTimer_Task(uint32_t portTick)
 	}	
 }
 
-// коллбэк прерывания таймера SysTick ------------------------------------------------------//
+// коллбэк прерывания таймера SysTick -----------------------------------------------//
 void SysTick_Callback(void)
 {
 	TicksCounter++; 
@@ -520,39 +520,52 @@ void SysTick_Callback(void)
 	{SysTick_CallbackFunction(TicksCounter);} //вызов коллбэка
 }
 
-//------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------//
 static void vTimerBtnBounceCallback(xTimerHandle xTimer) 
 {
   ButtonBounceCallback ();
 }
 
-//---------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------//
 void xTimersButtonBounce_Reload (uint16_t delay_ms)
 {
 	xTimer_SetPeriod(xTimerBtnBounce, delay_ms);
 	xTimer_Reload(xTimerBtnBounce);	
 }
 
-//------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 static void vTimerEncDelayCallback(xTimerHandle xTimer)
 {
   EncoderDelayCallback ();
 }
 
-//---------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
 void xTimerEncDelay_Reload (uint16_t delay_ms)
 {
 	xTimer_SetPeriod(xTimerEncDelay, delay_ms);
 	xTimer_Reload(xTimerEncDelay);	
 }
 
-// возвращает значение SysTick-------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
+static void vTimerI2CTimeoutCallback (xTimerHandle xTimer)
+{
+  I2C_DelayCallback ();
+}
+
+//------------------------------------------------------------------------------------//
+void xTimerI2CTimeout_Reload (uint16_t delay_ms)
+{
+	xTimer_SetPeriod(xTimerI2CTimeout, delay_ms);
+	xTimer_Reload(xTimerI2CTimeout);	
+}
+
+// возвращает значение SysTick--------------------------------------------------------//
 static uint32_t Get_SysTick(void)
 { 
   return TicksCounter;  
 }
  
-// задержка в мс---------------------------------------------------------------------------//
+// задержка в мс----------------------------------------------------------------------//
 void delay_ms(uint32_t delay)
 {	
   uint32_t ticks = 0;

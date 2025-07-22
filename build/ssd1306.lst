@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccI0AsY7.s 			page 1
+ARM GAS  /tmp/ccGHxA6J.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
   29:display/ssd1306.c **** static SSD1306_t SSD1306;
   30:display/ssd1306.c **** uint8_t SSD1306_Buffer[SSD1306_BUFFER_SIZE];
   31:display/ssd1306.c **** uint8_t LCD_buff[LCD_BUFFER_SIZE];
-ARM GAS  /tmp/ccI0AsY7.s 			page 2
+ARM GAS  /tmp/ccGHxA6J.s 			page 2
 
 
   32:display/ssd1306.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
   86:display/ssd1306.c **** //-----------------------------------------------------------------------------------------------//
   87:display/ssd1306.c **** void SSD1306_GotoXY(uint16_t x, uint16_t y) 
   88:display/ssd1306.c **** {
-ARM GAS  /tmp/ccI0AsY7.s 			page 3
+ARM GAS  /tmp/ccGHxA6J.s 			page 3
 
 
   28              		.loc 1 88 1 view -0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
   73 0008 124B     		ldr	r3, .L9
   74 000a 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
   75              		.loc 1 99 5 view .LVU12
-ARM GAS  /tmp/ccI0AsY7.s 			page 4
+ARM GAS  /tmp/ccGHxA6J.s 			page 4
 
 
   76 000c 13B1     		cbz	r3, .L6
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  120 0040 01F00701 		and	r1, r1, #7
  121              	.LVL9:
  103:display/ssd1306.c **** 	{	SSD1306_Buffer[x + (y/8) * SSD1306_X_SIZE] |= 1 << (y % 8);	} 
-ARM GAS  /tmp/ccI0AsY7.s 			page 5
+ARM GAS  /tmp/ccGHxA6J.s 			page 5
 
 
  122              		.loc 1 103 52 view .LVU28
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  169              		.loc 1 113 2 view .LVU34
  170              		.loc 1 113 32 is_stmt 0 view .LVU35
  171 0006 244B     		ldr	r3, .L24
-ARM GAS  /tmp/ccI0AsY7.s 			page 6
+ARM GAS  /tmp/ccGHxA6J.s 			page 6
 
 
  172 0008 1B88     		ldrh	r3, [r3]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  213              	.L16:
  120:display/ssd1306.c **** 		{
  214              		.loc 1 120 36 is_stmt 1 discriminator 2 view .LVU48
-ARM GAS  /tmp/ccI0AsY7.s 			page 7
+ARM GAS  /tmp/ccGHxA6J.s 			page 7
 
 
  120:display/ssd1306.c **** 		{
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  254 0068 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
  117:display/ssd1306.c **** 	{
  255              		.loc 1 117 2 discriminator 1 view .LVU64
-ARM GAS  /tmp/ccI0AsY7.s 			page 8
+ARM GAS  /tmp/ccGHxA6J.s 			page 8
 
 
  256 006a B242     		cmp	r2, r6
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  115:display/ssd1306.c **** 	
  295              		.loc 1 115 11 view .LVU80
  296 0092 FBE7     		b	.L12
-ARM GAS  /tmp/ccI0AsY7.s 			page 9
+ARM GAS  /tmp/ccGHxA6J.s 			page 9
 
 
  297              	.LVL23:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  342              		.loc 1 140 6 is_stmt 0 view .LVU88
  343 000a 0134     		adds	r4, r4, #1
  344              	.LVL27:
-ARM GAS  /tmp/ccI0AsY7.s 			page 10
+ARM GAS  /tmp/ccGHxA6J.s 			page 10
 
 
  345              	.L27:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  387              		.cfi_def_cfa_offset 32
  388              		.cfi_offset 3, -32
  389              		.cfi_offset 4, -28
-ARM GAS  /tmp/ccI0AsY7.s 			page 11
+ARM GAS  /tmp/ccGHxA6J.s 			page 11
 
 
  390              		.cfi_offset 5, -24
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  428 002c 5209     		lsrs	r2, r2, #5
  429 002e 89B2     		uxth	r1, r1
  430 0030 80B2     		uxth	r0, r0
-ARM GAS  /tmp/ccI0AsY7.s 			page 12
+ARM GAS  /tmp/ccGHxA6J.s 			page 12
 
 
  431 0032 FFF7FEFF 		bl	SSD1306_DrawPixel
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  471              	.L34:
  155:display/ssd1306.c **** 	{
  472              		.loc 1 155 14 is_stmt 1 discriminator 1 view .LVU125
-ARM GAS  /tmp/ccI0AsY7.s 			page 13
+ARM GAS  /tmp/ccGHxA6J.s 			page 13
 
 
  155:display/ssd1306.c **** 	{
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  511              	.L40:
  153:display/ssd1306.c **** 
  512              		.loc 1 153 11 view .LVU142
-ARM GAS  /tmp/ccI0AsY7.s 			page 14
+ARM GAS  /tmp/ccGHxA6J.s 			page 14
 
 
  513 0088 0020     		movs	r0, #0
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  175:display/ssd1306.c **** 	{
  176:display/ssd1306.c **** 		if (SSD1306_Putc(*str, Font, color) != *str) 
  177:display/ssd1306.c **** 		{	return *str;	}
-ARM GAS  /tmp/ccI0AsY7.s 			page 15
+ARM GAS  /tmp/ccGHxA6J.s 			page 15
 
 
  178:display/ssd1306.c **** 		str++;
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  602              		@ frame_needed = 0, uses_anonymous_args = 0
  603 0000 08B5     		push	{r3, lr}
  604              	.LCFI4:
-ARM GAS  /tmp/ccI0AsY7.s 			page 16
+ARM GAS  /tmp/ccGHxA6J.s 			page 16
 
 
  605              		.cfi_def_cfa_offset 8
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  206:display/ssd1306.c **** }
  207:display/ssd1306.c **** 
  208:display/ssd1306.c **** //-----------------------------------------------------------------------------------------------//
-ARM GAS  /tmp/ccI0AsY7.s 			page 17
+ARM GAS  /tmp/ccGHxA6J.s 			page 17
 
 
  209:display/ssd1306.c **** void SSD1306_Clear_Screen (void)
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  263:display/ssd1306.c **** 			y0 = tmp;
  264:display/ssd1306.c **** 		}
  265:display/ssd1306.c **** 		
-ARM GAS  /tmp/ccI0AsY7.s 			page 18
+ARM GAS  /tmp/ccGHxA6J.s 			page 18
 
 
  266:display/ssd1306.c **** 		if (x1 < x0) 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  320:display/ssd1306.c **** void SSD1306_DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, SSD1306_COLOR_t c) 
  321:display/ssd1306.c **** {
  322:display/ssd1306.c **** 	
-ARM GAS  /tmp/ccI0AsY7.s 			page 19
+ARM GAS  /tmp/ccGHxA6J.s 			page 19
 
 
  323:display/ssd1306.c **** 	if (x >= SSD1306_X_SIZE ||	y >= SSD1306_Y_SIZE) // Check input parameters 
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  377:display/ssd1306.c **** 	x = x1;
  378:display/ssd1306.c **** 	y = y1;
  379:display/ssd1306.c **** 
-ARM GAS  /tmp/ccI0AsY7.s 			page 20
+ARM GAS  /tmp/ccGHxA6J.s 			page 20
 
 
  380:display/ssd1306.c **** 	if (x2 >= x1) 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  434:display/ssd1306.c **** 	}
  435:display/ssd1306.c **** }
  436:display/ssd1306.c **** 
-ARM GAS  /tmp/ccI0AsY7.s 			page 21
+ARM GAS  /tmp/ccGHxA6J.s 			page 21
 
 
  437:display/ssd1306.c **** //-----------------------------------------------------------------------------------------------//
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  491:display/ssd1306.c **** 	{
  492:display/ssd1306.c **** 		if (f >= 0) 
  493:display/ssd1306.c **** 		{
-ARM GAS  /tmp/ccI0AsY7.s 			page 22
+ARM GAS  /tmp/ccGHxA6J.s 			page 22
 
 
  494:display/ssd1306.c **** 			y--;
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  548:display/ssd1306.c **** }
  549:display/ssd1306.c **** 
  550:display/ssd1306.c **** //-------------------------------ф-я отображения установленной скоро
-ARM GAS  /tmp/ccI0AsY7.s 			page 23
+ARM GAS  /tmp/ccGHxA6J.s 			page 23
 
 
  551:display/ssd1306.c **** void setup_speed_screen (int16_t rotation_speed)
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  605:display/ssd1306.c **** 	SSD1306_Puts (LCD_buff , &Font_11x17, SSD1306_COLOR_WHITE);
  606:display/ssd1306.c **** 
  607:display/ssd1306.c **** 	SSD1306_UpdateScreen();	
-ARM GAS  /tmp/ccI0AsY7.s 			page 24
+ARM GAS  /tmp/ccGHxA6J.s 			page 24
 
 
  608:display/ssd1306.c **** }
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  655 000c 0F4B     		ldr	r3, .L59+4
  656 000e 2C46     		mov	r4, r5
  657 0010 93E80700 		ldm	r3, {r0, r1, r2}
-ARM GAS  /tmp/ccI0AsY7.s 			page 25
+ARM GAS  /tmp/ccGHxA6J.s 			page 25
 
 
  658 0014 03C4     		stmia	r4!, {r0, r1}
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  704              	.LC3:
  705 000c 20505245 		.ascii	" PRESET4\000"
  705      53455434 
-ARM GAS  /tmp/ccI0AsY7.s 			page 26
+ARM GAS  /tmp/ccGHxA6J.s 			page 26
 
 
  705      00
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  750 002c 094A     		ldr	r2, .L63+12
  751 002e 2B46     		mov	r3, r5
  752 0030 07CA     		ldm	r2, {r0, r1, r2}
-ARM GAS  /tmp/ccI0AsY7.s 			page 27
+ARM GAS  /tmp/ccGHxA6J.s 			page 27
 
 
  753 0032 03C3     		stmia	r3!, {r0, r1}
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  798              		.cfi_offset 4, -16
  799              		.cfi_offset 5, -12
  800              		.cfi_offset 6, -8
-ARM GAS  /tmp/ccI0AsY7.s 			page 28
+ARM GAS  /tmp/ccGHxA6J.s 			page 28
 
 
  801              		.cfi_offset 14, -4
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  846 0048 00000000 		.word	.LANCHOR2
  847 004c 00000000 		.word	.LC4
  848 0050 00000000 		.word	Font_11x17
-ARM GAS  /tmp/ccI0AsY7.s 			page 29
+ARM GAS  /tmp/ccGHxA6J.s 			page 29
 
 
  849 0054 0C000000 		.word	.LC5
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  897              	.LVL63:
  633:display/ssd1306.c **** 	snprintf ((char *)LCD_buff, LCD_BUFFER_SIZE, " PRESET2");
  898              		.loc 1 633 2 view .LVU195
-ARM GAS  /tmp/ccI0AsY7.s 			page 30
+ARM GAS  /tmp/ccGHxA6J.s 			page 30
 
 
  899 0024 1121     		movs	r1, #17
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  949              		.cfi_offset 14, -4
  201:display/ssd1306.c **** 		SSD1306_WRITECOMMAND(0xB0 + i); //Установка битами X[2:0] адреса начал�
  950              		.loc 1 201 3 is_stmt 1 view .LVU202
-ARM GAS  /tmp/ccI0AsY7.s 			page 31
+ARM GAS  /tmp/ccGHxA6J.s 			page 31
 
 
  951              	.LVL68:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
   51:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @}
   52:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
   53:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccI0AsY7.s 			page 32
+ARM GAS  /tmp/ccGHxA6J.s 			page 32
 
 
   54:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /* Private macros ------------------------------------------------------------*/
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  108:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
  109:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  110:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /** @defgroup GPIO_LL_EC_PIN PIN
-ARM GAS  /tmp/ccI0AsY7.s 			page 33
+ARM GAS  /tmp/ccGHxA6J.s 			page 33
 
 
  111:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @{
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  165:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_MODE_OUTPUT_50MHz        GPIO_CRL_MODE0              /*!< Select Output mode, max s
  166:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  167:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @}
-ARM GAS  /tmp/ccI0AsY7.s 			page 34
+ARM GAS  /tmp/ccGHxA6J.s 			page 34
 
 
  168:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  222:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  223:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /** @defgroup GPIO_LL_EC_EXTI_PORT GPIO EXTI PORT
  224:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @{
-ARM GAS  /tmp/ccI0AsY7.s 			page 35
+ARM GAS  /tmp/ccGHxA6J.s 			page 35
 
 
  225:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  279:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
  280:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALU
  281:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccI0AsY7.s 			page 36
+ARM GAS  /tmp/ccGHxA6J.s 			page 36
 
 
  282:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  336:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_MODE_INPUT
  337:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_MODE_OUTPUT
  338:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_MODE_ALTERNATE
-ARM GAS  /tmp/ccI0AsY7.s 			page 37
+ARM GAS  /tmp/ccGHxA6J.s 			page 37
 
 
  339:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @retval None
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  393:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll CRL      MODEy       LL_GPIO_SetPinSpeed
  394:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll CRH      MODEy       LL_GPIO_SetPinSpeed
  395:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
-ARM GAS  /tmp/ccI0AsY7.s 			page 38
+ARM GAS  /tmp/ccGHxA6J.s 			page 38
 
 
  396:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  Pin This parameter can be one of the following values:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  450:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_14
  451:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_15
  452:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  /tmp/ccI0AsY7.s 			page 39
+ARM GAS  /tmp/ccGHxA6J.s 			page 39
 
 
  453:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_SPEED_FREQ_LOW
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  507:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
  508:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @param  Pin This parameter can be one of the following values:
  509:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_0
-ARM GAS  /tmp/ccI0AsY7.s 			page 40
+ARM GAS  /tmp/ccGHxA6J.s 			page 40
 
 
  510:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_1
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  564:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** __STATIC_INLINE void LL_GPIO_SetPinPull(GPIO_TypeDef *GPIOx, uint32_t Pin, uint32_t Pull)
  565:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** {
  566:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   MODIFY_REG(GPIOx->ODR, (Pin >> GPIO_PIN_MASK_POS), Pull << (POSITION_VAL(Pin >> GPIO_PIN_MASK_POS
-ARM GAS  /tmp/ccI0AsY7.s 			page 41
+ARM GAS  /tmp/ccGHxA6J.s 			page 41
 
 
  567:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** }
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  621:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
  622:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
  623:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_13
-ARM GAS  /tmp/ccI0AsY7.s 			page 42
+ARM GAS  /tmp/ccGHxA6J.s 			page 42
 
 
  624:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_14
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  678:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  679:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  680:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @}
-ARM GAS  /tmp/ccI0AsY7.s 			page 43
+ARM GAS  /tmp/ccGHxA6J.s 			page 43
 
 
  681:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  735:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** {
  736:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   WRITE_REG(GPIOx->ODR, PortValue);
  737:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** }
-ARM GAS  /tmp/ccI0AsY7.s 			page 44
+ARM GAS  /tmp/ccGHxA6J.s 			page 44
 
 
  738:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  792:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
  793:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  794:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
-ARM GAS  /tmp/ccI0AsY7.s 			page 45
+ARM GAS  /tmp/ccGHxA6J.s 			page 45
 
 
  795:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  202:display/ssd1306.c **** 		SSD1306_WRITECOMMAND(0x00); //Устанавка младшего ниббла регистра �
  968              		.loc 1 202 3 is_stmt 0 view .LVU207
  969 000a C0B2     		uxtb	r0, r0
-ARM GAS  /tmp/ccI0AsY7.s 			page 46
+ARM GAS  /tmp/ccGHxA6J.s 			page 46
 
 
  970 000c FFF7FEFF 		bl	ssd1306_SendCommand
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1015              		.loc 1 221 9 is_stmt 0 view .LVU218
  1016 000c 0023     		movs	r3, #0
  221:display/ssd1306.c **** 	{	SSD1306_Buffer[i] = ~SSD1306_Buffer[i];	}
-ARM GAS  /tmp/ccI0AsY7.s 			page 47
+ARM GAS  /tmp/ccGHxA6J.s 			page 47
 
 
  1017              		.loc 1 221 2 view .LVU219
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1063              		@ frame_needed = 0, uses_anonymous_args = 0
  227:display/ssd1306.c **** 	if (SSD1306.Inverted) 
  1064              		.loc 1 227 1 is_stmt 0 view .LVU230
-ARM GAS  /tmp/ccI0AsY7.s 			page 48
+ARM GAS  /tmp/ccGHxA6J.s 			page 48
 
 
  1065 0000 08B5     		push	{r3, lr}
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  232:display/ssd1306.c **** 
  1108              		.loc 1 232 1 discriminator 4 view .LVU242
  1109 002c F4E7     		b	.L82
-ARM GAS  /tmp/ccI0AsY7.s 			page 49
+ARM GAS  /tmp/ccGHxA6J.s 			page 49
 
 
  1110              	.LVL84:
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1163 0000 70B5     		push	{r4, r5, r6, lr}
  1164              	.LCFI12:
  1165              		.cfi_def_cfa_offset 16
-ARM GAS  /tmp/ccI0AsY7.s 			page 50
+ARM GAS  /tmp/ccGHxA6J.s 			page 50
 
 
  1166              		.cfi_offset 4, -16
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1210 001c 6661     		str	r6, [r4, #20]
  1211              	.LVL91:
  1212              		.loc 2 834 3 is_stmt 0 view .LVU261
-ARM GAS  /tmp/ccI0AsY7.s 			page 51
+ARM GAS  /tmp/ccGHxA6J.s 			page 51
 
 
  1213              	.LBE19:
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1256 005a 4020     		movs	r0, #64
  1257 005c FFF7FEFF 		bl	ssd1306_SendCommand
  1258              	.LVL102:
-ARM GAS  /tmp/ccI0AsY7.s 			page 52
+ARM GAS  /tmp/ccGHxA6J.s 			page 52
 
 
   55:display/ssd1306.c **** 	ssd1306_SendCommand(SETMULTIPLEX); //Установка коэффициента мультипл�
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1302              	.LVL113:
   70:display/ssd1306.c **** 
  1303              		.loc 1 70 2 view .LVU284
-ARM GAS  /tmp/ccI0AsY7.s 			page 53
+ARM GAS  /tmp/ccGHxA6J.s 			page 53
 
 
  1304 00a2 2020     		movs	r0, #32
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
   84:display/ssd1306.c **** 
  1344              		.loc 1 84 1 view .LVU299
  1345 00ca 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  /tmp/ccI0AsY7.s 			page 54
+ARM GAS  /tmp/ccGHxA6J.s 			page 54
 
 
  1346              	.L98:
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1398              		.loc 1 236 1 is_stmt 0 view .LVU305
  1399 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
  1400              	.LCFI14:
-ARM GAS  /tmp/ccI0AsY7.s 			page 55
+ARM GAS  /tmp/ccGHxA6J.s 			page 55
 
 
  1401              		.cfi_def_cfa_offset 36
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1444              		.loc 1 248 2 is_stmt 1 view .LVU316
  248:display/ssd1306.c **** 	{	y1 = SSD1306_Y_SIZE - 1;	}
  1445              		.loc 1 248 5 is_stmt 0 view .LVU317
-ARM GAS  /tmp/ccI0AsY7.s 			page 56
+ARM GAS  /tmp/ccGHxA6J.s 			page 56
 
 
  1446 0024 B8F11F0F 		cmp	r8, #31
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1485              		.loc 1 254 5 view .LVU332
  1486 0052 0123     		movs	r3, #1
  1487 0054 0093     		str	r3, [sp]
-ARM GAS  /tmp/ccI0AsY7.s 			page 57
+ARM GAS  /tmp/ccGHxA6J.s 			page 57
 
 
  1488              	.L111:
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1529 0088 4FF0FF33 		mov	r3, #-1
  1530 008c 1A46     		mov	r2, r3
  1531 008e DEE7     		b	.L110
-ARM GAS  /tmp/ccI0AsY7.s 			page 58
+ARM GAS  /tmp/ccGHxA6J.s 			page 58
 
 
  1532              	.LVL137:
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1575 00ba 1FFA88F8 		uxth	r8, r8
  274:display/ssd1306.c **** 		
  1576              		.loc 1 274 5 is_stmt 0 discriminator 3 view .LVU357
-ARM GAS  /tmp/ccI0AsY7.s 			page 59
+ARM GAS  /tmp/ccGHxA6J.s 			page 59
 
 
  1577 00be 5A46     		mov	r2, fp
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1618 00e6 3FB2     		sxth	r7, r7
  1619              	.LVL152:
  295:display/ssd1306.c **** 		{	SSD1306_DrawPixel(i, y0, c);	} // Horizontal line 
-ARM GAS  /tmp/ccI0AsY7.s 			page 60
+ARM GAS  /tmp/ccGHxA6J.s 			page 60
 
 
  1620              		.loc 1 295 3 view .LVU371
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1663              	.LVL160:
  1664              	.L134:
  1665              	.LCFI17:
-ARM GAS  /tmp/ccI0AsY7.s 			page 61
+ARM GAS  /tmp/ccGHxA6J.s 			page 61
 
 
  1666              		.cfi_restore_state
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1706              	.L125:
  305:display/ssd1306.c **** 		if (e2 > -dx) 
  1707              		.loc 1 305 3 is_stmt 1 view .LVU397
-ARM GAS  /tmp/ccI0AsY7.s 			page 62
+ARM GAS  /tmp/ccGHxA6J.s 			page 62
 
 
  1708              	.LVL168:
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1753              		.cfi_offset 7, -12
  1754              		.cfi_offset 8, -8
  1755              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccI0AsY7.s 			page 63
+ARM GAS  /tmp/ccGHxA6J.s 			page 63
 
 
  1756 0004 82B0     		sub	sp, sp, #8
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1796              	.L143:
  333:display/ssd1306.c **** 	SSD1306_DrawLine(x, y + h, x + w, y + h, c); // Bottom line 
  1797              		.loc 1 333 2 is_stmt 1 view .LVU423
-ARM GAS  /tmp/ccI0AsY7.s 			page 64
+ARM GAS  /tmp/ccGHxA6J.s 			page 64
 
 
  1798 0030 9419     		adds	r4, r2, r6
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1844              	.LCFI20:
  1845              		.cfi_def_cfa_offset 24
  1846              		@ sp needed
-ARM GAS  /tmp/ccI0AsY7.s 			page 65
+ARM GAS  /tmp/ccGHxA6J.s 			page 65
 
 
  1847 007a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1894              		.loc 1 347 9 is_stmt 0 view .LVU440
  1895 001a 8318     		adds	r3, r0, r2
  1896              	.LVL186:
-ARM GAS  /tmp/ccI0AsY7.s 			page 66
+ARM GAS  /tmp/ccGHxA6J.s 			page 66
 
 
  347:display/ssd1306.c **** 	{	w = SSD1306_X_SIZE - x;	}
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1937 0050 0134     		adds	r4, r4, #1
  1938              	.LVL191:
  353:display/ssd1306.c **** 	{	SSD1306_DrawLine(x, y + i, x + w, y + i, c); 	}	// Draw lines 
-ARM GAS  /tmp/ccI0AsY7.s 			page 67
+ARM GAS  /tmp/ccGHxA6J.s 			page 67
 
 
  1939              		.loc 1 353 23 discriminator 3 view .LVU455
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  1988              	.LCFI25:
  1989              		.cfi_def_cfa_offset 40
  1990 0006 0446     		mov	r4, r0
-ARM GAS  /tmp/ccI0AsY7.s 			page 68
+ARM GAS  /tmp/ccGHxA6J.s 			page 68
 
 
  1991 0008 0D46     		mov	r5, r1
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  370:display/ssd1306.c **** 	int16_t deltax = 0, deltay = 0, x = 0, y = 0, xinc1 = 0, xinc2 = 0, 
  2041              		.loc 1 370 1 is_stmt 0 view .LVU469
  2042 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
-ARM GAS  /tmp/ccI0AsY7.s 			page 69
+ARM GAS  /tmp/ccGHxA6J.s 			page 69
 
 
  2043              	.LCFI27:
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2087              		.loc 1 378 2 is_stmt 1 view .LVU479
  378:display/ssd1306.c **** 
  2088              		.loc 1 378 4 is_stmt 0 view .LVU480
-ARM GAS  /tmp/ccI0AsY7.s 			page 70
+ARM GAS  /tmp/ccGHxA6J.s 			page 70
 
 
  2089 003e 0EB2     		sxth	r6, r1
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  409:display/ssd1306.c **** 	} 
  2127              		.loc 1 409 3 view .LVU497
  409:display/ssd1306.c **** 	} 
-ARM GAS  /tmp/ccI0AsY7.s 			page 71
+ARM GAS  /tmp/ccGHxA6J.s 			page 71
 
 
  2128              		.loc 1 409 3 is_stmt 0 view .LVU498
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2168 0080 48F34F08 		sbfx	r8, r8, #1, #16
  2169              	.LVL217:
  417:display/ssd1306.c **** 		numpixels = deltay;
-ARM GAS  /tmp/ccI0AsY7.s 			page 72
+ARM GAS  /tmp/ccGHxA6J.s 			page 72
 
 
  2170              		.loc 1 417 3 is_stmt 1 view .LVU513
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  421:display/ssd1306.c **** 	{
  2210              		.loc 1 421 44 is_stmt 1 discriminator 2 view .LVU528
  421:display/ssd1306.c **** 	{
-ARM GAS  /tmp/ccI0AsY7.s 			page 73
+ARM GAS  /tmp/ccGHxA6J.s 			page 73
 
 
  2211              		.loc 1 421 52 is_stmt 0 discriminator 2 view .LVU529
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2252 00d8 089B     		ldr	r3, [sp, #32]
  2253 00da FC18     		adds	r4, r7, r3
  2254              	.LVL233:
-ARM GAS  /tmp/ccI0AsY7.s 			page 74
+ARM GAS  /tmp/ccGHxA6J.s 			page 74
 
 
  429:display/ssd1306.c **** 			y += yinc1;
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2303              		.cfi_offset 14, -4
  2304 0004 87B0     		sub	sp, sp, #28
  2305              	.LCFI31:
-ARM GAS  /tmp/ccI0AsY7.s 			page 75
+ARM GAS  /tmp/ccGHxA6J.s 			page 75
 
 
  2306              		.cfi_def_cfa_offset 64
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2346 003c 5846     		mov	r0, fp
  2347 003e FFF7FEFF 		bl	SSD1306_DrawPixel
  2348              	.LVL243:
-ARM GAS  /tmp/ccI0AsY7.s 			page 76
+ARM GAS  /tmp/ccGHxA6J.s 			page 76
 
 
  448:display/ssd1306.c ****   SSD1306_DrawPixel(x0 - r, y0, c);
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2391 007a 9944     		add	r9, r9, r3
  2392              	.LVL249:
  457:display/ssd1306.c **** 		}
-ARM GAS  /tmp/ccI0AsY7.s 			page 77
+ARM GAS  /tmp/ccGHxA6J.s 			page 77
 
 
  2393              		.loc 1 457 6 view .LVU577
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2438 00c4 FFF7FEFF 		bl	SSD1306_DrawPixel
  2439              	.LVL256:
  465:display/ssd1306.c ****     SSD1306_DrawPixel(x0 - x, y0 - y, c);
-ARM GAS  /tmp/ccI0AsY7.s 			page 78
+ARM GAS  /tmp/ccGHxA6J.s 			page 78
 
 
  2440              		.loc 1 465 5 view .LVU587
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2488 0126 029B     		ldr	r3, [sp, #8]
  2489 0128 019A     		ldr	r2, [sp, #4]
  2490 012a 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccI0AsY7.s 			page 79
+ARM GAS  /tmp/ccGHxA6J.s 			page 79
 
 
  2491 012c 03DA     		bge	.L171
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2540              		.loc 1 478 2 is_stmt 1 view .LVU600
  478:display/ssd1306.c **** 	int16_t ddF_x = 1;
  2541              		.loc 1 478 16 is_stmt 0 view .LVU601
-ARM GAS  /tmp/ccI0AsY7.s 			page 80
+ARM GAS  /tmp/ccGHxA6J.s 			page 80
 
 
  2542 000a 95B2     		uxth	r5, r2
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2582 003a 05EB0B06 		add	r6, r5, fp
  2583 003e B6B2     		uxth	r6, r6
  2584 0040 5246     		mov	r2, r10
-ARM GAS  /tmp/ccI0AsY7.s 			page 81
+ARM GAS  /tmp/ccGHxA6J.s 			page 81
 
 
  2585 0042 3946     		mov	r1, r7
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2628 007e 0232     		adds	r2, r2, #2
  2629 0080 93B2     		uxth	r3, r2
  2630 0082 12B2     		sxth	r2, r2
-ARM GAS  /tmp/ccI0AsY7.s 			page 82
+ARM GAS  /tmp/ccGHxA6J.s 			page 82
 
 
  2631 0084 0592     		str	r2, [sp, #20]
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2674 00c0 4246     		mov	r2, r8
  2675 00c2 4846     		mov	r0, r9
  2676 00c4 FFF7FEFF 		bl	SSD1306_DrawLine
-ARM GAS  /tmp/ccI0AsY7.s 			page 83
+ARM GAS  /tmp/ccGHxA6J.s 			page 83
 
 
  2677              	.LVL284:
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2724              		.cfi_def_cfa_offset 36
  2725              		@ sp needed
  2726 011c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
-ARM GAS  /tmp/ccI0AsY7.s 			page 84
+ARM GAS  /tmp/ccGHxA6J.s 			page 84
 
 
  507:display/ssd1306.c **** 
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2773 0012 0121     		movs	r1, #1
  2774 0014 0020     		movs	r0, #0
  2775 0016 FFF7FEFF 		bl	SSD1306_GotoXY
-ARM GAS  /tmp/ccI0AsY7.s 			page 85
+ARM GAS  /tmp/ccGHxA6J.s 			page 85
 
 
  2776              	.LVL290:
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2823 0060 00000000 		.word	.LANCHOR2
  2824 0064 00000000 		.word	.LC8
  2825 0068 00000000 		.word	Font_7x10
-ARM GAS  /tmp/ccI0AsY7.s 			page 86
+ARM GAS  /tmp/ccGHxA6J.s 			page 86
 
 
  2826 006c 0C000000 		.word	.LC9
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2873              		.loc 1 542 10 view .LVU663
  2874 0018 C4B2     		uxtb	r4, r0
  2875              	.LVL300:
-ARM GAS  /tmp/ccI0AsY7.s 			page 87
+ARM GAS  /tmp/ccGHxA6J.s 			page 87
 
 
  543:display/ssd1306.c **** 	SSD1306_Clear_Screen ();
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2923      52504D00 
  2924              		.section	.text.setup_speed_screen,"ax",%progbits
  2925              		.align	1
-ARM GAS  /tmp/ccI0AsY7.s 			page 88
+ARM GAS  /tmp/ccGHxA6J.s 			page 88
 
 
  2926              		.global	setup_speed_screen
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  2973              	.LVL313:
  558:display/ssd1306.c **** 
  2974              		.loc 1 558 1 is_stmt 0 view .LVU679
-ARM GAS  /tmp/ccI0AsY7.s 			page 89
+ARM GAS  /tmp/ccGHxA6J.s 			page 89
 
 
  2975 002c 38BD     		pop	{r3, r4, r5, pc}
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3024              		.loc 1 566 2 view .LVU684
  3025 0014 084E     		ldr	r6, .L194
  3026 0016 0095     		str	r5, [sp]
-ARM GAS  /tmp/ccI0AsY7.s 			page 90
+ARM GAS  /tmp/ccGHxA6J.s 			page 90
 
 
  3027 0018 2346     		mov	r3, r4
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3076              		.cfi_startproc
  3077              		@ args = 0, pretend = 0, frame = 0
  3078              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccI0AsY7.s 			page 91
+ARM GAS  /tmp/ccGHxA6J.s 			page 91
 
 
  3079 0000 38B5     		push	{r3, r4, r5, lr}
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3125              		.loc 1 583 2 view .LVU697
  3126 0046 FFF7FEFF 		bl	SSD1306_UpdateScreen
  3127              	.LVL326:
-ARM GAS  /tmp/ccI0AsY7.s 			page 92
+ARM GAS  /tmp/ccGHxA6J.s 			page 92
 
 
  584:display/ssd1306.c **** 
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  593:display/ssd1306.c **** 
  3177              		.loc 1 593 2 view .LVU703
  3178 001a 0122     		movs	r2, #1
-ARM GAS  /tmp/ccI0AsY7.s 			page 93
+ARM GAS  /tmp/ccGHxA6J.s 			page 93
 
 
  3179 001c 0549     		ldr	r1, .L202+8
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3227              		.loc 1 604 2 view .LVU709
  3228 000e 064B     		ldr	r3, .L206
  3229 0010 064A     		ldr	r2, .L206+4
-ARM GAS  /tmp/ccI0AsY7.s 			page 94
+ARM GAS  /tmp/ccGHxA6J.s 			page 94
 
 
  3230 0012 07CA     		ldm	r2, {r0, r1, r2}
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  615:display/ssd1306.c **** 	snprintf ((char *)LCD_buff, LCD_BUFFER_SIZE, "MANUAL MODE");
  3279              		.loc 1 615 2 view .LVU715
  3280 0006 0121     		movs	r1, #1
-ARM GAS  /tmp/ccI0AsY7.s 			page 95
+ARM GAS  /tmp/ccGHxA6J.s 			page 95
 
 
  3281 0008 0020     		movs	r0, #0
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3329              		.syntax unified
  3330              		.thumb
  3331              		.thumb_func
-ARM GAS  /tmp/ccI0AsY7.s 			page 96
+ARM GAS  /tmp/ccGHxA6J.s 			page 96
 
 
  3333              	menu_select_preset_screen:
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  697:display/ssd1306.c **** 			preset4_screen();
  698:display/ssd1306.c **** 			break;
  699:display/ssd1306.c **** 				
-ARM GAS  /tmp/ccI0AsY7.s 			page 97
+ARM GAS  /tmp/ccGHxA6J.s 			page 97
 
 
  700:display/ssd1306.c **** 		default:
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3407              		.syntax unified
  3408              		.thumb
  3409              		.thumb_func
-ARM GAS  /tmp/ccI0AsY7.s 			page 98
+ARM GAS  /tmp/ccGHxA6J.s 			page 98
 
 
  3411              	release_pedal_menu:
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3453 0036 A180     		strh	r1, [r4, #4]	@ movhi
  717:display/ssd1306.c **** 	SSD1306_Puts (LCD_buff , &Font_11x17, SSD1306_COLOR_WHITE);
  3454              		.loc 1 717 2 view .LVU746
-ARM GAS  /tmp/ccI0AsY7.s 			page 99
+ARM GAS  /tmp/ccGHxA6J.s 			page 99
 
 
  3455 0038 0122     		movs	r2, #1
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3502              		.loc 1 725 2 view .LVU751
  3503 000a 074B     		ldr	r3, .L227
  3504 000c 074A     		ldr	r2, .L227+4
-ARM GAS  /tmp/ccI0AsY7.s 			page 100
+ARM GAS  /tmp/ccGHxA6J.s 			page 100
 
 
  3505 000e 92E80300 		ldm	r2, {r0, r1}
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3554              		.file 4 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/s
  3555              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f105xc.h"
  3556              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h"
-ARM GAS  /tmp/ccI0AsY7.s 			page 101
+ARM GAS  /tmp/ccGHxA6J.s 			page 101
 
 
  3557              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h"
@@ -6009,132 +6009,132 @@ ARM GAS  /tmp/ccI0AsY7.s 			page 1
  3562              		.file 12 "/home/arashamf/soft/ARM_toolchains/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/
  3563              		.file 13 "display/ssd1306_interface.h"
  3564              		.file 14 "Core/Inc/tim.h"
-ARM GAS  /tmp/ccI0AsY7.s 			page 102
+ARM GAS  /tmp/ccGHxA6J.s 			page 102
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ssd1306.c
-     /tmp/ccI0AsY7.s:18     .text.SSD1306_GotoXY:0000000000000000 $t
-     /tmp/ccI0AsY7.s:24     .text.SSD1306_GotoXY:0000000000000000 SSD1306_GotoXY
-     /tmp/ccI0AsY7.s:45     .text.SSD1306_GotoXY:0000000000000008 $d
-     /tmp/ccI0AsY7.s:50     .text.SSD1306_DrawPixel:0000000000000000 $t
-     /tmp/ccI0AsY7.s:56     .text.SSD1306_DrawPixel:0000000000000000 SSD1306_DrawPixel
-     /tmp/ccI0AsY7.s:136    .text.SSD1306_DrawPixel:0000000000000054 $d
-     /tmp/ccI0AsY7.s:142    .text.SSD1306_PutChar:0000000000000000 $t
-     /tmp/ccI0AsY7.s:148    .text.SSD1306_PutChar:0000000000000000 SSD1306_PutChar
-     /tmp/ccI0AsY7.s:307    .text.SSD1306_PutChar:0000000000000098 $d
-     /tmp/ccI0AsY7.s:312    .text.SSD1306_PutString:0000000000000000 $t
-     /tmp/ccI0AsY7.s:318    .text.SSD1306_PutString:0000000000000000 SSD1306_PutString
-     /tmp/ccI0AsY7.s:371    .text.SSD1306_Putc:0000000000000000 $t
-     /tmp/ccI0AsY7.s:377    .text.SSD1306_Putc:0000000000000000 SSD1306_Putc
-     /tmp/ccI0AsY7.s:527    .text.SSD1306_Putc:0000000000000090 $d
-     /tmp/ccI0AsY7.s:532    .text.SSD1306_Puts:0000000000000000 $t
-     /tmp/ccI0AsY7.s:538    .text.SSD1306_Puts:0000000000000000 SSD1306_Puts
-     /tmp/ccI0AsY7.s:591    .text.SSD1306_UpdateScreen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:597    .text.SSD1306_UpdateScreen:0000000000000000 SSD1306_UpdateScreen
-     /tmp/ccI0AsY7.s:618    .text.SSD1306_UpdateScreen:0000000000000010 $d
-     /tmp/ccI0AsY7.s:623    .rodata.preset2_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:630    .text.preset2_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:635    .text.preset2_screen:0000000000000000 preset2_screen
-     /tmp/ccI0AsY7.s:692    .text.preset2_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:700    .rodata.preset3_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:707    .text.preset3_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:712    .text.preset3_screen:0000000000000000 preset3_screen
-     /tmp/ccI0AsY7.s:769    .text.preset3_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:777    .rodata.preset4_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:784    .text.preset4_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:789    .text.preset4_screen:0000000000000000 preset4_screen
-     /tmp/ccI0AsY7.s:846    .text.preset4_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:854    .rodata.preset1_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:861    .text.preset1_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:866    .text.preset1_screen:0000000000000000 preset1_screen
-     /tmp/ccI0AsY7.s:923    .text.preset1_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:931    .text.SSD1306_PageAdress:0000000000000000 $t
-     /tmp/ccI0AsY7.s:937    .text.SSD1306_PageAdress:0000000000000000 SSD1306_PageAdress
-     /tmp/ccI0AsY7.s:985    .text.SSD1306_PageAdress:0000000000000020 $d
-     /tmp/ccI0AsY7.s:990    .text.SSD1306_ToggleInvert:0000000000000000 $t
-     /tmp/ccI0AsY7.s:996    .text.SSD1306_ToggleInvert:0000000000000000 SSD1306_ToggleInvert
-     /tmp/ccI0AsY7.s:1045   .text.SSD1306_ToggleInvert:0000000000000024 $d
-     /tmp/ccI0AsY7.s:1051   .text.SSD1306_Fill:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1057   .text.SSD1306_Fill:0000000000000000 SSD1306_Fill
-     /tmp/ccI0AsY7.s:1118   .text.SSD1306_Fill:0000000000000034 $d
-     /tmp/ccI0AsY7.s:1124   .text.SSD1306_Clear_Screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1130   .text.SSD1306_Clear_Screen:0000000000000000 SSD1306_Clear_Screen
-     /tmp/ccI0AsY7.s:1151   .text.ssd1306_Init:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1157   .text.ssd1306_Init:0000000000000000 ssd1306_Init
-     /tmp/ccI0AsY7.s:1349   .text.ssd1306_Init:00000000000000cc $d
-     /tmp/ccI0AsY7.s:1355   .text.clear_buffer_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1360   .text.clear_buffer_screen:0000000000000000 clear_buffer_screen
-     /tmp/ccI0AsY7.s:1385   .text.SSD1306_DrawLine:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1391   .text.SSD1306_DrawLine:0000000000000000 SSD1306_DrawLine
-     /tmp/ccI0AsY7.s:1733   .text.SSD1306_DrawRectangle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1739   .text.SSD1306_DrawRectangle:0000000000000000 SSD1306_DrawRectangle
-ARM GAS  /tmp/ccI0AsY7.s 			page 103
+     /tmp/ccGHxA6J.s:18     .text.SSD1306_GotoXY:0000000000000000 $t
+     /tmp/ccGHxA6J.s:24     .text.SSD1306_GotoXY:0000000000000000 SSD1306_GotoXY
+     /tmp/ccGHxA6J.s:45     .text.SSD1306_GotoXY:0000000000000008 $d
+     /tmp/ccGHxA6J.s:50     .text.SSD1306_DrawPixel:0000000000000000 $t
+     /tmp/ccGHxA6J.s:56     .text.SSD1306_DrawPixel:0000000000000000 SSD1306_DrawPixel
+     /tmp/ccGHxA6J.s:136    .text.SSD1306_DrawPixel:0000000000000054 $d
+     /tmp/ccGHxA6J.s:142    .text.SSD1306_PutChar:0000000000000000 $t
+     /tmp/ccGHxA6J.s:148    .text.SSD1306_PutChar:0000000000000000 SSD1306_PutChar
+     /tmp/ccGHxA6J.s:307    .text.SSD1306_PutChar:0000000000000098 $d
+     /tmp/ccGHxA6J.s:312    .text.SSD1306_PutString:0000000000000000 $t
+     /tmp/ccGHxA6J.s:318    .text.SSD1306_PutString:0000000000000000 SSD1306_PutString
+     /tmp/ccGHxA6J.s:371    .text.SSD1306_Putc:0000000000000000 $t
+     /tmp/ccGHxA6J.s:377    .text.SSD1306_Putc:0000000000000000 SSD1306_Putc
+     /tmp/ccGHxA6J.s:527    .text.SSD1306_Putc:0000000000000090 $d
+     /tmp/ccGHxA6J.s:532    .text.SSD1306_Puts:0000000000000000 $t
+     /tmp/ccGHxA6J.s:538    .text.SSD1306_Puts:0000000000000000 SSD1306_Puts
+     /tmp/ccGHxA6J.s:591    .text.SSD1306_UpdateScreen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:597    .text.SSD1306_UpdateScreen:0000000000000000 SSD1306_UpdateScreen
+     /tmp/ccGHxA6J.s:618    .text.SSD1306_UpdateScreen:0000000000000010 $d
+     /tmp/ccGHxA6J.s:623    .rodata.preset2_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:630    .text.preset2_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:635    .text.preset2_screen:0000000000000000 preset2_screen
+     /tmp/ccGHxA6J.s:692    .text.preset2_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:700    .rodata.preset3_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:707    .text.preset3_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:712    .text.preset3_screen:0000000000000000 preset3_screen
+     /tmp/ccGHxA6J.s:769    .text.preset3_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:777    .rodata.preset4_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:784    .text.preset4_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:789    .text.preset4_screen:0000000000000000 preset4_screen
+     /tmp/ccGHxA6J.s:846    .text.preset4_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:854    .rodata.preset1_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:861    .text.preset1_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:866    .text.preset1_screen:0000000000000000 preset1_screen
+     /tmp/ccGHxA6J.s:923    .text.preset1_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:931    .text.SSD1306_PageAdress:0000000000000000 $t
+     /tmp/ccGHxA6J.s:937    .text.SSD1306_PageAdress:0000000000000000 SSD1306_PageAdress
+     /tmp/ccGHxA6J.s:985    .text.SSD1306_PageAdress:0000000000000020 $d
+     /tmp/ccGHxA6J.s:990    .text.SSD1306_ToggleInvert:0000000000000000 $t
+     /tmp/ccGHxA6J.s:996    .text.SSD1306_ToggleInvert:0000000000000000 SSD1306_ToggleInvert
+     /tmp/ccGHxA6J.s:1045   .text.SSD1306_ToggleInvert:0000000000000024 $d
+     /tmp/ccGHxA6J.s:1051   .text.SSD1306_Fill:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1057   .text.SSD1306_Fill:0000000000000000 SSD1306_Fill
+     /tmp/ccGHxA6J.s:1118   .text.SSD1306_Fill:0000000000000034 $d
+     /tmp/ccGHxA6J.s:1124   .text.SSD1306_Clear_Screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1130   .text.SSD1306_Clear_Screen:0000000000000000 SSD1306_Clear_Screen
+     /tmp/ccGHxA6J.s:1151   .text.ssd1306_Init:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1157   .text.ssd1306_Init:0000000000000000 ssd1306_Init
+     /tmp/ccGHxA6J.s:1349   .text.ssd1306_Init:00000000000000cc $d
+     /tmp/ccGHxA6J.s:1355   .text.clear_buffer_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1360   .text.clear_buffer_screen:0000000000000000 clear_buffer_screen
+     /tmp/ccGHxA6J.s:1385   .text.SSD1306_DrawLine:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1391   .text.SSD1306_DrawLine:0000000000000000 SSD1306_DrawLine
+     /tmp/ccGHxA6J.s:1733   .text.SSD1306_DrawRectangle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1739   .text.SSD1306_DrawRectangle:0000000000000000 SSD1306_DrawRectangle
+ARM GAS  /tmp/ccGHxA6J.s 			page 103
 
 
-     /tmp/ccI0AsY7.s:1853   .text.SSD1306_DrawFilledRectangle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1859   .text.SSD1306_DrawFilledRectangle:0000000000000000 SSD1306_DrawFilledRectangle
-     /tmp/ccI0AsY7.s:1962   .text.SSD1306_DrawTriangle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:1968   .text.SSD1306_DrawTriangle:0000000000000000 SSD1306_DrawTriangle
-     /tmp/ccI0AsY7.s:2028   .text.SSD1306_DrawFilledTriangle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2034   .text.SSD1306_DrawFilledTriangle:0000000000000000 SSD1306_DrawFilledTriangle
-     /tmp/ccI0AsY7.s:2278   .text.SSD1306_DrawCircle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2284   .text.SSD1306_DrawCircle:0000000000000000 SSD1306_DrawCircle
-     /tmp/ccI0AsY7.s:2509   .text.SSD1306_DrawFilledCircle:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2515   .text.SSD1306_DrawFilledCircle:0000000000000000 SSD1306_DrawFilledCircle
-     /tmp/ccI0AsY7.s:2732   .rodata.default_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:2739   .text.default_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2745   .text.default_screen:0000000000000000 default_screen
-     /tmp/ccI0AsY7.s:2823   .text.default_screen:0000000000000060 $d
-     /tmp/ccI0AsY7.s:2832   .rodata.setup_ratio_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:2836   .text.setup_ratio_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2842   .text.setup_ratio_screen:0000000000000000 setup_ratio_screen
-     /tmp/ccI0AsY7.s:2913   .text.setup_ratio_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:2921   .rodata.setup_speed_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:2925   .text.setup_speed_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2931   .text.setup_speed_screen:0000000000000000 setup_speed_screen
-     /tmp/ccI0AsY7.s:2979   .text.setup_speed_screen:0000000000000030 $d
-     /tmp/ccI0AsY7.s:2986   .rodata.setup_coil_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:2990   .text.setup_coil_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:2996   .text.setup_coil_screen:0000000000000000 setup_coil_screen
-     /tmp/ccI0AsY7.s:3053   .text.setup_coil_screen:0000000000000038 $d
-     /tmp/ccI0AsY7.s:3060   .rodata.main_menu_select_preset_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3067   .text.main_menu_select_preset_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3073   .text.main_menu_select_preset_screen:0000000000000000 main_menu_select_preset_screen
-     /tmp/ccI0AsY7.s:3133   .text.main_menu_select_preset_screen:000000000000004c $d
-     /tmp/ccI0AsY7.s:3141   .rodata.mode_setup_null_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3145   .text.mode_setup_null_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3151   .text.mode_setup_null_screen:0000000000000000 mode_setup_null_screen
-     /tmp/ccI0AsY7.s:3191   .text.mode_setup_null_screen:000000000000002c $d
-     /tmp/ccI0AsY7.s:3198   .rodata.mode_setup_manual_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3202   .text.mode_setup_manual_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3208   .text.mode_setup_manual_screen:0000000000000000 mode_setup_manual_screen
-     /tmp/ccI0AsY7.s:3246   .text.mode_setup_manual_screen:0000000000000028 $d
-     /tmp/ccI0AsY7.s:3253   .rodata.mode_setup_manual_dir_screen.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3257   .text.mode_setup_manual_dir_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3263   .text.mode_setup_manual_dir_screen:0000000000000000 mode_setup_manual_dir_screen
-     /tmp/ccI0AsY7.s:3319   .text.mode_setup_manual_dir_screen:0000000000000048 $d
-     /tmp/ccI0AsY7.s:3327   .text.menu_select_preset_screen:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3333   .text.menu_select_preset_screen:0000000000000000 menu_select_preset_screen
-     /tmp/ccI0AsY7.s:3356   .text.menu_select_preset_screen:0000000000000012 $d
-     /tmp/ccI0AsY7.s:3360   .text.menu_select_preset_screen:0000000000000016 $t
-     /tmp/ccI0AsY7.s:3398   .rodata.release_pedal_menu.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3405   .text.release_pedal_menu:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3411   .text.release_pedal_menu:0000000000000000 release_pedal_menu
-     /tmp/ccI0AsY7.s:3468   .text.release_pedal_menu:0000000000000048 $d
-     /tmp/ccI0AsY7.s:3476   .rodata.start_menu.str1.4:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3480   .text.start_menu:0000000000000000 $t
-     /tmp/ccI0AsY7.s:3486   .text.start_menu:0000000000000000 start_menu
-     /tmp/ccI0AsY7.s:3522   .text.start_menu:0000000000000028 $d
-     /tmp/ccI0AsY7.s:3535   .bss.LCD_buff:0000000000000000 LCD_buff
-     /tmp/ccI0AsY7.s:3549   .bss.SSD1306_Buffer:0000000000000000 SSD1306_Buffer
-     /tmp/ccI0AsY7.s:3531   .bss.LCD_buff:0000000000000000 $d
-ARM GAS  /tmp/ccI0AsY7.s 			page 104
+     /tmp/ccGHxA6J.s:1853   .text.SSD1306_DrawFilledRectangle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1859   .text.SSD1306_DrawFilledRectangle:0000000000000000 SSD1306_DrawFilledRectangle
+     /tmp/ccGHxA6J.s:1962   .text.SSD1306_DrawTriangle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:1968   .text.SSD1306_DrawTriangle:0000000000000000 SSD1306_DrawTriangle
+     /tmp/ccGHxA6J.s:2028   .text.SSD1306_DrawFilledTriangle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2034   .text.SSD1306_DrawFilledTriangle:0000000000000000 SSD1306_DrawFilledTriangle
+     /tmp/ccGHxA6J.s:2278   .text.SSD1306_DrawCircle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2284   .text.SSD1306_DrawCircle:0000000000000000 SSD1306_DrawCircle
+     /tmp/ccGHxA6J.s:2509   .text.SSD1306_DrawFilledCircle:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2515   .text.SSD1306_DrawFilledCircle:0000000000000000 SSD1306_DrawFilledCircle
+     /tmp/ccGHxA6J.s:2732   .rodata.default_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:2739   .text.default_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2745   .text.default_screen:0000000000000000 default_screen
+     /tmp/ccGHxA6J.s:2823   .text.default_screen:0000000000000060 $d
+     /tmp/ccGHxA6J.s:2832   .rodata.setup_ratio_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:2836   .text.setup_ratio_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2842   .text.setup_ratio_screen:0000000000000000 setup_ratio_screen
+     /tmp/ccGHxA6J.s:2913   .text.setup_ratio_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:2921   .rodata.setup_speed_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:2925   .text.setup_speed_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2931   .text.setup_speed_screen:0000000000000000 setup_speed_screen
+     /tmp/ccGHxA6J.s:2979   .text.setup_speed_screen:0000000000000030 $d
+     /tmp/ccGHxA6J.s:2986   .rodata.setup_coil_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:2990   .text.setup_coil_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:2996   .text.setup_coil_screen:0000000000000000 setup_coil_screen
+     /tmp/ccGHxA6J.s:3053   .text.setup_coil_screen:0000000000000038 $d
+     /tmp/ccGHxA6J.s:3060   .rodata.main_menu_select_preset_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3067   .text.main_menu_select_preset_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3073   .text.main_menu_select_preset_screen:0000000000000000 main_menu_select_preset_screen
+     /tmp/ccGHxA6J.s:3133   .text.main_menu_select_preset_screen:000000000000004c $d
+     /tmp/ccGHxA6J.s:3141   .rodata.mode_setup_null_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3145   .text.mode_setup_null_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3151   .text.mode_setup_null_screen:0000000000000000 mode_setup_null_screen
+     /tmp/ccGHxA6J.s:3191   .text.mode_setup_null_screen:000000000000002c $d
+     /tmp/ccGHxA6J.s:3198   .rodata.mode_setup_manual_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3202   .text.mode_setup_manual_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3208   .text.mode_setup_manual_screen:0000000000000000 mode_setup_manual_screen
+     /tmp/ccGHxA6J.s:3246   .text.mode_setup_manual_screen:0000000000000028 $d
+     /tmp/ccGHxA6J.s:3253   .rodata.mode_setup_manual_dir_screen.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3257   .text.mode_setup_manual_dir_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3263   .text.mode_setup_manual_dir_screen:0000000000000000 mode_setup_manual_dir_screen
+     /tmp/ccGHxA6J.s:3319   .text.mode_setup_manual_dir_screen:0000000000000048 $d
+     /tmp/ccGHxA6J.s:3327   .text.menu_select_preset_screen:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3333   .text.menu_select_preset_screen:0000000000000000 menu_select_preset_screen
+     /tmp/ccGHxA6J.s:3356   .text.menu_select_preset_screen:0000000000000012 $d
+     /tmp/ccGHxA6J.s:3360   .text.menu_select_preset_screen:0000000000000016 $t
+     /tmp/ccGHxA6J.s:3398   .rodata.release_pedal_menu.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3405   .text.release_pedal_menu:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3411   .text.release_pedal_menu:0000000000000000 release_pedal_menu
+     /tmp/ccGHxA6J.s:3468   .text.release_pedal_menu:0000000000000048 $d
+     /tmp/ccGHxA6J.s:3476   .rodata.start_menu.str1.4:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3480   .text.start_menu:0000000000000000 $t
+     /tmp/ccGHxA6J.s:3486   .text.start_menu:0000000000000000 start_menu
+     /tmp/ccGHxA6J.s:3522   .text.start_menu:0000000000000028 $d
+     /tmp/ccGHxA6J.s:3535   .bss.LCD_buff:0000000000000000 LCD_buff
+     /tmp/ccGHxA6J.s:3549   .bss.SSD1306_Buffer:0000000000000000 SSD1306_Buffer
+     /tmp/ccGHxA6J.s:3531   .bss.LCD_buff:0000000000000000 $d
+ARM GAS  /tmp/ccGHxA6J.s 			page 104
 
 
-     /tmp/ccI0AsY7.s:3538   .bss.SSD1306:0000000000000000 $d
-     /tmp/ccI0AsY7.s:3542   .bss.SSD1306:0000000000000000 SSD1306
-     /tmp/ccI0AsY7.s:3545   .bss.SSD1306_Buffer:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3538   .bss.SSD1306:0000000000000000 $d
+     /tmp/ccGHxA6J.s:3542   .bss.SSD1306:0000000000000000 SSD1306
+     /tmp/ccGHxA6J.s:3545   .bss.SSD1306_Buffer:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 ssd1306_SendDataBuffer

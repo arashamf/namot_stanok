@@ -2,6 +2,7 @@
 // Includes -------------------------------------------------------------------------------------------//
 #include "menu.h"
 #include "typedef.h"
+#include "eeprom.h"
 #include "tim.h"
 #include "button.h"
 #include "drive.h"
@@ -181,26 +182,27 @@ void setup_menu (encoder_data_t * HandleEncData, coil_data_t * HandleCoilData)
 			}
 			if ((key_code = scan_keys()) != NO_KEY) //если была нажата кнопка
 			{
+				HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка оставшегося количества витков обмотки
 				if (key_code == KEY_SETUP_LONG) //длинное нажатие кнопки энкодера - выход из режима установки количества витков
 				{		
-					HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка оставшегося количества витков обмотки					
 					HandleCoilData->set_numb_winding = count+1; //необходимое количество обмоток
 					HandleCoilData->complet_winding = 0; //количество полностью намотанных обмоток				
+					for (uint8_t i = count+1; i < MAX_NUMBER_COIL; i++)
+					{	HandleCoilData->remains_coil[i] = HandleCoilData->set_coil[i] = 0;	}
+					SaveCoilData (HandleCoilData->coil_buffer);
 					return;
 				}	
 				else
 				{
 					if (key_code == KEY_SETUP_SHORT) //короткое нажатие кнопки энкодера - переход к вводу количества витков следующей обмотки
-					{
-						HandleCoilData->remains_coil[count] = HandleCoilData->set_coil[count]; //установка оставшегося количества витков обмотки
-						break;
-					}
+					{	break;	}
 				}
 			}			
 		}
 	}
 	HandleCoilData->set_numb_winding = MAX_NUMBER_COIL; //необходимое количество обмоток
 	HandleCoilData->complet_winding = 0;	//количество полностью намотанных обмоток
+	SaveCoilData (HandleCoilData->coil_buffer);
 	return;
 }
 

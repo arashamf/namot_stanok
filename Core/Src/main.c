@@ -34,6 +34,7 @@
 #include "button.h"
 #include "eeprom.h"
 #include "iwdg.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -130,6 +131,7 @@ int main(void)
 	
 	timers_ini ();
 	init_preset_struct (preset_ptr);
+  GetCoilData (preset3.coil_buffer);
 	ssd1306_Init();	
 	start_menu ();	
 	init_loop ();	

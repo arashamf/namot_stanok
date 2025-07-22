@@ -16,6 +16,7 @@
         "usart.h": "c",
         "stm32f1xx_it.h": "c",
         "stm32f1xx_ll_dma.h": "c",
-        "stm32f1xx.h": "c"
+        "stm32f1xx.h": "c",
+        "stdio.h": "c"
     }
 }

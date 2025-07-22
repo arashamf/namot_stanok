@@ -17,7 +17,7 @@ build/i2c.o: Core/Src/i2c.c Core/Inc/i2c.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h Core/Inc/typedef.h \
- Core/Inc/usart.h
+ Core/Inc/usart.h Core/Inc/tim.h Core/Inc/typedef.h
 Core/Inc/i2c.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:
@@ -42,3 +42,5 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:
 Core/Inc/typedef.h:
 Core/Inc/usart.h:
+Core/Inc/tim.h:
+Core/Inc/typedef.h:

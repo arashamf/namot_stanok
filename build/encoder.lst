@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccvk4pOh.s 			page 1
+ARM GAS  /tmp/cckSB8Ti.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   31:Core/Src/encoder.c **** {
   32:Core/Src/encoder.c **** 	HandleEncData->val_new = read_gray_code_from_encoder(); //чтение данных энкодер
   33:Core/Src/encoder.c ****   	switch (state_machine) //проверка номера стадии конечного авто�
-ARM GAS  /tmp/ccvk4pOh.s 			page 2
+ARM GAS  /tmp/cckSB8Ti.s 			page 2
 
 
   34:Core/Src/encoder.c ****   	{
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   88:Core/Src/encoder.c ****         		if (HandleEncData->val_new == PULSE_STATE_SECOND) //если данные от экоде
   89:Core/Src/encoder.c ****         		{ state_machine = ENC_NULL; } //переход на следующую стадию ав�
   90:Core/Src/encoder.c ****         		else //если данные от энкодера не соотвествуют ожид
-ARM GAS  /tmp/ccvk4pOh.s 			page 3
+ARM GAS  /tmp/cckSB8Ti.s 			page 3
 
 
   91:Core/Src/encoder.c ****         		{
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  145:Core/Src/encoder.c ****           		}
  146:Core/Src/encoder.c ****           		HandleEncData->val_old = HandleEncData->val_new; //сохранение текущег�
  147:Core/Src/encoder.c ****           		cnt_timeout = 0; //сброс счётчика таймаутов
-ARM GAS  /tmp/ccvk4pOh.s 			page 4
+ARM GAS  /tmp/cckSB8Ti.s 			page 4
 
 
  148:Core/Src/encoder.c ****         	}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  202:Core/Src/encoder.c ****     	default:
  203:Core/Src/encoder.c ****       	break;         
  204:Core/Src/encoder.c ****   	}
-ARM GAS  /tmp/ccvk4pOh.s 			page 5
+ARM GAS  /tmp/cckSB8Ti.s 			page 5
 
 
  205:Core/Src/encoder.c **** 	return HandleEncData->delta ;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   24:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** extern "C" {
   25:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #endif
   26:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccvk4pOh.s 			page 6
+ARM GAS  /tmp/cckSB8Ti.s 			page 6
 
 
   27:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /* Includes ------------------------------------------------------------------*/
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   81:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
   82:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****                               GPIO HW configuration can be modified afterwards using unitary functi
   83:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccvk4pOh.s 			page 7
+ARM GAS  /tmp/cckSB8Ti.s 			page 7
 
 
   84:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   uint32_t Speed;        /*!< Specifies the speed for the selected pins.
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  138:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
  139:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /** @defgroup GPIO_LL_EC_MODE Mode
  140:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @{
-ARM GAS  /tmp/ccvk4pOh.s 			page 8
+ARM GAS  /tmp/cckSB8Ti.s 			page 8
 
 
  141:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  195:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PIN_7        AFIO_EVCR_PIN_PX7   /*!< EVENTOUT on pin 7 */
  196:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PIN_8        AFIO_EVCR_PIN_PX8   /*!< EVENTOUT on pin 8 */
  197:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PIN_9        AFIO_EVCR_PIN_PX9   /*!< EVENTOUT on pin 9 */
-ARM GAS  /tmp/ccvk4pOh.s 			page 9
+ARM GAS  /tmp/cckSB8Ti.s 			page 9
 
 
  198:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EVENTOUT_PIN_10       AFIO_EVCR_PIN_PX10  /*!< EVENTOUT on pin 10 */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  252:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EXTI_LINE12           (0x000FU << 16U | 3U)  /*!< EXTI_POSITION_0  | EXTICR[3] *
  253:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EXTI_LINE13           (0x00F0U << 16U | 3U)  /*!< EXTI_POSITION_4  | EXTICR[3] *
  254:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EXTI_LINE14           (0x0F00U << 16U | 3U)  /*!< EXTI_POSITION_8  | EXTICR[3] *
-ARM GAS  /tmp/ccvk4pOh.s 			page 10
+ARM GAS  /tmp/cckSB8Ti.s 			page 10
 
 
  255:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** #define LL_GPIO_AF_EXTI_LINE15           (0xF000U << 16U | 3U)  /*!< EXTI_POSITION_12 | EXTICR[3] *
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  309:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         Alternate function Output.
  310:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @note   Warning: only one pin can be passed as parameter.
  311:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll CRL        CNFy         LL_GPIO_SetPinMode
-ARM GAS  /tmp/ccvk4pOh.s 			page 11
+ARM GAS  /tmp/cckSB8Ti.s 			page 11
 
 
  312:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll CRL        MODEy        LL_GPIO_SetPinMode
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  366:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
  367:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  368:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
-ARM GAS  /tmp/ccvk4pOh.s 			page 12
+ARM GAS  /tmp/cckSB8Ti.s 			page 12
 
 
  369:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  423:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****              (Speed << (POSITION_VAL(Pin) * 4U)));
  424:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** }
  425:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** 
-ARM GAS  /tmp/ccvk4pOh.s 			page 13
+ARM GAS  /tmp/cckSB8Ti.s 			page 13
 
 
  426:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  480:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  481:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
  482:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
-ARM GAS  /tmp/ccvk4pOh.s 			page 14
+ARM GAS  /tmp/cckSB8Ti.s 			page 14
 
 
  483:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  537:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** /**
  538:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @brief  Configure gpio pull-up or pull-down for a dedicated pin on a dedicated port.
  539:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @note   Warning: only one pin can be passed as parameter.
-ARM GAS  /tmp/ccvk4pOh.s 			page 15
+ARM GAS  /tmp/cckSB8Ti.s 			page 15
 
 
  540:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   * @rmtoll ODR        ODR         LL_GPIO_SetPinPull
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  594:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   */
  595:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_GetPinPull(GPIO_TypeDef *GPIOx, uint32_t Pin)
  596:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h **** {
-ARM GAS  /tmp/ccvk4pOh.s 			page 16
+ARM GAS  /tmp/cckSB8Ti.s 			page 16
 
 
  597:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   return (READ_BIT(GPIOx->ODR, (GPIO_ODR_ODR0 << (POSITION_VAL(Pin >> GPIO_PIN_MASK_POS)))) >> (POS
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  651:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_7
  652:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
  653:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
-ARM GAS  /tmp/ccvk4pOh.s 			page 17
+ARM GAS  /tmp/cckSB8Ti.s 			page 17
 
 
  654:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  708:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_5
  709:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_6
  710:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_7
-ARM GAS  /tmp/ccvk4pOh.s 			page 18
+ARM GAS  /tmp/cckSB8Ti.s 			page 18
 
 
  711:Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   83 0034 9B68     		ldr	r3, [r3, #8]
   84              		.loc 2 724 78 view .LVU19
   85 0036 DB43     		mvns	r3, r3
-ARM GAS  /tmp/ccvk4pOh.s 			page 19
+ARM GAS  /tmp/cckSB8Ti.s 			page 19
 
 
   86 0038 13F00103 		ands	r3, r3, #1
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  136              		.cfi_offset 14, -4
  137 0002 0446     		mov	r4, r0
   32:Core/Src/encoder.c ****   	switch (state_machine) //проверка номера стадии конечного авто�
-ARM GAS  /tmp/ccvk4pOh.s 			page 20
+ARM GAS  /tmp/cckSB8Ti.s 			page 20
 
 
  138              		.loc 1 32 2 is_stmt 1 view .LVU30
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   54:Core/Src/encoder.c ****             			state_machine = ENC_RESET;  //переход в начальную стадию ко
  179              		.loc 1 54 16 is_stmt 1 view .LVU44
   54:Core/Src/encoder.c ****             			state_machine = ENC_RESET;  //переход в начальную стадию ко
-ARM GAS  /tmp/ccvk4pOh.s 			page 21
+ARM GAS  /tmp/cckSB8Ti.s 			page 21
 
 
  180              		.loc 1 54 66 is_stmt 0 view .LVU45
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   49:Core/Src/encoder.c ****             			HandleEncData->flag_dir = 1; //флаг прямого поворота энкоде
  220              		.loc 1 49 16 is_stmt 1 view .LVU60
   49:Core/Src/encoder.c ****             			HandleEncData->flag_dir = 1; //флаг прямого поворота энкоде
-ARM GAS  /tmp/ccvk4pOh.s 			page 22
+ARM GAS  /tmp/cckSB8Ti.s 			page 22
 
 
  221              		.loc 1 49 30 is_stmt 0 view .LVU61
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
   92:Core/Src/encoder.c ****           			state_machine = ENC_RESET; //переход на стадию сброса показ�
  259              		.loc 1 92 38 view .LVU78
  260 0092 E370     		strb	r3, [r4, #3]
-ARM GAS  /tmp/ccvk4pOh.s 			page 23
+ARM GAS  /tmp/cckSB8Ti.s 			page 23
 
 
   93:Core/Src/encoder.c ****         		}
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  299              		.loc 1 76 29 is_stmt 0 view .LVU94
  300 00be 4B4B     		ldr	r3, .L44
  301 00c0 0422     		movs	r2, #4
-ARM GAS  /tmp/ccvk4pOh.s 			page 24
+ARM GAS  /tmp/cckSB8Ti.s 			page 24
 
 
  302 00c2 1A70     		strb	r2, [r3]
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  341              		.loc 1 131 18 is_stmt 0 view .LVU109
  342 00f0 0128     		cmp	r0, #1
  343 00f2 2CD0     		beq	.L40
-ARM GAS  /tmp/ccvk4pOh.s 			page 25
+ARM GAS  /tmp/cckSB8Ti.s 			page 25
 
 
  142:Core/Src/encoder.c ****               			state_machine = ENC_RESET;  //переход на стадию сброса пок
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  381              		.loc 1 109 65 is_stmt 0 view .LVU126
  382 011a A370     		strb	r3, [r4, #2]
  109:Core/Src/encoder.c ****             		state_machine = ENC_RESET; //переход в начальную стадию кон
-ARM GAS  /tmp/ccvk4pOh.s 			page 26
+ARM GAS  /tmp/cckSB8Ti.s 			page 26
 
 
  383              		.loc 1 109 39 view .LVU127
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  424              	.L40:
  133:Core/Src/encoder.c ****               			{  
  425              		.loc 1 133 18 view .LVU141
-ARM GAS  /tmp/ccvk4pOh.s 			page 27
+ARM GAS  /tmp/cckSB8Ti.s 			page 27
 
 
  133:Core/Src/encoder.c ****               			{  
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  464 0178 012B     		cmp	r3, #1
  465 017a 1FD0     		beq	.L42
  175:Core/Src/encoder.c ****             		{	HandleEncData->delta = 1;	} 
-ARM GAS  /tmp/ccvk4pOh.s 			page 28
+ARM GAS  /tmp/cckSB8Ti.s 			page 28
 
 
  466              		.loc 1 175 15 is_stmt 1 view .LVU158
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  160:Core/Src/encoder.c ****             		state_machine = ENC_RESET; //переход к начальной стадии кон
  504              		.loc 1 160 15 is_stmt 1 view .LVU175
  160:Core/Src/encoder.c ****             		state_machine = ENC_RESET; //переход к начальной стадии кон
-ARM GAS  /tmp/ccvk4pOh.s 			page 29
+ARM GAS  /tmp/cckSB8Ti.s 			page 29
 
 
  505              		.loc 1 160 65 is_stmt 0 view .LVU176
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  189:Core/Src/encoder.c ****         	{
  545              		.loc 1 189 53 is_stmt 0 view .LVU191
  546 01cc 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-ARM GAS  /tmp/ccvk4pOh.s 			page 30
+ARM GAS  /tmp/cckSB8Ti.s 			page 30
 
 
  189:Core/Src/encoder.c ****         	{
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  589              		.align	1
  590              		.global	read_encoder
  591              		.syntax unified
-ARM GAS  /tmp/ccvk4pOh.s 			page 31
+ARM GAS  /tmp/cckSB8Ti.s 			page 31
 
 
  592              		.thumb
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  637              		.loc 1 226 17 is_stmt 0 view .LVU214
  638 0000 014B     		ldr	r3, .L50
  639 0002 0022     		movs	r2, #0
-ARM GAS  /tmp/ccvk4pOh.s 			page 32
+ARM GAS  /tmp/cckSB8Ti.s 			page 32
 
 
  640 0004 1A70     		strb	r2, [r3]
@@ -1894,30 +1894,30 @@ ARM GAS  /tmp/ccvk4pOh.s 			page 1
  676              		.file 8 "Core/Inc/typedef.h"
  677              		.file 9 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
  678              		.file 10 "Core/Inc/tim.h"
-ARM GAS  /tmp/ccvk4pOh.s 			page 33
+ARM GAS  /tmp/cckSB8Ti.s 			page 33
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 encoder.c
-     /tmp/ccvk4pOh.s:18     .text.read_gray_code_from_encoder:0000000000000000 $t
-     /tmp/ccvk4pOh.s:23     .text.read_gray_code_from_encoder:0000000000000000 read_gray_code_from_encoder
-     /tmp/ccvk4pOh.s:114    .text.read_gray_code_from_encoder:000000000000005c $d
-     /tmp/ccvk4pOh.s:119    .text.read_state_encoder:0000000000000000 $t
-     /tmp/ccvk4pOh.s:124    .text.read_state_encoder:0000000000000000 read_state_encoder
-     /tmp/ccvk4pOh.s:151    .text.read_state_encoder:0000000000000018 $d
-     /tmp/ccvk4pOh.s:156    .text.read_state_encoder:0000000000000022 $t
-     /tmp/ccvk4pOh.s:582    .text.read_state_encoder:00000000000001ec $d
-     /tmp/ccvk4pOh.s:589    .text.read_encoder:0000000000000000 $t
-     /tmp/ccvk4pOh.s:595    .text.read_encoder:0000000000000000 read_encoder
-     /tmp/ccvk4pOh.s:623    .text.EncoderDelayCallback:0000000000000000 $t
-     /tmp/ccvk4pOh.s:629    .text.EncoderDelayCallback:0000000000000000 EncoderDelayCallback
-     /tmp/ccvk4pOh.s:646    .text.EncoderDelayCallback:0000000000000008 $d
-     /tmp/ccvk4pOh.s:661    .bss.flag_end_delay:0000000000000000 flag_end_delay
-     /tmp/ccvk4pOh.s:655    .bss.cnt_timeout:0000000000000000 cnt_timeout
-     /tmp/ccvk4pOh.s:656    .bss.cnt_timeout:0000000000000000 $d
-     /tmp/ccvk4pOh.s:662    .bss.flag_end_delay:0000000000000000 $d
-     /tmp/ccvk4pOh.s:667    .bss.state_machine:0000000000000000 state_machine
-     /tmp/ccvk4pOh.s:668    .bss.state_machine:0000000000000000 $d
+     /tmp/cckSB8Ti.s:18     .text.read_gray_code_from_encoder:0000000000000000 $t
+     /tmp/cckSB8Ti.s:23     .text.read_gray_code_from_encoder:0000000000000000 read_gray_code_from_encoder
+     /tmp/cckSB8Ti.s:114    .text.read_gray_code_from_encoder:000000000000005c $d
+     /tmp/cckSB8Ti.s:119    .text.read_state_encoder:0000000000000000 $t
+     /tmp/cckSB8Ti.s:124    .text.read_state_encoder:0000000000000000 read_state_encoder
+     /tmp/cckSB8Ti.s:151    .text.read_state_encoder:0000000000000018 $d
+     /tmp/cckSB8Ti.s:156    .text.read_state_encoder:0000000000000022 $t
+     /tmp/cckSB8Ti.s:582    .text.read_state_encoder:00000000000001ec $d
+     /tmp/cckSB8Ti.s:589    .text.read_encoder:0000000000000000 $t
+     /tmp/cckSB8Ti.s:595    .text.read_encoder:0000000000000000 read_encoder
+     /tmp/cckSB8Ti.s:623    .text.EncoderDelayCallback:0000000000000000 $t
+     /tmp/cckSB8Ti.s:629    .text.EncoderDelayCallback:0000000000000000 EncoderDelayCallback
+     /tmp/cckSB8Ti.s:646    .text.EncoderDelayCallback:0000000000000008 $d
+     /tmp/cckSB8Ti.s:661    .bss.flag_end_delay:0000000000000000 flag_end_delay
+     /tmp/cckSB8Ti.s:655    .bss.cnt_timeout:0000000000000000 cnt_timeout
+     /tmp/cckSB8Ti.s:656    .bss.cnt_timeout:0000000000000000 $d
+     /tmp/cckSB8Ti.s:662    .bss.flag_end_delay:0000000000000000 $d
+     /tmp/cckSB8Ti.s:667    .bss.state_machine:0000000000000000 state_machine
+     /tmp/cckSB8Ti.s:668    .bss.state_machine:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 xTimerEncDelay_Reload

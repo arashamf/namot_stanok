@@ -115,6 +115,7 @@ void xTimer_Delete(xTimerHandle );
 void xTimer_Task(uint32_t portTick);
 void xTimersButtonBounce_Reload (uint16_t );
 void xTimerEncDelay_Reload (uint16_t );
+void xTimerI2CTimeout_Reload (uint16_t );
 
 //Variables -----------------------------------------------------------------------//
 

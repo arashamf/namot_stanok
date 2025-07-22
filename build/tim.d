@@ -18,7 +18,7 @@ build/tim.o: Core/Src/tim.c Core/Inc/tim.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h Core/Inc/typedef.h \
  Core/Inc/typedef.h Core/Inc/usart.h Core/Inc/drive.h Core/Inc/gpio.h \
- Core/Inc/encoder.h Core/Inc/button.h
+ Core/Inc/encoder.h Core/Inc/button.h Core/Inc/i2c.h
 Core/Inc/tim.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:
@@ -48,3 +48,4 @@ Core/Inc/drive.h:
 Core/Inc/gpio.h:
 Core/Inc/encoder.h:
 Core/Inc/button.h:
+Core/Inc/i2c.h:
